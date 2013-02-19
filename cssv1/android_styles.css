@@ -4,6 +4,15 @@
 	text-decoration: none;	
 	}
 	
+	.overthrow-enabled.android #content-pane > div{
+	position:absolute;
+top:80px;
+bottom:0px;	
+width: 100%;
+background-color:white;
+
+	}
+	
 .android body, 
 .android #content, 
 .android #controls{
@@ -52,6 +61,7 @@
 	width:50%;
 	overflow:hidden;
 	text-overflow: ellipsis;
+	white-space: nowrap;
 	font-size:15px;
 	padding-top: 7px;	
 	text-align: left;
@@ -155,11 +165,12 @@
 	background-image: url('images/android/mdpi/1_navigation_cancel.png');
 	content:'';
 	display: block;	
-	width:14px; 
-	height:10px;
-	background-size:12px;
-	background-position: top left;
+	width:28px; 
+	height:28px;
+	
+	background-position: 0 0;
 	background-repeat: no-repeat;
+	
 	}
 
 input[type="search"]:focus{

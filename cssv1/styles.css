@@ -1,4 +1,4 @@
-/*Cpntent-pane*/
+/*Content-pane*/
 #content-pane > div{	
 	display: none;	
 	}
@@ -18,3 +18,8 @@
 	top:0;
 	left:0;
 	}
+	
+.overthrow-enabled .overthrow {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}

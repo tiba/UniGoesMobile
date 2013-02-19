@@ -1,0 +1,474 @@
+.ios a, 
+.ios a:hover, 
+.ios a:focus, 
+.ios a:visited{
+	text-decoration: none;	
+	}
+
+.ios body, 
+.ios #content, 
+.ios #controls{
+	clear:both;
+	}
+
+.ios body{
+	overflow:visible;
+	font-family:arial;
+	background-position: center bottom;
+	display: block;
+	}
+
+.ios #controls{
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:100;	
+	display: none;
+	}
+
+
+/*Mainbar*/
+	
+.ios #mainbar{
+	width: 100%;
+	top:0;
+	-webkit-box-sizing: border-box;
+ 	box-sizing: border-box;
+ 	-webkit-box-shadow: rgba(0, 0, 0, 0.4) 0 1px 6px;
+ 	box-shadow: rgba(0, 0, 0, 0.4) 0 1px 6px;
+ 	border-bottom: 1px solid #2a3441;
+ 	z-index: 10;
+ 	position: fixed;
+ 	padding: 6px 8px;
+ 	height: 44px;
+ 	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0.15)), color-stop(100%, rgba(255, 255, 255, 0))), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #92a3b9), color-stop(50%, #7f93ad), color-stop(51%, #768ba7), color-stop(100%, #6d83a1));
+ 	background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0)), -webkit-linear-gradient(top, #92a3b9, #7f93ad 50%, #768ba7 51%, #6d83a1);
+ 	background-image: linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0)), linear-gradient(top, #92a3b9, #7f93ad 50%, #768ba7 51%, #6d83a1);
+ 	-webkit-box-shadow: rgba(255, 255, 255, 0.3) 0 1px 0 inset;
+ 	box-shadow: rgba(255, 255, 255, 0.3) 0 1px 0 inset;
+	display: inline-block;
+	}	
+	
+/*TODO:Platzierung sitetitle besser machen! Wieso ist margin-left und margin-right anders bei geicher Prozentangabe?*/	
+.ios #sitetitle{
+	position: absolute;	
+	overflow: hidden;
+	text-overflow: ellipsis;	
+	white-space: nowrap;
+	margin-left:30%;
+	margin-right:20%;	
+	width: 50%;
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 36px;
+	color: white;
+	text-shadow: #5c718e 0 -1px 0;
+	text-align: center;
+	}	
+
+.ios #mainbar .button a{
+	display: block;
+ 	overflow: hidden;
+  	width: auto;
+  	height: 30px;
+  	min-width: 30px;
+  	font-family: inherit;
+  	font-size: 12px;
+  	font-weight: bold;
+  	line-height: 30px;
+  	text-overflow: ellipsis;
+  	text-decoration: none;
+  	white-space: nowrap;
+ 	background: none;
+ 	color: white;
+ 	text-shadow: #3e5779 0 -1px 0;
+ 	-webkit-box-shadow: rgba(255, 255, 255, 0.2) 0 1px 0, rgba(0, 0, 0, 0.2) 0 1px 2px inset;
+ 	box-shadow: rgba(255, 255, 255, 0.2) 0 1px 0, rgba(0, 0, 0, 0.2) 0 1px 2px inset;
+ 	border: 1px solid #2d3f57;
+ 	-webkit-border-radius: 5px;
+ 	border-radius: 5px;
+ 	background-color: #50709a;
+ 	background-image: -webkit-linear-gradient(top, #7c97bb, #5a7caa 50%, #50709a 51%, #476489);
+	}	
+	
+.ios #mainbar .button > a > span{
+	display: none;	
+	}
+	
+.ios #mainbar > .relative > div{
+	display:inline-block;
+	}
+	
+.ios .relative{
+	position:relative;
+	width: 100%;
+	}		
+.ios #menu-icon .button{
+	position: absolute;	
+	width: 43px;
+	height: 30px;
+	}
+.ios #menu-icon .button a{
+	display: block;	
+	white-space: nowrap;
+	font-family: inherit;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 30px;
+	text-overflow: ellipsis;
+	text-decoration: none;
+	color: white;
+	}
+	
+.ios #mainbar #menu-icon a{
+	background: url('images/ios/menu_tab2.png') no-repeat 3px, 
+	-webkit-linear-gradient(top, #7c97bb, #5a7caa 50%, #50709a 51%, #476489);
+	}
+	
+.ios #mainbar .icon{		
+	left: 36px;
+	position: absolute;	
+	}
+		
+.ios #logo-icon a > img{
+	height:28px;
+	min-width: 30px;
+	}
+	
+.ios #add-favorite-icon{
+	position: absolute;
+	right:0;	
+	}		
+		
+.ios #mainbar #add-favorite-icon a{
+	background: url('images/ios/merken_tab1_hell.png') no-repeat 3px, 
+	-webkit-linear-gradient(top, #7c97bb, #5a7caa 50%, #50709a 51%, #476489);
+	}		
+
+
+/*Auxbar*/
+	
+.ios #auxbar{
+	background-image: url('images/ios/bg_tabbar.png');
+	background-repeat: repeat-x;
+	position:fixed;
+	bottom:0;
+	left:0;
+	width:100%;
+	height:48px;
+	}
+	
+.ios #auxbar .button{
+	float:left;		
+	}
+
+.ios #auxbar .button > a{
+	display: block;	
+	padding: 7px 0;	
+	border-right: 1px solid grey;
+	}	
+	
+.ios #auxbar .button.active{
+	background-image: url('images/ios/bg_tabbar_activebutton.png');	
+	background-repeat: repeat-x;	
+	}	
+	
+.ios #auxbar .button.active > a > span{
+	color: white;	
+	}	
+
+.ios #auxbar .button > a > span{
+	color: grey;	
+	text-decoration: none;
+	text-align: center;
+	background-repeat: no-repeat;
+	padding-top: 30px;
+	display: inline-block;
+	font-size: 10px;
+	width: 78px;
+	background-position: center top;
+	font-weight: bold;
+	text-shadow: #5c718e 0 -1px 0;
+	}	
+	
+.ios #search-icon > a{
+	right: 64px;
+	bottom: 0;
+	}	
+
+.ios #search-icon.button.active > a > span{
+	background-image: url('images/ios/search_tab_orange.png');
+	}
+	
+.ios #search-icon > a > span{
+	background-image: url('images/ios/search_tab.png');
+	}
+
+.ios #search-area{
+	height: 47px;
+	width: 100%;
+	position: fixed;
+	top:44px;
+	line-height: 32px;
+	display: none;
+	z-index: 100;
+	}
+	
+.ios #search-area > form > input[type="search"]{
+	font-size:16px;  
+	width: 100%;
+	}	
+	
+/*TODO:in den nachfolgenden 3 styles aufräumen!!*/	
+.ios #search-area input[type="search"]{
+	/*Original-Selektor: .ui-body-c, .ui-overlay-c.ui-body-c, .ui-overlay-c*/
+	color: #333 /*{c-body-color}*/;
+	text-shadow: 0 /*{c-body-shadow-x}*/ 1px /*{c-body-shadow-y}*/ 0 /*{c-body-shadow-radius}*/ #fff /*{c-body-shadow-color}*/;	
+
+	/*Original-Selektor: .ui-body-c, .ui-overlay-c.ui-body-c, .ui-overlay-c*/
+	color: #333 /*{c-body-color}*/;
+	text-shadow: 0 /*{c-body-shadow-x}*/ 1px /*{c-body-shadow-y}*/ 0 /*{c-body-shadow-radius}*/ #fff /*{c-body-shadow-color}*/;
+
+	/*Original-Selektor: .ui-body-c, .ui-overlay-c*/
+	border: 1px solid #aaa /*{c-body-border}*/;
+	color: #333 /*{c-body-color}*/;
+	text-shadow: 0 /*{c-body-shadow-x}*/ 1px /*{c-body-shadow-y}*/ 0 /*{c-body-shadow-radius}*/ #fff /*{c-body-shadow-color}*/;
+	background: #f9f9f9 /*{c-body-background-color}*/;
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #f9f9f9 /*{c-body-background-start}*/), to( #eee /*{c-body-background-end}*/));
+	background-image: -webkit-linear-gradient( #f9f9f9 /*{c-body-background-start}*/, #eee /*{c-body-background-end}*/);
+	background-image: -moz-linear-gradient( #f9f9f9 /*{c-body-background-start}*/, #eee /*{c-body-background-end}*/);
+	background-image: -ms-linear-gradient( #f9f9f9 /*{c-body-background-start}*/, #eee /*{c-body-background-end}*/);
+	background-image: -o-linear-gradient( #f9f9f9 /*{c-body-background-start}*/, #eee /*{c-body-background-end}*/);
+	background-image: linear-gradient( #f9f9f9 /*{c-body-background-start}*/, #eee /*{c-body-background-end}*/);
+	
+	/*Original-Selektor: .ui-btn-corner-all*/
+	-moz-border-radius: 1em /*{global-radii-buttons}*/;
+	-webkit-border-radius: 1em /*{global-radii-buttons}*/;
+	border-radius: 1em /*{global-radii-buttons}*/;
+	
+	/*Original-Selektor: .ui-corner-tl, .ui-corner-tr, .ui-corner-bl, .ui-corner-br, .ui-corner-top, .ui-corner-bottom, .ui-corner-right, .ui-corner-left, .ui-corner-all, .ui-btn-corner-tl, .ui-btn-corner-tr, .ui-btn-corner-bl, .ui-btn-corner-br, .ui-btn-corner-top, .ui-btn-corner-bottom, .ui-btn-corner-right, .ui-btn-corner-left, .ui-btn-corner-all */
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
+	
+	/*Original-Selektor: .ui-shadow-inset*/
+	-moz-box-shadow: inset 0px 1px 4px rgba(0,0,0,.2);
+	-webkit-box-shadow: inset 0px 1px 4px rgba(0,0,0,.2);
+	box-shadow: inset 0px 1px 4px rgba(0,0,0,.2);
+	
+	/*Original-Selektor: input.ui-input-text, textarea.ui-input-text, .ui-input-search*/
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+
+	/*Original-Selektor: .ui-input-search*/
+	padding: 0 16px;
+	margin: .5em 0;
+	/*background-image: none;*/
+	position: relative;
+	height: 32px;
+	}
+	
+.ios #search-area input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+	/*Original-Selektor: .ui-icon, .ui-icon-searchfield::after*/
+	background: #666 /*{global-icon-color}*/;
+	background: rgba(0,0,0,.4) /*{global-icon-disc}*/;
+	background-image: url(images/ios/icons-18-white.png) /*{global-icon-set}*/;
+	background-repeat: no-repeat;
+	-moz-border-radius: 11px;
+	-webkit-border-radius: 11px;
+	border-radius: 11px;
+	width:22px;
+	height:22px;
+		
+	/*Original-Selektor: .ui-icon-delete*/
+	background-position: -72px 50%;	
+	}
+
+.ios #search-area input[type="search"]::after{
+	/*Original-Selektor: .ui-icon, .ui-icon-searchfield::after */
+	background: #666 /*{global-icon-color}*/;
+	background: rgba(0,0,0,.4) /*{global-icon-disc}*/;
+	background-image: url(images/ios/search-area_icon-lupe.png) /*{global-icon-set}*/;
+	background-repeat: no-repeat;
+	-moz-border-radius: 9px;
+	-webkit-border-radius: 9px;
+	border-radius: 9px;
+	
+	/*Original-Selektor: .ui-icon-search, .ui-icon-searchfield::after*/
+	background-position: -612px 50%;
+	
+	/*Original-Selektor: .ui-icon-searchfield::after */
+	position: absolute;
+	left: 7px;
+	top: 50%;
+	margin-top: -9px;
+	content: "";
+	width: 18px;
+	height: 18px;
+	opacity: .5;
+	}
+
+.ios #search-area > form > button{
+	font-size:16px; 
+	font-family:sans-serif; 
+	}
+	
+.ios #search-area.active{
+	display:block;	
+	}	
+	
+.ios #more-container.active{
+	display: block;	
+	}	
+	
+.ios #more-icon > a{
+	right: 0;
+	bottom: 0;	
+	}
+	
+.ios #less-icon.button.more > a > span{
+	background-image: url('images/ios/more_tab_orange.png');
+	color: white;
+	}	
+
+.ios #less-icon.button.more{
+	background-image: url('images/ios/bg_tabbar_activebutton.png');	
+	background-repeat: repeat-x;
+	}
+
+.ios #more-icon.button.active > a > span{
+	background-image: url('images/ios/more_tab_orange.png');
+	}
+	
+.ios #more-icon > a > span{
+	background-image: url('images/ios/more_tab.png');
+	background-position: center center;
+	}
+	
+.ios #more-container{
+	position: fixed;
+	right:0;
+	bottom:0;
+	height: 48px; 
+	width: 100%;
+	background-image: url('images/ios/bg_tabbar.png');
+	background-repeat: repeat-x;
+	display:none;
+	}
+	
+.ios #favorites-icon{
+	left:128px;
+	bottom:0;
+	}	
+		
+.ios #shortcuts-icon{
+	left:0;	
+	bottom:0;
+	}	
+		
+.ios #favorites-icon.button.active > a > span{
+	background-image: url('images/ios/favoriten_tab_orange.png');
+	}			
+		
+.ios #favorites-icon > a > span{
+	background-image: url('images/ios/favoriten_tab.png');
+	}	
+	
+.ios #shortcuts-icon.button.active > a > span{
+	background-image: url('images/ios/shortcuts_tab_orange.png');
+	}		
+		
+.ios #shortcuts-icon > a > span{
+	background-image: url('images/ios/shortcuts_tab.png');
+	}	
+	
+.ios #content-icon.button.active > a > span{
+	background-image: url('images/ios/content_tab_orange.png');	
+	}	
+	
+.ios #content-icon > a > span{
+	background-image: url('images/ios/content_tab.png');	
+	}
+
+.ios #settings-icon.button.active > a > span{
+	background-image: url('images/ios/settings_tab_orange.png');	
+	}
+	
+.ios #settings-icon > a > span{
+	background-image: url('images/ios/settings_tab.png');	
+	}
+
+.ios .up-page-content-localnav a{	
+	-webkit-border-radius: 8px;
+	border-radius: 8px;		
+	-webkit-box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0;
+	box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0;
+	border: 1px solid #acacac;
+	margin: 4px 4px;
+	background-color:#e0e0e0;
+	}
+	
+.ios .up-page-content-up-page-content-localnav-L2 a{
+	background-color: #f0efef;
+	}	
+	
+.ios .up-page-content-localnav li{
+	border-top: none;	
+	}	
+				
+	
+/*Footer*/
+
+.ios #footer{
+	position:fixed;
+	bottom:48px;
+	left:0;
+	width:100%;
+	height:39px;	
+	background-image: url('images/common/bg_footer.png');
+	background-repeat: repeat-x;
+	}
+	
+.ios #footer .button a{
+	background:none;
+	border:none;
+	display:inline;
+	}
+	
+.ios #footer > div {
+	float:right;
+	padding-right:6px;
+	margin-top:24px;
+	font-size:10px;
+	}
+	
+.ios #footer #copyright{
+	float:left;		
+	}
+	
+/*Overlay-pane*/
+
+.ios #overlay-pane #navigation-menu{
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+	width: 90%;
+	position: fixed;
+	top: 40px;
+	}
+	
+.ios #overlay-pane #close{
+	background-image: url('images/ios/close-icon_white.png');
+	width: 11px;
+	height: 12px;
+	background-position: top right;
+	background-repeat: no-repeat;
+	content:'';
+	display: block;
+	position: fixed;
+	top: 50px;
+	left: 70%;
+	z-index: 100;
+	}

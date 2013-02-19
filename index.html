@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<style type="text/css">
+	.ver{
+		position: absolute;
+	
+	}
+	.hor{
+position: absolute;
+		
+	}	
+	
+	.ios img.ver{width: 394px; left:58px;top:6px;}
+	.ios img.hor{left:540px;
+		height: 394px;top:198px;}
+	.ios iframe.ver{top:128px;
+		left: 95px;}
+	.ios iframe.hor{left:660px; top:235px;z-index:1;}
+	
+	.android img.ver{
+		width: 379px; 
+		left:70px;
+		top:20px;	
+	}
+	.android img.hor{
+		left:540px;
+		height: 379px;top:210px;
+	}
+	.android iframe.ver{
+		top: 128px;
+		left: 95px;	
+	}
+	.android iframe.hor{
+		left:660px; top:235px;z-index:1;
+	}
+</style>
+</head>
+<body class="">
+
+
+<img class="ver" src="images/nexus4.jpg" style=""/>
+<img class="hor" src="images/nexus4ls.jpg" style=""/>
+<iframe class="ver" src="website.html#android" width="320" height="480" border="1" style=""></iframe>
+<iframe class="hor" src="website.html#android" width="480" height="320" border="1" style=""></iframe>
+
+<a class="switch-ios" href="#">iOs</a>|<a class="switch-android" href="#">Android</a>
+
+<script type="text/javascript" >
+(function($) {
+	$(document).ready(function(){
+		$('.switch-ios').click(function(){
+			$.cookie("agent", "ios");
+		});
+		$('.switch-android').click(function(){
+			$.cookie("agent", "android");
+
+		});
+		if(!$.cookie("agent")){
+			$.cookie("agent",'android');		
+		}
+		
+		$('body').addClass($.cookie("agent"));
+		if($('body').hasClass('ios')){
+			
+			$('img.ver').attr('src','images/iphone5.jpg');
+			$('img.hor').attr('src','images/iphone5ls.jpg');
+			$('iframe.ver').attr('width','320');
+			$('iframe.hor').attr('width','580');
+			$('iframe.ver').attr('height','580');
+			$('iframe.hor').attr('height','320');
+			
+			$('iframe.ver').attr('src','website.html#ios');
+			$('iframe.hor').attr('src','website.html#ios');		
+		}
+	}); 
+		
+ })(jQuery);
+
+
+</script>
+</body>
+</html>

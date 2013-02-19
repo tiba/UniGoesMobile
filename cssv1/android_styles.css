@@ -1,0 +1,286 @@
+.android a, 
+.android a:hover, 
+.android a:focus{
+	text-decoration: none;	
+	}
+	
+.android body, 
+.android #content, 
+.android #controls{
+	clear:both;
+	}
+
+.android body{
+	overflow:visible;
+	font-family:arial;
+	background-position: center bottom;
+	display: block;
+	}
+
+.android #controls{
+	position:fixed;
+	display: none;
+	}
+	
+	
+/*Mainbar*/
+
+.android #mainbar{
+	position:fixed;
+	width:100%;
+	height:47px;
+	background-color: #ececec;
+	border-bottom:1px solid #d7d7d7;	
+	z-index:10;
+	top: 0;
+	left: 0;
+	}
+
+.android .relative{
+	position:relative;
+	overflow: hidden;
+	text-align: right;
+	width: 100%;
+	}
+
+.android #mainbar > .relative > div{
+	display:block;
+	}
+
+.android #mainbar #sitetitle{
+	float: left;	
+	width:50%;
+	overflow:hidden;
+	text-overflow: ellipsis;
+	font-size:15px;
+	padding-top: 7px;	
+	text-align: left;
+	}
+
+   
+.android #logo-icon img{
+	margin:8px 4px;
+	height:32px;
+	}
+	
+.android #logo-icon {
+	width: 72px;
+	float: left;	
+	}	
+	
+
+.android #mainbar > .relative > .button{
+	display:inline-block;
+	}
+
+.android #mainbar > .relative > .button > a{
+	width: 32px;
+	height: 32px;
+	margin:8px 4px;
+	display: block;
+	text-decoration: none;
+	}
+
+.android #more-container{
+	position: fixed;
+	right:0;
+	top:48px;
+	background-color:#efefef;
+	display:none;
+	box-shadow: -2px 2px 5px #aaa;
+	}
+
+.android #more-container > div:first-child > a{
+	border-top:none;
+	}
+	
+.android #more-container > div > a{
+	color:black;
+	text-decoration:none;
+	display: block;
+	padding-left: 8px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	width:144px;
+	line-height: 32px;
+	border-top:1px solid #d7d7d7;
+	}
+
+.android #mainbar >.relative > .button > a > span{
+	display: none;	
+	}	
+		
+.android #mainbar #more-icon > a, 
+.android #mainbar #less-icon > a{
+	background-image: url('images/android/mdpi/ic_action_overflow_dark.png');	
+	}
+
+.android #mainbar #search-icon > a{
+	background-image: url('images/android/mdpi/2_action_search.png');	
+	}
+
+.android #search-area{
+	position: fixed;
+	width: 50%;
+	padding-left: 8px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	line-height: 32px;
+	left: 66px;
+	top: -3px;
+	background-color: #ececec;
+	display: none;
+	z-index: 100;
+	}
+	
+.android #search-area > form > input[type="search"]{
+	font-size:16px; 
+	width: 100%;
+	}	
+
+.android #search-area input[type="search"]{
+	-webkit-appearance: none;	
+	appearance: none;
+	border:none;	
+	border-bottom: 2px solid orange;
+	background: transparent;
+	}
+	
+.android #search-area input[type="search"]::-webkit-search-cancel-button {
+	-webkit-appearance: none;	
+	appearance: none;
+	}	
+	
+.android #search-area input[type="search"]::-webkit-search-cancel-button:after {	
+	background-image: url('images/android/mdpi/1_navigation_cancel.png');
+	content:'';
+	display: block;	
+	width:14px; 
+	height:10px;
+	background-size:12px;
+	background-position: top left;
+	background-repeat: no-repeat;
+	}
+
+input[type="search"]:focus{
+	border:none;
+	outline:none;
+	border-bottom: 2px solid orange;	
+	}
+
+.android #search-area > form > button{
+	font-size:16px; 
+	font-family:sans-serif; 
+	}	
+	
+.android #search-area.active{
+	display:block;	
+	}
+	
+.android #more-container.active{
+	display: block;
+	text-align: left;
+	}	
+	
+.android #mainbar #more-container.active #add-favorite-icon > a,
+.android #mainbar #more-container.active #favorites-icon > a,
+.android #mainbar #more-container.active #search-icon > a,
+.android #mainbar #more-container.active #shortcuts-icon > a,
+.android #mainbar #more-container.active #settings-icon > a{
+	background-image: none;		
+	}
+	
+.android #mainbar #add-favorite-icon > a{
+	background-image: url('images/android/mdpi/3_rating_favorite.png');	
+	}
+
+.android #mainbar #favorites-icon > a{
+	background-image: url('images/android/mdpi/3_rating_important.png');	
+	}
+	
+.android #mainbar #settings-icon > a{
+	background-image: url('images/android/mdpi/3_rating_good.png');	
+	}
+
+.android #mainbar #shortcuts-icon > a{
+	background-image: url('images/android/mdpi/3_rating_good.png');
+	}
+
+/*Auxbar*/
+
+.android #auxbar{
+	position:fixed;
+	top:48px;
+	left:0;
+	width:100%;
+	background-color:#ececec;
+	border-bottom-style:1px solid #d7d7d7;
+	}
+
+.android #auxbar > div{
+	width: 50%;
+	height: 31px;	
+	}
+
+.android #auxbar > div > a{
+	width:100%;
+	height:19px;
+	border-bottom: 2px solid orange;
+	display:block;
+	padding-top: 10px;	
+	}
+
+.android #auxbar > div  span{
+	line-height: 14px;
+	font-size: 14px;
+	display: block;
+	width:99%;
+	border-left:1px solid #d7d7d7;
+	text-align: center;		
+	}
+
+.android #auxbar > div:first-child span{
+	border-left:none;	
+	}
+
+.android #auxbar > div{
+	float: left;
+	}
+
+.android #auxbar .button.active a{
+	padding-top:6px;
+	height:21px;
+	border-bottom: 4px solid orange;
+	color:black;
+	text-decoration: none;
+	}
+
+.android #auxbar .button a{
+	color:grey;	
+	text-decoration: none;
+	}
+
+
+/*Footer*/
+
+.android #footer{
+	position:fixed;
+	bottom:0;
+	left:0;
+	width:100%;
+	height:39px;	
+	background-image: url('images/common/bg_footer.png');
+	background-repeat: repeat-x;
+	}
+
+.android #footer > div {
+	float:right;
+	padding-right:6px;
+	margin-top:24px;
+	font-size:10px;
+	}
+	
+.android #footer #copyright{
+	float:left;		
+	}
+	

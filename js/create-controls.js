@@ -38,6 +38,7 @@ var cconfig = [
 		{target:".android #mainbar .relative",element:".android #favorites-icon"},
 		{target:".android #mainbar .relative",element:".android #shortcuts-icon"},
 		
+		
 		{target:".android #auxbar",element:".android #menu-icon"},
 		{target:".android #auxbar",element:".android #content-icon"},
 
@@ -49,6 +50,7 @@ var cconfig = [
 		{target:".ios #mainbar .relative",element:".ios #add-favorite-icon"},
 		{target:".ios #mainbar .relative",element:".ios #menu-icon"},
 		{target:".ios #auxbar",element:".ios #content-icon"},
+		
 		{target:".ios #auxbar",element:".ios #search-icon"},		
 		{target:".ios #auxbar",element:".ios #shortcuts-icon"},
 		{target:".ios #auxbar",element:".ios #favorites-icon"},
@@ -56,7 +58,8 @@ var cconfig = [
 		{target:".ios #more-container",element:".ios #less-icon"},
 		
 		{target:".ios #content-pane", element:".ios #search-area"},
-		{target:".ios #overlay-pane", element:".ios #navigation-menu"}		
+		{target:".ios #overlay-pane", element:".ios #navigation-menu"},		
+		{target:".ios #auxbar",element:".ios #more-container"}
 	];
 	
 
@@ -87,8 +90,11 @@ var cconfig = [
 						
 			var maxWidth = getContainerWidth(device);
 			var curWidth = 0;
-			$.each($(config[device].variableContainer + " > *"), function(key, div){
-				curWidth += $(div).width();				
+			//breiten zusammenzählen, unsichtbare elemente nicht berücksichtigen (benötigt man spezielle für den more-container!)
+			$.each($(config[device].variableContainer + " > *:visible"), function(key, div){
+				
+					curWidth += $(div).width();
+								
 			});
 			
 			if(maxWidth<curWidth ){
@@ -214,6 +220,13 @@ var cconfig = [
 //clickevent ausführen, um Inhalt anzuzeigen:
 
 		$("#content-icon a").trigger("click");
+		
+		//scrollen auch auf älteren browsern ermöglichen
+		$('body').addClass('overthrow-enabled');
+		$('#content-pane > div').addClass('overthrow')
+			.height($(window).height()-$('#auxbar').height()-$('#mainbar').height()-$('#auxbar').css('padding-top')-$('#mainbar').css('padding-top')-$('#auxbar').css('padding-bottom')-$('#mainbar').css('padding-bottom'))
+			.width($(window).width());
+		
 			
 	}); 
 	

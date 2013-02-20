@@ -36,6 +36,48 @@ position: absolute;
 	.android iframe.hor{
 		left:660px; top:235px;z-index:1;
 	}
+	
+	
+	.ios img.ver.tablet{
+		width: 999px;
+		left: 4px;
+		top: 920px;	
+	}
+	.ios img.hor.tablet{
+		left: 1010px;
+		height: 999px;
+		top: 928px;	
+	}
+	.ios iframe.ver.tablet{
+		top: 1050px;
+		left: 120px;	
+	}
+	.ios iframe.hor.tablet{
+		left: 1151px;
+		top: 1045px;
+		z-index: 1;
+	}
+	
+	.android img.ver.tablet{
+		width: 1004px;
+		left: 7px;
+		top: 967px;
+	}
+	.android img.hor.tablet{
+		left: 1030px;
+		height: 1004px;
+		top: 960px;
+	}
+	.android iframe.ver.tablet{
+		top: 1050px;
+		left: 110px;
+	
+	}
+	.android iframe.hor.tablet{
+			left: 1110px;
+			top: 1064px;
+			z-index: 1;
+	}
 </style>
 </head>
 <body class="">
@@ -45,6 +87,12 @@ position: absolute;
 <img class="hor" src="images/nexus4ls.jpg" style=""/>
 <iframe class="ver" src="website.html#android" width="320" height="480" border="1" style=""></iframe>
 <iframe class="hor" src="website.html#android" width="480" height="320" border="1" style=""></iframe>
+
+<img class="ver tablet" src="images/galaxytab10.jpg" style=""/>
+<img class="hor tablet" src="images/galaxytab10ls.jpg" style=""/>
+<iframe class="ver tablet" src="website.html#android" width="800" height="1280" border="1" style=""></iframe>
+<iframe class="hor tablet" src="website.html#android" width="1280" height="800" border="1" style=""></iframe>
+
 
 <a class="switch-ios" href="#">iOs</a>|<a class="switch-android" href="#">Android</a>
 
@@ -71,6 +119,13 @@ position: absolute;
 			$('iframe.hor').attr('width','580');
 			$('iframe.ver').attr('height','580');
 			$('iframe.hor').attr('height','320');
+			
+			$('img.ver.tablet').attr('src','images/ipad2.jpg');
+			$('img.hor.tablet').attr('src','images/ipad2ls.jpg');
+			$('iframe.ver.tablet').attr('width','768');
+			$('iframe.hor.tablet').attr('width','1024');
+			$('iframe.ver.tablet').attr('height','1024');
+			$('iframe.hor.tablet').attr('height','768');			
 			
 			$('iframe.ver').attr('src','website.html#ios');
 			$('iframe.hor').attr('src','website.html#ios');		

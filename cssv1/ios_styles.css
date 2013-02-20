@@ -7,10 +7,10 @@
 
 .overthrow-enabled.ios #content-pane > div{
 	position:absolute;
-top:44px;
-bottom:48px;	
-width: 100%;
-background-color:white;
+	top:44px;
+	bottom:48px;	
+	width: 100%;
+	background-color:white;
 
 	}
 
@@ -184,6 +184,7 @@ background-color:white;
 	
 .ios #auxbar .button.active > a > span{
 	color: white;	
+	text-shadow: orange 0 -1px 0;
 	}	
 
 .ios #auxbar .button > a > span{
@@ -191,13 +192,14 @@ background-color:white;
 	text-decoration: none;
 	text-align: center;
 	background-repeat: no-repeat;
-	padding-top: 30px;
+	padding-top: 25px;
 	display: inline-block;
 	font-size: 10px;
 	width: 78px;
 	background-position: center top;
 	font-weight: bold;
-	text-shadow: #5c718e 0 -1px 0;
+/*TODO: Größe der background-images anders ändern als mit background-size??*/	
+	background-size:22px;
 	}	
 	
 .ios #search-icon > a{
@@ -220,7 +222,6 @@ background-color:white;
 	top:44px;
 	line-height: 32px;
 	display: none;
-	z-index: 100;
 	}
 	
 .ios #search-area > form > input[type="search"]{
@@ -338,12 +339,14 @@ background-color:white;
 	bottom: 0;	
 	}
 	
-.ios #less-icon.button.more > a > span{
+.ios #less-icon > a > span{
+	background-image: url('images/ios/more_tab.png');
+	}	
+.ios #less-icon.button.active > a > span{
 	background-image: url('images/ios/more_tab_orange.png');
-	color: white;
 	}	
 
-.ios #less-icon.button.more{
+.ios #less-icon.button.active{
 	background-image: url('images/ios/bg_tabbar_activebutton.png');	
 	background-repeat: repeat-x;
 	}
@@ -410,24 +413,6 @@ background-color:white;
 	background-image: url('images/ios/settings_tab.png');	
 	}
 
-.ios .up-page-content-localnav a{	
-	-webkit-border-radius: 8px;
-	border-radius: 8px;		
-	-webkit-box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0;
-	box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0;
-	border: 1px solid #acacac;
-	margin: 4px 4px;
-	background-color:#e0e0e0;
-	}
-	
-.ios .up-page-content-up-page-content-localnav-L2 a{
-	background-color: #f0efef;
-	}	
-	
-.ios .up-page-content-localnav li{
-	border-top: none;	
-	}	
-				
 	
 /*Footer*/
 
@@ -461,14 +446,26 @@ background-color:white;
 /*Overlay-pane*/
 
 .ios #overlay-pane #navigation-menu{
-	overflow-y: scroll;
-	-webkit-overflow-scrolling: touch;
-	width: 90%;
-	position: fixed;
-	top: 40px;
+	position: absolute;	
+	width: 80%;
+	height: 80%;
+	top: 60px;
+	-moz-box-shadow: 0px 0px 12px rgba(0,0,0,.6);
+	-webkit-box-shadow: 0px 0px 12px rgba(0,0,0,.6);
+	box-shadow: 0px 0px 12px rgba(0,0,0,.6);
+	background-color: rgba(0,0,0,0.75);		
 	}
+
+.ios #navigation-menu > nav{
+	position: absolute;
+	top: 20px;
+	bottom: 20px;
+	left: 20px;
+	right: 20px;	
+	overflow: auto;	
+	}	
 	
-.ios #overlay-pane #close{
+.ios #navigation-menu .close{
 	background-image: url('images/ios/close-icon_white.png');
 	width: 11px;
 	height: 12px;
@@ -476,8 +473,21 @@ background-color:white;
 	background-repeat: no-repeat;
 	content:'';
 	display: block;
-	position: fixed;
-	top: 50px;
-	left: 70%;
 	z-index: 100;
 	}
+	
+
+
+.ios .up-page-content-localnav a,
+.ios .up-page-content-localnav span{	
+	-webkit-border-radius: 8px;
+	border-radius: 8px;		
+	-webkit-box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0;
+	box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0;
+	border: 1px solid #acacac;
+	margin: 4px 4px;
+
+ 		
+	}
+
+

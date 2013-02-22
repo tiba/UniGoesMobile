@@ -1,3 +1,8 @@
+.ios #content-pane{
+top:48px;
+bottom:48px;	
+	}
+
 .ios a, 
 .ios a:hover, 
 .ios a:focus, 
@@ -6,12 +11,9 @@
 	}
 
 .overthrow-enabled.ios #content-pane > div{
-	position:absolute;
-	top:44px;
-	bottom:48px;	
-	width: 100%;
+	width: 100%;	
 	background-color:white;
-
+	overflow:hidden;
 	}
 
 .ios body, 
@@ -57,8 +59,7 @@
  	box-shadow: rgba(255, 255, 255, 0.3) 0 1px 0 inset;
 	display: inline-block;
 	}	
-	
-/*TODO:Platzierung sitetitle besser machen! Wieso ist margin-left und margin-right anders bei geicher Prozentangabe?*/	
+		
 .ios #sitetitle{
 	position: absolute;	
 	overflow: hidden;
@@ -85,12 +86,10 @@
   	font-size: 12px;
   	font-weight: bold;
   	line-height: 30px;
-  	text-overflow: ellipsis;
   	text-decoration: none;
   	white-space: nowrap;
  	background: none;
  	color: white;
- 	text-shadow: #3e5779 0 -1px 0;
  	-webkit-box-shadow: rgba(255, 255, 255, 0.2) 0 1px 0, rgba(0, 0, 0, 0.2) 0 1px 2px inset;
  	box-shadow: rgba(255, 255, 255, 0.2) 0 1px 0, rgba(0, 0, 0, 0.2) 0 1px 2px inset;
  	border: 1px solid #2d3f57;
@@ -117,22 +116,33 @@
 	width: 43px;
 	height: 30px;
 	}
-.ios #menu-icon .button a{
+	
+/*.ios #menu-icon .button a{
 	display: block;	
 	white-space: nowrap;
 	font-family: inherit;
 	font-size: 12px;
 	font-weight: bold;
 	line-height: 30px;
-	text-overflow: ellipsis;
 	text-decoration: none;
 	color: white;
-	}
+	}*/
 	
 .ios #mainbar #menu-icon a{
-	background: url('images/ios/menu_tab2.png') no-repeat 3px, 
-	-webkit-linear-gradient(top, #7c97bb, #5a7caa 50%, #50709a 51%, #476489);
+	background: url('images/ios/sprite_ios_auxbar.png') no-repeat -505px -17px, -webkit-linear-gradient(top, #7c97bb, #5a7caa 50%, #50709a 51%, #476489);
 	}
+	
+	.ios #mainbar #menu-icon.active a{
+	background: url('images/ios/sprite_ios_auxbar.png') no-repeat -505px -97px, -webkit-linear-gradient(top, #476489,  #50709a 50%,#5a7caa 51%,#7c97bb );
+	}
+	
+.ios #mainbar #add-favorite-icon a{
+	background: url('images/ios/sprite_ios_auxbar.png') no-repeat -585px -17px, -webkit-linear-gradient(top, #7c97bb, #5a7caa 50%, #50709a 51%, #476489);
+	}
+			
+.ios #mainbar #add-favorite-icon.active a{
+	background: url('images/ios/sprite_ios_auxbar.png') no-repeat -585px -97px, -webkit-linear-gradient(top, #476489, #50709a  50%, #5a7caa 51%, #7c97bb);
+	}		
 	
 .ios #mainbar .icon{		
 	left: 36px;
@@ -147,11 +157,6 @@
 .ios #add-favorite-icon{
 	position: absolute;
 	right:0;	
-	}		
-		
-.ios #mainbar #add-favorite-icon a{
-	background: url('images/ios/merken_tab1_hell.png') no-repeat 3px, 
-	-webkit-linear-gradient(top, #7c97bb, #5a7caa 50%, #50709a 51%, #476489);
 	}		
 
 
@@ -184,7 +189,6 @@
 	
 .ios #auxbar .button.active > a > span{
 	color: white;	
-	text-shadow: orange 0 -1px 0;
 	}	
 
 .ios #auxbar .button > a > span{
@@ -196,11 +200,16 @@
 	display: inline-block;
 	font-size: 10px;
 	width: 78px;
-	background-position: center top;
 	font-weight: bold;
-/*TODO: Größe der background-images anders ändern als mit background-size??*/	
-	background-size:22px;
+	background-image: url('images/ios/sprite_ios_auxbar.png');
+	background-repeat: no-repeat;
+	
 	}	
+	
+.ios #auxbar .button.active > a > span{
+	background-image: url('images/ios/sprite_ios_auxbar.png');
+	background-repeat: no-repeat;
+	}
 	
 .ios #search-icon > a{
 	right: 64px;
@@ -208,20 +217,16 @@
 	}	
 
 .ios #search-icon.button.active > a > span{
-	background-image: url('images/ios/search_tab_orange.png');
+	background-position: -80px -97px;
 	}
 	
 .ios #search-icon > a > span{
-	background-image: url('images/ios/search_tab.png');
+	background-position: -80px -17px;
 	}
 
 .ios #search-area{
-	height: 47px;
-	width: 100%;
-	position: fixed;
-	top:44px;
+
 	line-height: 32px;
-	display: none;
 	}
 	
 .ios #search-area > form > input[type="search"]{
@@ -292,25 +297,24 @@
 	border-radius: 11px;
 	width:22px;
 	height:22px;
-		
+	
 	/*Original-Selektor: .ui-icon-delete*/
-	background-position: -72px 50%;	
+	background-position: -71px 50%;
+	pointer:cursor;
 	}
 
-.ios #search-area input[type="search"]::after{
-	/*Original-Selektor: .ui-icon, .ui-icon-searchfield::after */
-	background: #666 /*{global-icon-color}*/;
-	background: rgba(0,0,0,.4) /*{global-icon-disc}*/;
-	background-image: url(images/ios/search-area_icon-lupe.png) /*{global-icon-set}*/;
+/*.ios #search-area input[type="search"]::after{
+	
+	background: #666;
+	background: rgba(0,0,0,.4) ;
+	background-image: url(images/ios/search-area_icon-lupe.png) ;
 	background-repeat: no-repeat;
 	-moz-border-radius: 9px;
 	-webkit-border-radius: 9px;
 	border-radius: 9px;
 	
-	/*Original-Selektor: .ui-icon-search, .ui-icon-searchfield::after*/
 	background-position: -612px 50%;
 	
-	/*Original-Selektor: .ui-icon-searchfield::after */
 	position: absolute;
 	left: 7px;
 	top: 50%;
@@ -319,7 +323,7 @@
 	width: 18px;
 	height: 18px;
 	opacity: .5;
-	}
+	}*/
 
 .ios #search-area > form > button{
 	font-size:16px; 
@@ -338,26 +342,20 @@
 	right: 0;
 	bottom: 0;	
 	}
-	
-.ios #less-icon > a > span{
-	background-image: url('images/ios/more_tab.png');
-	}	
-.ios #less-icon.button.active > a > span{
-	background-image: url('images/ios/more_tab_orange.png');
-	}	
 
 .ios #less-icon.button.active{
-	background-image: url('images/ios/bg_tabbar_activebutton.png');	
+	background-image: url('images/ios/bg_tabbar_activebutton.png');
 	background-repeat: repeat-x;
 	}
 
-.ios #more-icon.button.active > a > span{
-	background-image: url('images/ios/more_tab_orange.png');
+.ios #more-icon.button.active > a > span,
+.ios #less-icon.button.active > a > span{
+	background-position: -400px -97px;
 	}
 	
+.ios #less-icon > a > span,
 .ios #more-icon > a > span{
-	background-image: url('images/ios/more_tab.png');
-	background-position: center center;
+	background-position: -400px -17px;
 	}
 	
 .ios #more-container{
@@ -380,37 +378,37 @@
 	left:0;	
 	bottom:0;
 	}	
-		
+					
 .ios #favorites-icon.button.active > a > span{
-	background-image: url('images/ios/favoriten_tab_orange.png');
+	background-position: -240px -97px;
 	}			
 		
 .ios #favorites-icon > a > span{
-	background-image: url('images/ios/favoriten_tab.png');
+	background-position: -240px -17px;
 	}	
 	
 .ios #shortcuts-icon.button.active > a > span{
-	background-image: url('images/ios/shortcuts_tab_orange.png');
+	background-position: -160px -97px;
 	}		
 		
 .ios #shortcuts-icon > a > span{
-	background-image: url('images/ios/shortcuts_tab.png');
+	background-position: -160px -17px;
 	}	
 	
 .ios #content-icon.button.active > a > span{
-	background-image: url('images/ios/content_tab_orange.png');	
+	background-position: 0px -97px;
 	}	
 	
 .ios #content-icon > a > span{
-	background-image: url('images/ios/content_tab.png');	
+	background-position: 0px -17px;
 	}
 
 .ios #settings-icon.button.active > a > span{
-	background-image: url('images/ios/settings_tab_orange.png');	
+	background-position: -320px -97px;
 	}
 	
 .ios #settings-icon > a > span{
-	background-image: url('images/ios/settings_tab.png');	
+	background-position: -320px -17px;
 	}
 
 	
@@ -443,17 +441,31 @@
 	float:left;		
 	}
 	
+	
 /*Overlay-pane*/
 
 .ios #overlay-pane #navigation-menu{
 	position: absolute;	
 	width: 80%;
 	height: 80%;
-	top: 60px;
+	top: 45px;
+	left:10px;
 	-moz-box-shadow: 0px 0px 12px rgba(0,0,0,.6);
 	-webkit-box-shadow: 0px 0px 12px rgba(0,0,0,.6);
 	box-shadow: 0px 0px 12px rgba(0,0,0,.6);
-	background-color: rgba(0,0,0,0.75);		
+	background-color: rgba(0,0,0,0.8);			
+	}
+
+.ios #navigation-menu::after{
+	content: '';	
+	position: absolute;
+	overflow: hidden;	
+	width: 28px;
+	height: 28px;
+	top:-20px ;
+	left:0;
+	display: block;
+	background-image:url('images/ios/arrow.png');
 	}
 
 .ios #navigation-menu > nav{
@@ -466,18 +478,31 @@
 	}	
 	
 .ios #navigation-menu .close{
+	/*Kreis für cancel-button:*/
+	position: absolute;	
+	width: 6px;
+	height: 30px;
+   background-color: black;
+   border-radius:50%;
+   -moz-border-radius:50%;
+   -webkit-border-radius:50%;
+   border: 5px solid white;
+   /*Weißes x für cancel-button:*/
 	background-image: url('images/ios/close-icon_white.png');
-	width: 11px;
-	height: 12px;
-	background-position: top right;
+	background-position: center center;
 	background-repeat: no-repeat;
 	content:'';
 	display: block;
 	z-index: 100;
+	right: -17px;
+	top: -17px;
+	background-size: 16px;
+	-moz-box-shadow: 0px 0px 12px rgba(0,0,0,.6);
+	-webkit-box-shadow: 0px 0px 12px rgba(0,0,0,.6);
+	box-shadow: 0px 0px 12px rgba(0,0,0,.6);
+	cursor: pointer;
 	}
 	
-
-
 .ios .up-page-content-localnav a,
 .ios .up-page-content-localnav span{	
 	-webkit-border-radius: 8px;
@@ -485,9 +510,59 @@
 	-webkit-box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0;
 	box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0;
 	border: 1px solid #acacac;
-	margin: 4px 4px;
-
- 		
+	margin: 4px 4px; 		
+	}
+	
+.ios .up-page-content-localnav span, 
+.ios .up-page-content-localnav a{
+	padding-right:25px;
 	}
 
+/*.ios .up-page-content-localnav-L1-item a {
+	background: rgb(224,224,224); 
+	background: -moz-linear-gradient(top, rgba(224,224,224,1) 0%, rgba(239,239,239,1) 50%, rgba(232,232,232,1) 51%, rgba(255,255,255,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(224,224,224,1)), color-stop(50%,rgba(239,239,239,1)), color-stop(51%,rgba(232,232,232,1)), color-stop(100%,rgba(255,255,255,1))); 
+	background: -webkit-linear-gradient(top, rgba(224,224,224,1) 0%,rgba(239,239,239,1) 50%,rgba(232,232,232,1) 51%,rgba(255,255,255,1) 100%); 
+	background: -o-linear-gradient(top, rgba(224,224,224,1) 0%,rgba(239,239,239,1) 50%,rgba(232,232,232,1) 51%,rgba(255,255,255,1) 100%); 
+	background: -ms-linear-gradient(top, rgba(224,224,224,1) 0%,rgba(239,239,239,1) 50%,rgba(232,232,232,1) 51%,rgba(255,255,255,1) 100%); 
+	background: linear-gradient(to bottom, rgba(224,224,224,1) 0%,rgba(239,239,239,1) 50%,rgba(232,232,232,1) 51%,rgba(255,255,255,1) 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0e0e0', endColorstr='#ffffff',GradientType=0 ); 
+	
+	}
+	
+.ios .up-page-content-localnav-L2-item a {
+	background: rgb(240,239,239);
+	background: -moz-linear-gradient(top, rgba(240,239,239,1) 0%, rgba(255,254,254,1) 50%, rgba(248,247,247,1) 51%, rgba(255,255,255,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(240,239,239,1)), color-stop(50%,rgba(255,254,254,1)), color-stop(51%,rgba(248,247,247,1)), color-stop(100%,rgba(255,255,255,1))); 
+	background: -webkit-linear-gradient(top, rgba(240,239,239,1) 0%,rgba(255,254,254,1) 50%,rgba(248,247,247,1) 51%,rgba(255,255,255,1) 100%); 
+	background: -o-linear-gradient(top, rgba(240,239,239,1) 0%,rgba(255,254,254,1) 50%,rgba(248,247,247,1) 51%,rgba(255,255,255,1) 100%); 
+	background: -ms-linear-gradient(top, rgba(240,239,239,1) 0%,rgba(255,254,254,1) 50%,rgba(248,247,247,1) 51%,rgba(255,255,255,1) 100%);
+	background: linear-gradient(to bottom, rgba(240,239,239,1) 0%,rgba(255,254,254,1) 50%,rgba(248,247,247,1) 51%,rgba(255,255,255,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0efef', endColorstr='#ffffff',GradientType=0 );
+	}
 
+.ios .up-page-content-localnav-L3-item-act a {
+	background: rgb(248,248,248);
+	background: -moz-linear-gradient(top, rgba(248,248,248,1) 0%, rgba(255,254,254,1) 50%, rgba(250,250,250,1) 51%, rgba(255,255,255,1) 100%); 
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(248,248,248,1)), color-stop(50%,rgba(255,254,254,1)), color-stop(51%,rgba(250,250,250,1)), color-stop(100%,rgba(255,255,255,1)));
+	background: -webkit-linear-gradient(top, rgba(248,248,248,1) 0%,rgba(255,254,254,1) 50%,rgba(250,250,250,1) 51%,rgba(255,255,255,1) 100%); 
+	background: -o-linear-gradient(top, rgba(248,248,248,1) 0%,rgba(255,254,254,1) 50%,rgba(250,250,250,1) 51%,rgba(255,255,255,1) 100%); 
+	background: -ms-linear-gradient(top, rgba(248,248,248,1) 0%,rgba(255,254,254,1) 50%,rgba(250,250,250,1) 51%,rgba(255,255,255,1) 100%); 
+	background: linear-gradient(to bottom, rgba(248,248,248,1) 0%,rgba(255,254,254,1) 50%,rgba(250,250,250,1) 51%,rgba(255,255,255,1) 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#ffffff',GradientType=0 );
+	}
+	
+.ios .up-page-content-localnav-L1-item-cur span,
+.ios .up-page-content-localnav-L2-item-cur span,
+.ios .up-page-content-localnav-L3-item-cur span,
+.ios .up-page-content-localnav-L4-item-cur span {
+	background: rgb(254,237,215);
+	background: -moz-linear-gradient(top, rgba(254,237,215,1) 0%, rgba(255,254,254,1) 50%, rgba(255,245,223,1) 51%, rgba(255,255,255,1) 100%); 
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(254,237,215,1)), color-stop(50%,rgba(255,254,254,1)), color-stop(51%,rgba(255,245,223,1)), color-stop(100%,rgba(255,255,255,1))); 
+	background: -webkit-linear-gradient(top, rgba(254,237,215,1) 0%,rgba(255,254,254,1) 50%,rgba(255,245,223,1) 51%,rgba(255,255,255,1) 100%); 
+	background: -o-linear-gradient(top, rgba(254,237,215,1) 0%,rgba(255,254,254,1) 50%,rgba(255,245,223,1) 51%,rgba(255,255,255,1) 100%); 
+	background: -ms-linear-gradient(top, rgba(254,237,215,1) 0%,rgba(255,254,254,1) 50%,rgba(255,245,223,1) 51%,rgba(255,255,255,1) 100%); 
+	background: linear-gradient(to bottom, rgba(254,237,215,1) 0%,rgba(255,254,254,1) 50%,rgba(255,245,223,1) 51%,rgba(255,255,255,1) 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feedd7', endColorstr='#ffffff',GradientType=0 ); 
+	}
+*/

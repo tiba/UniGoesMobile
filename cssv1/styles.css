@@ -1,4 +1,14 @@
 /*Content-pane*/
+
+#content-pane{	
+	padding:10px;
+	position: absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	}
+
 #content-pane > div{	
 	display: none;	
 	}
@@ -7,7 +17,9 @@
 	display: block;	
 	}
 
+
 /*Overlay pane*/
+
 #overlay-pane{
 	position: fixed;
 	height: 100%;
@@ -20,6 +32,6 @@
 	}
 	
 .overthrow-enabled .overthrow {
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-}
+   overflow: auto;
+   -webkit-overflow-scrolling: touch;
+	}

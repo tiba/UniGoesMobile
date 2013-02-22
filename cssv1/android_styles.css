@@ -4,12 +4,12 @@
 	text-decoration: none;	
 	}
 	
-	.overthrow-enabled.android #content-pane > div{
+.overthrow-enabled.android #content-pane > div{
 	position:absolute;
-top:80px;
-bottom:0px;	
-width: 100%;
-background-color:white;
+	top:80px;
+	bottom:0px;	
+	width: 100%;
+	background-color:white;
 
 	}
 	
@@ -68,7 +68,6 @@ background-color:white;
 	text-align: left;
 	}
 
-   
 .android #logo-icon img{
 	margin:8px 4px;
 	height:32px;
@@ -79,7 +78,6 @@ background-color:white;
 	float: left;	
 	}	
 	
-
 .android #mainbar > .relative > .button{
 	display:inline-block;
 	}
@@ -90,6 +88,8 @@ background-color:white;
 	margin:8px 4px;
 	display: block;
 	text-decoration: none;
+	background: url('images/android/sprite_android_mainbar.png');
+	background-repeat: no-repeat;	
 	}
 
 .android #more-container{
@@ -123,11 +123,11 @@ background-color:white;
 		
 .android #mainbar #more-icon > a, 
 .android #mainbar #less-icon > a{
-	background-image: url('images/android/mdpi/ic_action_overflow_dark.png');	
+	background-position: -80px 0px;	
 	}
 
 .android #mainbar #search-icon > a{
-	background-image: url('images/android/mdpi/2_action_search.png');	
+	background-position: -28px -20px;	
 	}
 
 .android #search-area{
@@ -203,7 +203,7 @@ input[type="search"]:focus{
 	}
 	
 .android #mainbar #add-favorite-icon > a{
-	background-image: url('images/android/mdpi/3_rating_favorite.png');	
+	background-position: -27px -100px;
 	}
 
 .android #mainbar #favorites-icon > a{

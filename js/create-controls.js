@@ -195,10 +195,7 @@ var cconfig = [
 			$(v).click(function(){
 				$("#overlay-pane > div").removeClass("active");
 				$(currentOverlayPane).addClass("active");
-				
-				/*
-				$("#overlay-pane > div").removeClass('closed');					
-				*/
+
 				
 				//eventhandler unterbrechen, damit das click event nicht weiter propagiert wird
 				$(currentOverlayPane).click(function(){return false;});
@@ -208,21 +205,21 @@ var cconfig = [
 		});
 
 		
-		
-		
 		if(device=='ios'){		
-				//scrollen auch auf älteren browsern ermöglichen
+			//scrollen im Hauptmenü-popup auch auf älteren browsern ermöglichen
 			$('#navigation-menu nav').addClass('overthrow');
+			
+			//bei ios einen close-button und einen popup-menü-Pfeil zu allen popups (divs in der overlay-pane) hinzufügen:
+			$("#overlay-pane > div").append('<a class="close" title="close"></a>');
+			$('#overlay-pane, #overlay-pane .close').click(function(){
+				$('#overlay-pane > div').removeClass('active');
+				$('#overlay-pane').hide();			
+			});
+		
 		}else if(device=='android'){
 				
 		}	
-		
-		$("#overlay-pane > div").append('<a class="close">close</a>');
-		$('#overlay-pane, #overlay-pane .close').click(function(){
-			$('#overlay-pane > div').removeClass('active');
-			$('#overlay-pane').hide();			
-			});
-		
+	
 
 //clickevent ausführen, um Inhalt anzuzeigen:
 
@@ -230,9 +227,9 @@ var cconfig = [
 		
 		//scrollen auch auf älteren browsern ermöglichen
 		$('body').addClass('overthrow-enabled');
-		$('#content-pane > div').addClass('overthrow')
-			.height($(window).height()-$('#auxbar').height()-$('#mainbar').height()-$('#auxbar').css('padding-top')-$('#mainbar').css('padding-top')-$('#auxbar').css('padding-bottom')-$('#mainbar').css('padding-bottom'))
-			.width($(window).width());
+		$('#content-pane').addClass('overthrow')
+			/*.height($(window).height()-$('#auxbar').height()-$('#mainbar').height()-$('#auxbar').css('padding-top')-$('#mainbar').css('padding-top')-$('#auxbar').css('padding-bottom')-$('#mainbar').css('padding-bottom'))
+			.width($(window).width());*/
 		
 			
 	}); 

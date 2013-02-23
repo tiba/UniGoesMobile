@@ -1,8 +1,8 @@
 /*Content-pane*/
 
 #content-pane{	
-	padding:10px;
-	position: absolute;
+	
+	position: fixed;
 	top:0;
 	bottom:0;
 	left:0;
@@ -11,6 +11,7 @@
 
 #content-pane > div{	
 	display: none;	
+	padding:10px;
 	}
 
 #content-pane > div.active{
@@ -35,3 +36,5 @@
    overflow: auto;
    -webkit-overflow-scrolling: touch;
 	}
+	
+	

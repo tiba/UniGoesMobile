@@ -23,21 +23,19 @@ var config = {
 	}
 
 
-
 //Standard-Platzierung für Div-Elemente:
+//Anmerkung: Reihenfolge der Elemente hat Bedeutung für die Platzierung
 
 var cconfig = [
 		{target:".android #mainbar .relative",element:".android #logo-icon"},
 		{target:".android #mainbar .relative",element:".android #sitetitle"},
 
-//TODO: Reihenfolge für nächsten Absatz richtig festlegen!!More-icon muss immer ganz rechts bleiben
 		{target:".android #mainbar .relative",element:".android #search-icon"},
 		{target:".android #mainbar .relative",element:".android #add-favorite-icon"},
 		
 		{target:".android #mainbar .relative",element:".android #settings-icon"},	
 		{target:".android #mainbar .relative",element:".android #favorites-icon"},
-		{target:".android #mainbar .relative",element:".android #shortcuts-icon"},
-		{target:".android #mainbar .relative",element:".android #more-icon"},	
+		{target:".android #mainbar .relative",element:".android #shortcuts-icon"},	
 		
 		{target:".android #auxbar",element:".android #menu-icon"},
 		{target:".android #auxbar",element:".android #content-icon"},
@@ -61,7 +59,6 @@ var cconfig = [
 		{target:".ios #overlay-pane", element:".ios #navigation-menu"},		
 		{target:".ios #auxbar",element:".ios #more-container"}
 	];
-	
 
 
 (function($) {
@@ -225,18 +222,29 @@ var cconfig = [
 
 		$("#content-icon a").trigger("click");
 		
-		//scrollen auch auf älteren browsern ermöglichen
+		//scrollen auch auf älteren browsern ermöglichen:
+		
 		$('body').addClass('overthrow-enabled');
 		$('#content-pane').addClass('overthrow')
+			
+			//automatische Höhen- und Breitenberechnung - wurde aber vorerst wieder auskommentiert, da bei Abstandsangaben 
+			//für die content-pane Probbleme mit der Breite auftraten:		
 			/*.height($(window).height()-$('#auxbar').height()-$('#mainbar').height()-$('#auxbar').css('padding-top')-$('#mainbar').css('padding-top')-$('#auxbar').css('padding-bottom')-$('#mainbar').css('padding-bottom'))
 			.width($(window).width());*/
-		
-			
 	}); 
 	
 	function getContainerWidth(device){
 
 			return $(config[device].variableContainer).width();		
 	}
+		
+		
+	//TODO: responsive Webdesign:
+	
+	//für Geräte, deren aktuelle Bildschirmbreite mindestens 850px beträgt, soll die Hauptnavigation (navigation-menu) 
+	//immer links angezeigt werden, da genug Platz für Navigation und Inhalt vorhanden ist
+	
+	
+
 		
  })(jQuery);

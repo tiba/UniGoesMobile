@@ -4,14 +4,20 @@
 	text-decoration: none;	
 	}
 	
-.overthrow-enabled.android #content-pane > div{
-	position:absolute;
-	top:80px;
-	bottom:0px;	
+.overthrow-enabled.android #content-pane > div{	
 	width: 100%;
 	background-color:white;
+	position:absolute;
+	top:0;
+	left:0;
+	right: 0;
+	bottom: 0;
 
 	}
+	
+.android #content-pane{
+	top:80px;	
+	}	
 	
 .android body, 
 .android #content, 
@@ -123,7 +129,7 @@
 		
 .android #mainbar #more-icon > a, 
 .android #mainbar #less-icon > a{
-	background-position: -80px 0px;	
+	background-position: -27px -260px;
 	}
 
 .android #mainbar #search-icon > a{
@@ -207,16 +213,17 @@ input[type="search"]:focus{
 	}
 
 .android #mainbar #favorites-icon > a{
-	background-image: url('images/android/mdpi/3_rating_important.png');	
+	background-position: -27px -180px;
 	}
 	
 .android #mainbar #settings-icon > a{
-	background-image: url('images/android/mdpi/3_rating_good.png');	
+	background-position: -27px -340px;	
 	}
 
 .android #mainbar #shortcuts-icon > a{
-	background-image: url('images/android/mdpi/3_rating_good.png');
+	background-position: -27px -420px;
 	}
+
 
 /*Auxbar*/
 
@@ -226,7 +233,6 @@ input[type="search"]:focus{
 	left:0;
 	width:100%;
 	background-color:#ececec;
-	border-bottom-style:1px solid #d7d7d7;
 	}
 
 .android #auxbar > div{
@@ -301,4 +307,41 @@ input[type="search"]:focus{
 	border-top:1px dashed #acacac;
 	}
 	
+/*responsive Webdesign:*/	
 	
+/* Für Geräte, deren aktuelle Bildschirmbreite mindestens 850px beträgt: */
+@media (min-width: 850px) {
+	.android #auxbar{
+		display: none;		
+		}
+	.android #content-pane{
+		top: 48px;		
+		}
+	.android #content-pane #navigation-menu{
+		display: block;
+		width: 25%;		
+		z-index: 1;
+		padding:0;
+		margin:0;
+		left:0;
+		top:0;
+		bottom: 0;
+		border-right: 1px solid grey;
+		}
+	.android #content-pane > div{
+		left:25%;
+		padding-left:10px;
+		width:auto;	
+		}
+		
+	.overthrow-enabled.android #content-pane > div{	
+		left:25%;
+		width: auto;
+		background-color:white;
+		overflow: auto;
+	}
+	.android #content{
+		display: block;	
+		}
+	}
+		

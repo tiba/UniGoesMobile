@@ -2,12 +2,7 @@
 #content,#navigation-menu,#favorites, #shortcuts{
 	display: none;	
 	}
-#content:target,
-#navigation-menu:target
-,#favorites:target, 
-#shortcuts:target{
-	display:block;	
-	}
+
 	
 /*** OWN HELPER FRAMEWORK ***/
 .aleft {text-align:left;}

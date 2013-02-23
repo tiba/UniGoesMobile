@@ -4,16 +4,6 @@
 	text-decoration: none;	
 	}
 	
-.overthrow-enabled.android #content-pane > div{	
-	width: 100%;
-	background-color:white;
-	position:absolute;
-	top:0;
-	left:0;
-	right: 0;
-	bottom: 0;
-
-	}
 	
 .android #content-pane{
 	top:80px;	
@@ -76,11 +66,10 @@
 
 .android #logo-icon img{
 	margin:8px 4px;
-	height:32px;
+	width: 50px;
 	}
 	
 .android #logo-icon {
-	width: 72px;
 	float: left;	
 	}	
 	
@@ -217,11 +206,11 @@ input[type="search"]:focus{
 	}
 	
 .android #mainbar #settings-icon > a{
-	background-position: -27px -340px;	
+	background-position:	-27px -420px;
 	}
 
 .android #mainbar #shortcuts-icon > a{
-	background-position: -27px -420px;
+	background-position:  -27px -340px;
 	}
 
 
@@ -302,8 +291,8 @@ input[type="search"]:focus{
 	float:left;		
 	}
 	
-	/*menü*/
-	.android .up-page-content-localnav li {
+/*menü*/
+.android .up-page-content-localnav li {
 	border-top:1px dashed #acacac;
 	}
 	
@@ -318,30 +307,9 @@ input[type="search"]:focus{
 		top: 48px;		
 		}
 	.android #content-pane #navigation-menu{
-		display: block;
-		width: 25%;		
-		z-index: 1;
-		padding:0;
-		margin:0;
-		left:0;
-		top:0;
-		bottom: 0;
+
 		border-right: 1px solid grey;
 		}
-	.android #content-pane > div{
-		left:25%;
-		padding-left:10px;
-		width:auto;	
-		}
-		
-	.overthrow-enabled.android #content-pane > div{	
-		left:25%;
-		width: auto;
-		background-color:white;
-		overflow: auto;
-	}
-	.android #content{
-		display: block;	
-		}
+
 	}
 		

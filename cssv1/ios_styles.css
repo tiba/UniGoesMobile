@@ -150,8 +150,7 @@ bottom:48px;
 	}
 		
 .ios #logo-icon a > img{
-	height:28px;
-	min-width: 30px;
+	width: 50px;
 	}
 	
 .ios #add-favorite-icon{
@@ -566,3 +565,27 @@ bottom:48px;
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feedd7', endColorstr='#ffffff',GradientType=0 ); 
 	}
 */
+
+	
+/*responsive Webdesign:*/	
+	
+/* Für Geräte, deren aktuelle Bildschirmbreite mindestens 850px beträgt: */
+@media (min-width: 850px) {
+	.ios #content-pane{
+		top: 44px;
+		bottom:48px;		
+		}
+	.ios #navigation-menu .close{
+		display:none;		
+		}
+		
+		.ios #navigation-menu nav{
+			left:0;
+			top:0;
+					
+		}
+		.ios #navigation-menu::after{
+		background:none;			
+			}
+	
+	}

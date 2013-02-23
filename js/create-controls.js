@@ -17,7 +17,7 @@ var config = {
 			moreIconSelector : ".android #more-icon", 
 			variableContainer : ".android #mainbar .relative",
 			overflowContainer : ".android #more-container",
-			contentPaneIcons : ["#add-favorite-icon a", "#shortcuts-icon a", "#favorites-icon a", "#settings-icon a"],
+			contentPaneIcons : ["#menu-icon a", "#content-icon a","#add-favorite-icon a", "#shortcuts-icon a", "#favorites-icon a", "#settings-icon a"],
 			overlayPaneIcons : ["#search-icon a", '#more-icon a']
 			}	
 	}
@@ -33,9 +33,9 @@ var cconfig = [
 		{target:".android #mainbar .relative",element:".android #search-icon"},
 		{target:".android #mainbar .relative",element:".android #add-favorite-icon"},
 		
-		{target:".android #mainbar .relative",element:".android #settings-icon"},	
-		{target:".android #mainbar .relative",element:".android #favorites-icon"},
 		{target:".android #mainbar .relative",element:".android #shortcuts-icon"},	
+		{target:".android #mainbar .relative",element:".android #favorites-icon"},
+		{target:".android #mainbar .relative",element:".android #settings-icon"},	
 		
 		{target:".android #auxbar",element:".android #menu-icon"},
 		{target:".android #auxbar",element:".android #content-icon"},
@@ -203,20 +203,30 @@ var cconfig = [
 
 		
 		if(device=='ios'){		
+
 			//scrollen im Hauptmenü-popup auch auf älteren browsern ermöglichen
 			$('#navigation-menu nav').addClass('overthrow');
 			
 			//bei ios einen close-button und einen popup-menü-Pfeil zu allen popups (divs in der overlay-pane) hinzufügen:
 			$("#overlay-pane > div").append('<a class="close" title="close"></a>');
-			$('#overlay-pane, #overlay-pane .close').click(function(){
+			
+			//responsive Webdesign: für Geräte, deren aktuelle Bildschirmbreite mindestens 850px beträgt, soll die Hauptnavigation 
+			//(navigation-menu) immer links angezeigt werden, da genug Platz für Navigation und Inhalt vorhanden ist. 
+			//Deshalb wird das navigation-menu für diesen Fall in die content-pane verschoben - es soll ja kein popup-Menü mehr sein.
+
+			if($(window).width()>850){
+				$('#content-pane').append($('#navigation-menu'));				
+				}
+			
+		}
+		else if(device=='android'){				
+
+		}	
+	
+		$('#overlay-pane, #overlay-pane .close').click(function(){
 				$('#overlay-pane > div').removeClass('active');
 				$('#overlay-pane').hide();			
 			});
-		
-		}else if(device=='android'){
-				
-		}	
-	
 
 //clickevent ausführen, um Inhalt anzuzeigen:
 
@@ -225,7 +235,7 @@ var cconfig = [
 		//scrollen auch auf älteren browsern ermöglichen:
 		
 		$('body').addClass('overthrow-enabled');
-		$('#content-pane').addClass('overthrow')
+		$('#content-pane > div').addClass('overthrow');
 			
 			//automatische Höhen- und Breitenberechnung - wurde aber vorerst wieder auskommentiert, da bei Abstandsangaben 
 			//für die content-pane Probbleme mit der Breite auftraten:		
@@ -234,17 +244,8 @@ var cconfig = [
 	}); 
 	
 	function getContainerWidth(device){
-
 			return $(config[device].variableContainer).width();		
 	}
-		
-		
-	//TODO: responsive Webdesign:
-	
-	//für Geräte, deren aktuelle Bildschirmbreite mindestens 850px beträgt, soll die Hauptnavigation (navigation-menu) 
-	//immer links angezeigt werden, da genug Platz für Navigation und Inhalt vorhanden ist
-	
-	
-
+			
 		
  })(jQuery);

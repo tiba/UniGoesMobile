@@ -8,11 +8,21 @@
 	left:0;
 	right:0;
 	}
-
-#content-pane > div{	
+	
+.overthrow-enabled #content-pane > div{	
+	width: 100%;
+	background-color:white;
+	position:absolute;
+	top:0;
+	left:0;
+	right: 0;
+	bottom: 0;
 	display: none;	
 	padding:10px;
+
 	}
+
+
 
 #content-pane > div.active{
 	display: block;	
@@ -38,3 +48,40 @@
 	}
 	
 	
+@media (min-width: 850px) {
+	 #mainbar #menu-icon, 
+	 #auxbar #menu-icon 
+	 {
+		display:none;		
+		}
+	 .ios #content-pane #navigation-menu,
+	 .android #content-pane #navigation-menu{
+		display: block;
+		width: 25%;		
+		z-index: 1;
+		padding:0;
+		margin:0;
+		left:0;
+		top:0;
+		bottom: 0;
+		
+		}
+	 .ios #content-pane > div,
+	 .android #content-pane > div{
+		left:25%;
+		padding-left:10px;
+		width:auto;	
+		}	
+	.ios.overthrow-enabled #content-pane > div,
+	.android.overthrow-enabled #content-pane > div{	
+		left:25%;
+		width: auto;
+		background-color:white;
+		overflow: auto;
+		}
+	 .ios #content-pane #content,
+	 .android #content-pane #content{
+		display: block;	
+		}
+		
+		}

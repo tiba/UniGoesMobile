@@ -1,30 +1,19 @@
-.android a, 
-.android a:hover, 
-.android a:focus{
-	text-decoration: none;	
-	}
-	
-	
-.android #content-pane{
-	top:80px;	
-	}	
-	
-.android body, 
-.android #content, 
-.android #controls{
-	clear:both;
-	}
-
 .android body{
 	overflow:visible;
 	font-family:arial;
 	background-position: center bottom;
 	display: block;
 	}
+	
 
-.android #controls{
-	position:fixed;
-	display: none;
+/*Content-pane*/
+
+.android #content-pane{
+	top:80px;	
+	}	
+	
+.android #content-pane > div{	
+	margin-bottom: 40px;	
 	}
 	
 	
@@ -69,7 +58,7 @@
 	width: 50px;
 	}
 	
-.android #logo-icon {
+.android #logo-icon{
 	float: left;	
 	}	
 	
@@ -132,8 +121,8 @@
 	padding-top: 8px;
 	padding-bottom: 8px;
 	line-height: 32px;
-	left: 66px;
-	top: -3px;
+	left: 58px;
+	top: -5px;
 	background-color: #ececec;
 	display: none;
 	z-index: 100;
@@ -152,21 +141,19 @@
 	background: transparent;
 	}
 	
-.android #search-area input[type="search"]::-webkit-search-cancel-button {
+.android #search-area input[type="search"]::-webkit-search-cancel-button{
 	-webkit-appearance: none;	
 	appearance: none;
 	}	
 	
-.android #search-area input[type="search"]::-webkit-search-cancel-button:after {	
+.android #search-area input[type="search"]::-webkit-search-cancel-button:after{	
 	background-image: url('images/android/mdpi/1_navigation_cancel.png');
 	content:'';
 	display: block;	
 	width:28px; 
-	height:28px;
-	
+	height:28px;	
 	background-position: 0 0;
 	background-repeat: no-repeat;
-	
 	}
 
 input[type="search"]:focus{
@@ -280,7 +267,7 @@ input[type="search"]:focus{
 	background-repeat: repeat-x;
 	}
 
-.android #footer > div {
+.android #footer > div{
 	float:right;
 	padding-right:6px;
 	margin-top:24px;
@@ -290,16 +277,18 @@ input[type="search"]:focus{
 .android #footer #copyright{
 	float:left;		
 	}
+
 	
-/*menü*/
-.android .up-page-content-localnav li {
+/*Navigation-menu*/
+
+.android .up-page-content-localnav li{
 	border-top:1px dashed #acacac;
 	}
 	
-/*responsive Webdesign:*/	
-	
-/* Für Geräte, deren aktuelle Bildschirmbreite mindestens 850px beträgt: */
-@media (min-width: 850px) {
+/*responsive Webdesign*/		
+/* Für android-Geräte, deren aktuelle Bildschirmbreite mindestens 850px beträgt: */
+
+@media (min-width: 850px){
 	.android #auxbar{
 		display: none;		
 		}
@@ -307,9 +296,7 @@ input[type="search"]:focus{
 		top: 48px;		
 		}
 	.android #content-pane #navigation-menu{
-
 		border-right: 1px solid grey;
 		}
-
 	}
 		

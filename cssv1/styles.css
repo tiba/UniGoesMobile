@@ -1,7 +1,27 @@
+/*Allgemeine styles, die für ios und android gelten sollen:*/
+
+body, 
+#content, 
+#controls{
+	clear:both;
+	}
+
+a, 
+a:hover, 
+a:focus, 
+a:visited{
+	text-decoration: none;	
+	}
+
+#controls{
+	position:fixed;
+	display: none;
+	}
+
+
 /*Content-pane*/
 
 #content-pane{	
-	
 	position: fixed;
 	top:0;
 	bottom:0;
@@ -19,10 +39,7 @@
 	bottom: 0;
 	display: none;	
 	padding:10px;
-
 	}
-
-
 
 #content-pane > div.active{
 	display: block;	
@@ -41,17 +58,21 @@
 	top:0;
 	left:0;
 	}
-	
-.overthrow-enabled .overthrow {
+#overlay-pane > div.active {
+	display: block;	
+	}
+.overthrow-enabled .overthrow{
    overflow: auto;
    -webkit-overflow-scrolling: touch;
 	}
 	
-	
-@media (min-width: 850px) {
+
+/*responsive Webdesign*/	
+/* Für ios- und android-Geräte, deren aktuelle Bildschirmbreite mindestens 850px beträgt:*/	
+		
+@media (min-width: 850px){
 	 #mainbar #menu-icon, 
-	 #auxbar #menu-icon 
-	 {
+	 #auxbar #menu-icon{
 		display:none;		
 		}
 	 .ios #content-pane #navigation-menu,
@@ -64,7 +85,6 @@
 		left:0;
 		top:0;
 		bottom: 0;
-		
 		}
 	 .ios #content-pane > div,
 	 .android #content-pane > div{
@@ -83,5 +103,4 @@
 	 .android #content-pane #content{
 		display: block;	
 		}
-		
-		}
+	}

@@ -87,7 +87,9 @@ var cconfig = [
 						
 			var maxWidth = getContainerWidth(device);
 			var curWidth = 0;
-			//breiten zusammenzählen, unsichtbare elemente nicht berücksichtigen (benötigt man spezielle für den more-container!)
+
+			//Breiten zusammenzählen, unsichtbare Elemente nicht berücksichtigen (benötigt man speziell für den more-container!)
+
 			$.each($(config[device].variableContainer + " > *:visible"), function(key, div){
 				
 					curWidth += $(div).width();
@@ -107,7 +109,6 @@ var cconfig = [
 					curWidth += $(div).width();
 					if(curWidth>maxWidth-elWidth && div!=element){
 
-
 						//Anmerkung: curWidth repräsentiert ab hier nicht mehr die tatsächliche Breite, macht aber nichts,
 						//da alle elemente ab jetzt in den overflowContainer kommen.
 						
@@ -116,8 +117,7 @@ var cconfig = [
 				});
 				
 			}		
-		
-		
+				
 //Klasse "active" für geklickte Buttons setzen:
 
 		$(".button").click(function(){
@@ -128,14 +128,13 @@ var cconfig = [
 
 		$("#search-icon a").click(function(){
 		
-		//der Fokus wird auf das Eingabefeld gelegt, damit mobile User gleich die richtige Tastaturanzeige bekommen:			
+			//der Fokus wird auf das Eingabefeld gelegt, damit mobile User gleich die richtige Tastaturanzeige bekommen:			
 
 			$("#search-area input[type='search']").focus();		
 			return true;
 			});	
 
-
-//Folgender Code nur für android relevant, weil die search-area bei ios ein content-pane darstellt:
+		//Folgender Code nur für android relevant, weil die search-area bei ios ein content-pane darstellt:
 		
 		if(device=='android'){
 
@@ -149,36 +148,35 @@ var cconfig = [
 			});	
 		}
 
-
-//beim Klicken auf den more-button wird ein Auswahlmenü mit weiteren Aktionsmöglichkeiten aktiviert und 
-//durch den style sichtbar gemacht:
+		//beim Klicken auf den more-button wird ein Auswahlmenü mit weiteren Aktionsmöglichkeiten aktiviert und 
+		//durch den style sichtbar gemacht:
 
 		$("#more-icon a").click(function(){
 			$("#more-container").addClass("active");		
 			});		
-
 	
-//wenn der more-button in ios bereits geklickt wurde, der user aber wieder zurück möchte, 
-//wird das more-Auswahlmenü wieder deaktiviert und so wieder die Standard-Anzeige der tabbar sichtbar: 			
+		//wenn der more-button in ios bereits geklickt wurde, der user aber wieder zurück möchte, 
+		//wird das more-Auswahlmenü wieder deaktiviert und so wieder die Standard-Anzeige der tabbar sichtbar: 			
 
 		$("#less-icon a").click(function(){
 			$("#more-container").removeClass("active");			
 			});		
 
-			
-//aktuell geklicktes Element bekommt die Klasse active, die anderen nicht(nur aktive content-pane-Elemente 
-//haben den style sichtbar):			
-
+		//aktuell geklicktes Element bekommt die Klasse active, die anderen nicht(nur aktive content-pane-Elemente 
+		//haben den style sichtbar):			
+		
 		$.each(config[device].contentPaneIcons,function(k,v){
 
-		//die Variable contentPane enthält den Wert des hrefs der Icons und diese sind gleichzeitig die ids der Elemente in der content-pane
-		//dadurch kann man die contentPanes sichtbar und unsichtbar machen
+			//die Variable contentPane enthält den Wert des hrefs der Icons und diese sind gleichzeitig die ids der Elemente 
+			//in der content-pane dadurch kann man die contentPanes sichtbar und unsichtbar machen
 
 			var currentContentPane = $(v).attr("href");
 			$(v).click(function(){
 				$("#content-pane > div").removeClass("active");
 				$(currentContentPane).addClass("active");
-				//overlays ausblenden (falls etwas sichtbar ist), wenn angezeigter content wechselt!		
+				
+				//overlays ausblenden (falls etwas sichtbar ist), wenn angezeigter content wechselt!	
+					
 				$("#overlay-pane").hide();			
 			});
 				 					 			
@@ -186,7 +184,7 @@ var cconfig = [
 
 		$.each(config[device].overlayPaneIcons,function(k,v){
 
-		//die Variable overlayPane ...TODO: weiterschreiben!
+			//die Variable overlayPane ...TODO: weiterschreiben!
 
 			var currentOverlayPane = $(v).attr("href");
 			$(v).click(function(){
@@ -195,6 +193,7 @@ var cconfig = [
 
 				
 				//eventhandler unterbrechen, damit das click event nicht weiter propagiert wird
+				
 				$(currentOverlayPane).click(function(){return false;});
 				$("#overlay-pane").show();				
 			});
@@ -205,9 +204,11 @@ var cconfig = [
 		if(device=='ios'){		
 
 			//scrollen im Hauptmenü-popup auch auf älteren browsern ermöglichen
+			
 			$('#navigation-menu nav').addClass('overthrow');
 			
 			//bei ios einen close-button und einen popup-menü-Pfeil zu allen popups (divs in der overlay-pane) hinzufügen:
+			
 			$("#overlay-pane > div").append('<a class="close" title="close"></a>');
 			
 			//responsive Webdesign: für Geräte, deren aktuelle Bildschirmbreite mindestens 850px beträgt, soll die Hauptnavigation 
@@ -241,6 +242,7 @@ var cconfig = [
 			//für die content-pane Probbleme mit der Breite auftraten:		
 			/*.height($(window).height()-$('#auxbar').height()-$('#mainbar').height()-$('#auxbar').css('padding-top')-$('#mainbar').css('padding-top')-$('#auxbar').css('padding-bottom')-$('#mainbar').css('padding-bottom'))
 			.width($(window).width());*/
+
 	}); 
 	
 	function getContainerWidth(device){

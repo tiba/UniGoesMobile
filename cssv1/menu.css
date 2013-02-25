@@ -1,10 +1,10 @@
-.up-page-content-localnav {
+nav {
 	font-size:16px; 
 	margin:0 0 20px 0; 
 	}
 
-.up-page-content-localnav span,
-.up-page-content-localnav a {
+nav span,
+nav a {
 	color:#000; 
 	display:block; 
 	height:48px; 
@@ -27,10 +27,10 @@
 	padding:10px;}
 */
 
-.up-page-content-localnav-L1-item a{background:none no-repeat scroll 0 0 #e0e0e0;}
-.up-page-content-localnav-L1-item a,
-.up-page-content-localnav-L1-item span {padding-left:8px;} 
-.up-page-content-localnav-L2-item a {background:none no-repeat scroll 0 0 #f0efef;}
+nav>ul>li a{background:none no-repeat scroll 0 0 #e0e0e0;}
+nav>ul>li a,
+nav>ul>li>ul>li span {padding-left:8px;} 
+nav>ul>li>ul>li a {background:none no-repeat scroll 0 0 #f0efef;}
 .up-page-content-localnav-L2-item a,
 .up-page-content-localnav-L2-item span { padding-left:16px;}
 .up-page-content-localnav-L3-item a {background:none no-repeat scroll 0 0 #f8f8f8;}
@@ -44,40 +44,49 @@
 	display:block;	
 	}
 
-.up-page-content-localnav-L1-item-act a {
-	background-image:url('images/common/localnav-arrows.png'); 
-	background-position: right -65px;
-	display:block;
-	}
-	
-.up-page-content-localnav-L2-item-act a {
-	background-image:url('images/common/localnav-arrows.png');
-	background-position: right -65px;
-	background-color:  #f0efef;
-	display:block;
-	}
-	
-.up-page-content-localnav-L3-item-act a {
+
+
+nav li.active > a{
 	background-image:url('images/common/localnav-arrows.png');
 	background-position:right -65px;
 	background-color: #f8f8f8; 
 	display:block;
+	
+	}
+
+.up-page-content-localnav-L1-item-act a,
+nav > ul > li.active > a {
+	}
+	
+.up-page-content-localnav-L2-item-act a,
+nav > ul > li > ul > li.active > a {
+	background-color:  #f0efef;
+	}
+	
+.up-page-content-localnav-L3-item-act a,
+nav > ul > li > ul> li > ul > li.active > a {
+	background-color: #f8f8f8; 
 	}
 
 .up-page-content-localnav-L1-item-cur span,
 .up-page-content-localnav-L2-item-cur span,
 .up-page-content-localnav-L3-item-cur span,
-.up-page-content-localnav-L4-item-cur span{
+.up-page-content-localnav-L4-item-cur span,
+nav .current span
+{
 	background-color:#feedd7; background-image:none;
 	}
 
-.up-page-content-localnav-item-sub a{
+.up-page-content-localnav-item-sub a,
+nav .sub > a
+{
 	background-image:url('images/common/localnav-arrows.png'); 
 	background-position:right 18px;
 	background-repeat:no-repeat;
 	}
 
-.up-page-content-localnav-item-sub span {
+.up-page-content-localnav-item-sub span,
+nav .sub span {
 	background-image:url('images/common/localnav-arrows.png'); 
 	background-position:right -65px; 
 	background-repeat:no-repeat;

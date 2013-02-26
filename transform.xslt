@@ -45,7 +45,7 @@
 						
 						<nav>
 							<!-- Füge Navigation ein -->
-							<xsl:apply-templates select="//div[@id='left']"/>
+							<xsl:apply-templates select="//div[@id='left']/div[@class='mainnav']"/>
 						</nav>
 					</div>
 					<div class="up-page-content-localnav" id="shortcuts">

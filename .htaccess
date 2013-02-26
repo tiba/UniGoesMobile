@@ -1,0 +1,14 @@
+#alle dokumente auf index.php weiterleiten
+#ausser wenn die Datei lokal existiert
+
+
+RewriteEngine On
+#Wir befinden uns im Unterverzeichnis UniGoesMobile und alle Links sind relativ zu diesem Verzeichnis angegeben
+RewriteBase /UniGoesMobile/
+Options +FollowSymLinks
+
+#redirect all requests, that don't point to a file
+#nur auf index.php umleiten, wenn es kein Verzeichnis und keine Datei ist (!-d und !-f)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond  %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php [L]

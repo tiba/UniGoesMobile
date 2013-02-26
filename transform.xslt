@@ -6,7 +6,7 @@
 
 
     <xsl:output method="html" encoding="UTF-8"/>
-	<!-- Grund-template: Rahmenstruktur des HTML-Dokuments. einzelne Bestandteile werden gef¸llt -->
+	<!-- Grund-template: Rahmenstruktur des HTML-Dokuments. einzelne Bestandteile werden gef√ºllt -->
     <xsl:template match="/">
 		<html>
 				<head>
@@ -37,14 +37,14 @@
 			<body>
 				<div id="content-pane">
 					<div id="content" >
-						<!-- F‹ge Inhaltsbereich ein -->
+						<!-- F√úge Inhaltsbereich ein -->
 						<xsl:apply-templates select="//div[@id='center']"/>
 					</div>
 
 					<div class="up-page-content-localnav" id="navigation-menu">
 						
 						<nav>
-							<!-- F¸ge Navigation ein -->
+							<!-- F√ºge Navigation ein -->
 							<xsl:apply-templates select="//div[@id='left']"/>
 						</nav>
 					</div>
@@ -64,7 +64,7 @@
 				</div>
 				<div id="footer">
 					<div id="copyright" class="label">
-						<span>&copy; 2013 Universit‰t Passau
+						<span>&copy; 2013 Universit√§t Passau
 						</span>
 					</div>
 					<div id="impressum" class="">
@@ -91,7 +91,7 @@
 
 				<div id="controls">
 					<div id="logo-icon" class="icon">
-							<a href=""><img src="images/logo.png" alt="Logo Universit‰t Passau" >
+							<a href=""><img src="images/logo.png" alt="Logo Universit√§t Passau" >
 							</a>
 					</div>
 					
@@ -182,7 +182,7 @@
     </xsl:template>
 
 
-	<!-- identit‰ts-Template: kopiert 1-zu-1 den input -->
+	<!-- identit√§ts-Template: kopiert 1-zu-1 den input -->
 	<xsl:template match="@*|node()">
 		<xsl:copy>
 			<xsl:apply-templates select="@*|node()"/>

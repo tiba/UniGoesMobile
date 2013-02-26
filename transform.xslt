@@ -8,11 +8,13 @@
     <xsl:output method="html" encoding="UTF-8"/>
 	<!-- Grund-template: Rahmenstruktur des HTML-Dokuments. einzelne Bestandteile werden gefüllt -->
     <xsl:template match="/">
+       
 		<html>
 			<head>
 				<!--setze Titel der Quell-Seite-->
 				<title><xsl:value-of select="//title"/></title>
 				<meta charset="utf-8"/>
+                                
 				<link rel="stylesheet" type="text/css" href="cssv1/reset.css" media="all"/>
 				<link rel="stylesheet" type="text/css" href="cssv1/content.css" media="all"/>
 				<link rel="stylesheet" type="text/css" href="cssv1/menu.css" media="all"/>
@@ -162,6 +164,8 @@
 					<div id="more-container" class="container">
 							
 					</div>	
+					
+					<div id="bookmark-status" class="status">Hier steht die Meldung zum Bookmark</div>
 				</div>
 				<div id="overlay-pane">
 				

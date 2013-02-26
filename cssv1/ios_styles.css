@@ -8,7 +8,8 @@
 .ios #controls{
 	top:0;
 	left:0;
-	z-index:100;	
+	z-index:100;
+        
 	}
 
 
@@ -23,9 +24,9 @@
 	padding:10px;	
 	}
 
-.overthrow-enabled.ios #content-pane > div{
+/*.overthrow-enabled.ios #navigation-menu > div{
 	overflow:hidden;
-	}
+	}*/
 	
 .ios #favorites nav a.delete{		
 	width: 0px;

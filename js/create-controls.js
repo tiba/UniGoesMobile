@@ -9,7 +9,7 @@ var config = {
 			variableContainer : ".ios #auxbar",
 			overflowContainer : ".ios #more-container",
 			contentPaneIcons : ["#content-icon a",  "#shortcuts-icon a", "#favorites-icon a", "#settings-icon a","#search-icon a"],
-			overlayPaneIcons : ["#menu-icon a", "add-favorite-icon a"]
+			overlayPaneIcons : ["#menu-icon a", "#add-favorite-icon a"]
 			
 			},
 		android:{

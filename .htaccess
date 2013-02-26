@@ -15,3 +15,4 @@ RewriteRule ^(typo3|typo3temp|typo3conf|fileadmin|uploads)(.*)$ http://www.uni-p
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond  %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*)$ index.php [L]
+#RewriteRule ^.*$ http://www.google.de [R=302]

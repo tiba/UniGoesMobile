@@ -9,7 +9,7 @@ var config = {
 			variableContainer : ".ios #auxbar",
 			overflowContainer : ".ios #more-container",
 			contentPaneIcons : ["#content-icon a",  "#shortcuts-icon a", "#favorites-icon a", "#settings-icon a","#search-icon a"],
-			overlayPaneIcons : ["#menu-icon a"]
+			overlayPaneIcons : ["#menu-icon a", "add-favorite-icon a"]
 			
 			},
 		android:{
@@ -56,7 +56,8 @@ var cconfig = [
 		{target:".ios #more-container",element:".ios #less-icon"},
 		
 		{target:".ios #content-pane", element:".ios #search-area"},
-		{target:".ios #overlay-pane", element:".ios #navigation-menu"},		
+		{target:".ios #overlay-pane", element:".ios #navigation-menu"},
+		{target:".ios #overlay-pane", element:".ios #bookmark-status"},		
 		{target:".ios #auxbar",element:".ios #more-container"}
 	];
 

@@ -37,12 +37,22 @@ a:visited{
 	left:0;
 	right: 0;
 	bottom: 0;
-	display: none;	
-	padding:10px;
+	display: none;
 	}
 
 #content-pane > div.active{
 	display: block;	
+	}
+
+#content-pane p{
+	padding: 10px;	
+	}
+
+#favorites nav a.delete{
+	position: absolute;
+	margin-top: -39px;	
+	margin-left: 90%;	
+	cursor: pointer;	
 	}
 
 

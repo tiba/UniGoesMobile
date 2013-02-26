@@ -12,10 +12,25 @@
 	top:80px;	
 	}	
 	
-.android #content-pane > div{	
+.overthrow-enabled.android #content-pane > div{	
 	margin-bottom: 40px;	
 	}
 	
+.android #content-pane #content{	
+	padding:10px;	
+	}
+
+.android #favorites nav a.delete{		
+	width: 32px;
+	height: 32px;
+   /*Graues x für delete-button:*/
+	background-image: url('images/android/mdpi/5_content_remove.png');
+	content:'';
+	background-color: transparent;
+	background-position: center center;
+	background-repeat: no-repeat;
+	}
+
 	
 /*Mainbar*/
 
@@ -186,6 +201,10 @@ input[type="search"]:focus{
 	
 .android #mainbar #add-favorite-icon > a{
 	background-position: -27px -100px;
+	}
+	
+.android #mainbar #add-favorite-icon.active > a{
+	background-position: -76px -100px;
 	}
 
 .android #mainbar #favorites-icon > a{

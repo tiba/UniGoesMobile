@@ -15,14 +15,39 @@
 /*Content-pane*/
 
 .ios #content-pane{
-top:48px;
-bottom:48px;	
+	top:48px;
+	bottom:48px;	
+	}
+
+.ios #content-pane #content{	
+	padding:10px;	
 	}
 
 .overthrow-enabled.ios #content-pane > div{
-	width: 100%;	
-	background-color:white;
 	overflow:hidden;
+	}
+	
+.ios #favorites nav a.delete{		
+	width: 0px;
+	height: 24px; 	
+ 	background: url('images/ios/cancel-icon_white.png'), -moz-linear-gradient(-90deg, #da7d83, #da7d83 50%, #ca444e 50%, #ca444e);
+	background: url('images/ios/cancel-icon_white.png'), -ms-linear-gradient(-90deg, #da7d83, #da7d83 50%, #ca444e 50%, #ca444e);
+	background: url('images/ios/cancel-icon_white.png'), -o-linear-gradient(-90deg, #da7d83, #da7d83 50%, #ca444e 50%, #ca444e);
+	background: url('images/ios/cancel-icon_white.png'), -webkit-gradient(linear, left top, left bottom, from(#da7d83), color-stop(0.5, #da7d83), color-stop(0.5, #ca444e), to(#ca444e));
+	background: url('images/ios/cancel-icon_white.png'), linear-gradient(-90deg, #da7d83, #da7d83 50%, #ca444e 50%, #ca444e);
+	border: 3px solid #fff;
+	-moz-border-radius: 30px;
+	-ms-border-radius: 30px;
+	-o-border-radius: 30px;
+	-webkit-border-radius: 30px;
+	border-radius: 30px;
+	-moz-box-shadow: 0 2px 2px rgba(0,0,0, 1);
+	-ms-box-shadow: 0 2px 2px rgba(0,0,0, 1);
+	-o-box-shadow: 0 2px 2px rgba(0,0,0, 1);
+	-webkit-box-shadow: 0 2px 2px rgba(0,0,0, 1);
+	box-shadow: 0 2px 2px rgba(0,0,0, 1);
+	background-position: center center;
+	background-repeat: no-repeat;
 	}
 	
 
@@ -121,7 +146,7 @@ bottom:48px;
 	background: url('images/ios/sprite_ios_auxbar.png') no-repeat -505px -17px, -webkit-linear-gradient(top, #7c97bb, #5a7caa 50%, #50709a 51%, #476489);
 	}
 	
-	.ios #mainbar #menu-icon.active a{
+.ios #mainbar #menu-icon.active a{
 	background: url('images/ios/sprite_ios_auxbar.png') no-repeat -505px -97px, -webkit-linear-gradient(top, #476489,  #50709a 50%,#5a7caa 51%,#7c97bb );
 	}
 	
@@ -430,9 +455,9 @@ bottom:48px;
 	}
 	
 	
-/*Overlay-pane - Navigation-menu*/
+/*Overlay-pane*/
 
-.ios #overlay-pane #navigation-menu{
+.ios #navigation-menu{
 	position: absolute;	
 	width: 80%;
 	height: 80%;
@@ -442,6 +467,18 @@ bottom:48px;
 	-webkit-box-shadow: 0px 0px 12px rgba(0,0,0,.6);
 	box-shadow: 0px 0px 12px rgba(0,0,0,.6);
 	background-color: rgba(0,0,0,0.8);			
+	}
+	
+.ios #bookmark-status{
+	position: absolute;	
+	width: 80%;
+	height: 80%;
+	top: 45px;
+	right:10px;
+	-moz-box-shadow: 0px 0px 12px rgba(0,0,0,.6);
+	-webkit-box-shadow: 0px 0px 12px rgba(0,0,0,.6);
+	box-shadow: 0px 0px 12px rgba(0,0,0,.6);
+	background-color: rgba(0,0,0,0.8);	
 	}
 
 .ios #navigation-menu::after{
@@ -465,8 +502,8 @@ bottom:48px;
 	overflow: auto;	
 	}	
 	
-.ios #navigation-menu .close{
-	/*Kreis für cancel-button:*/
+.ios #overlay-pane > div .close{
+	/*Schwarzer Kreis für cancel-button:*/
 	position: absolute;	
 	width: 6px;
 	height: 30px;
@@ -491,18 +528,14 @@ bottom:48px;
 	cursor: pointer;
 	}
 	
-.ios .up-page-content-localnav a,
-.ios .up-page-content-localnav span{	
+.ios #overlay-pane a,
+.ios #overlay-pane span{	
 	-webkit-border-radius: 8px;
 	border-radius: 8px;		
 	-webkit-box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0;
 	box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0;
 	border: 1px solid #acacac;
-	margin: 4px 4px; 		
-	}
-	
-.ios .up-page-content-localnav span, 
-.ios .up-page-content-localnav a{
+	margin: 4px 4px; 	
 	padding-right:25px;
 	}
 

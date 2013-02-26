@@ -7,6 +7,9 @@ RewriteEngine On
 RewriteBase /UniGoesMobile/
 Options +FollowSymLinks
 
+#statische Dateien der alten Website weiterleiten
+RewriteRule ^(typo3|typo3temp|typo3conf|fileadmin|uploads)(.*)$ http://www.uni-passau.de/$1$2
+
 #redirect all requests, that don't point to a file
 #nur auf index.php umleiten, wenn es kein Verzeichnis und keine Datei ist (!-d und !-f)
 RewriteCond %{REQUEST_FILENAME} !-d

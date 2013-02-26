@@ -53,7 +53,6 @@
 						
 						</nav>
 					</div>
-					</div>
 					<div  id="favorites">
 						<p>Hier finden Sie Ihre gespeicherten Seiten der Uni-Passau</p>
 					</div>
@@ -64,7 +63,7 @@
 				</div>
 				<div id="footer">
 					<div id="copyright" class="label">
-						<span>&copy; 2013 Universität Passau
+						<span>© 2013 Universität Passau
 						</span>
 					</div>
 					<div id="impressum" class="">
@@ -91,12 +90,11 @@
 
 				<div id="controls">
 					<div id="logo-icon" class="icon">
-							<a href=""><img src="images/logo.png" alt="Logo Universität Passau" >
+							<a href=""><img src="images/logo.png" alt="Logo Universität Passau" />
 							</a>
 					</div>
 					
-					<div id="sitetitle" class="label">Seitentitel Seitentitel Seitentitel Seitentitel Seitentitel Seitentitel
-					</div>		
+					<div id="sitetitle" class="label"><xsl:value-of select="//title"/></div>		
 					
 					<div id="search-icon" class="button">
 						<a href="#search-area" id="search-a" title="Suche">
@@ -132,7 +130,6 @@
 							<span>Mehr
 							</span>
 						</a>
-							
 					</div>		
 					<div id="less-icon" class="button">
 						<a href="#more-container" title="Mehr">
@@ -156,15 +153,15 @@
 					</div>	
 					
 					<div id="settings-icon" class="button">
-								<a href="#settings" title="Einstellungen">
-									<span>Einstellungen
-									</span>
-								</a>
-							</div>	
+						<a href="#settings" title="Einstellungen">
+							<span>Einstellungen
+							</span>
+						</a>
+					</div>	
 					
 					<div id="more-container" class="container">
 							
-						</div>	
+					</div>	
 				</div>
 				<div id="overlay-pane">
 				

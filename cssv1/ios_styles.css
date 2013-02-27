@@ -317,6 +317,7 @@
 	pointer:cursor;
 	}
 
+/*nachfolgender style soll lupen-icon in das suchfeld einfügen, funktioniert aber leider nicht:*/
 /*.ios #search-area input[type="search"]::after{
 	
 	background: #666;
@@ -326,9 +327,7 @@
 	-moz-border-radius: 9px;
 	-webkit-border-radius: 9px;
 	border-radius: 9px;
-	
 	background-position: -612px 50%;
-	
 	position: absolute;
 	left: 7px;
 	top: 50%;
@@ -539,6 +538,10 @@
 	margin: 4px 4px; 	
 	padding-right:25px;
 	}
+
+/*TODO: nachfolgende styles beinhalten die Verläufe für den Hintergrund der buttons in ios-menüs
+um diese anzuwenden müssen aber noch die Pfeil-Bilder aus dem uni-sprite als zweites back-
+ground-image neben jeden einzelnen Verlauf gesetzt werden*/
 
 /*.ios .up-page-content-localnav-L1-item a {
 	background: rgb(224,224,224); 

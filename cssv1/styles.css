@@ -95,6 +95,7 @@ a:visited{
 		left:0;
 		top:0;
 		bottom: 0;
+                height: 100%;
 		}
 	 .ios #content-pane > div,
 	 .android #content-pane > div{

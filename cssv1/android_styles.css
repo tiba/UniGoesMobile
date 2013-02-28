@@ -1,321 +1,265 @@
-.android body{
-	overflow:visible;
-	font-family:arial;
-	background-position: center bottom;
-	display: block;
-	}
-	
+
 
 /*Content-pane*/
 
 .android #content-pane{
-	top:80px;	
-	}	
-	
-.overthrow-enabled.android #content-pane > div{	
-	margin-bottom: 40px;	
-	}
-	
-.android #content-pane #content{	
-	padding:10px;	
-	}
+    top:80px;
+    bottom:0px;
+}	
+
+
+
+
 
 .android #favorites nav a.delete{		
-	width: 32px;
-	height: 32px;
-   /*Graues x für delete-button:*/
-	background-image: url('images/android/mdpi/5_content_remove.png');
-	content:'';
-	background-color: transparent;
-	background-position: center center;
-	background-repeat: no-repeat;
-	}
+    width: 32px;
+    height: 32px;
+    /*Graues x für delete-button:*/
+    background: url('images/android/mdpi/5_content_remove.png') center no-repeat transparent;
+    content:'';
+}
 
-	
+
 /*Mainbar*/
 
 .android #mainbar{
-	position:fixed;
-	width:100%;
-	height:47px;
-	background-color: #ececec;
-	border-bottom:1px solid #d7d7d7;	
-	z-index:10;
-	top: 0;
-	left: 0;
-	}
+    position:fixed;
+    left:0;
+    right:0;
+    top:0;
+    height:48px;
+    background-color: #ececec;
+    border-bottom:1px solid #d7d7d7;	
+    z-index:10;
+    text-align: right;
 
-.android .relative{
-	position:relative;
-	overflow: hidden;
-	text-align: right;
-	width: 100%;
-	}
+}
 
-.android #mainbar > .relative > div{
-	display:block;
-	}
 
 .android #mainbar #sitetitle{
-	float: left;	
-	width:50%;
-	overflow:hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	height: 20px;
-	font-size:15px;
-	padding-top: 7px;	
-	text-align: left;
-	}
+    float: left;	
+    width:50%;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 20px;
+    font-size:15px;
+    padding-top: 7px;	
+    text-align: left;
+}
 
 .android #logo-icon img{
-	margin:8px 4px;
-	width: 50px;
-	}
-	
-.android #logo-icon{
-	float: left;	
-	}	
-	
-.android #mainbar > .relative > .button{
-	display:inline-block;
-	}
+    margin:8px 4px;
+    width: 50px;
+}
 
-.android #mainbar > .relative > .button > a{
-	width: 32px;
-	height: 32px;
-	margin:8px 4px;
-	display: block;
-	text-decoration: none;
-	background: url('images/android/sprite_android_mainbar.png');
-	background-repeat: no-repeat;	
-	}
+.android #logo-icon{
+    float: left;	
+}	
+
+.android #mainbar  > .button{
+    display:inline-block;
+}
+
+.android #mainbar > .button > a{
+    width: 32px;
+    height: 32px;
+    margin:8px 4px;
+    display: block;
+    text-decoration: none;
+    background: url('images/android/sprite_android_mainbar.png');
+    background-repeat: no-repeat;	
+}
 
 .android #more-container{
-	position: fixed;
-	right:0;
-	top:48px;
-	background-color:#efefef;
-	display:none;
-	box-shadow: -2px 2px 5px #aaa;
-	}
+    position: absolute;
+    right:0;
+    top:48px;
+    background-color:#efefef;
+    display:none;
+    box-shadow: -2px 2px 5px #aaa;
+}
 
 .android #more-container > div:first-child > a{
-	border-top:none;
-	}
-	
-.android #more-container > div > a{
-	color:black;
-	text-decoration:none;
-	display: block;
-	padding-left: 8px;
-	padding-top: 8px;
-	padding-bottom: 8px;
-	width:144px;
-	line-height: 32px;
-	border-top:1px solid #d7d7d7;
-	}
+    border-top:none;
+}
 
-.android #mainbar >.relative > .button > a > span{
-	display: none;	
-	}	
-		
+.android #more-container > div > a{
+    color:black;
+    text-decoration:none;
+    display: block;
+    padding:0 8px;
+    min-width:144px;
+    line-height: 48px;
+    height:48px;
+    border-top:1px solid #d7d7d7;
+}
+
+.android #mainbar  > .button > a > span{
+    display: none;	
+}	
+
 .android #mainbar #more-icon > a, 
 .android #mainbar #less-icon > a{
-	background-position: -27px -260px;
-	}
+    background-position: -27px -260px;
+}
 
 .android #mainbar #search-icon > a{
-	background-position: -28px -20px;	
-	}
+    background-position: -28px -20px;	
+}
 
 .android #search-area{
-	position: fixed;
-	width: 50%;
-	padding-left: 8px;
-	padding-top: 8px;
-	padding-bottom: 8px;
-	line-height: 32px;
-	left: 58px;
-	top: -5px;
-	background-color: #ececec;
-	display: none;
-	z-index: 100;
-	}
-	
+    position: absolute;
+    width: 50%;
+    padding: 8px;
+    height:32px;
+    left: 58px;
+    background-color: #ececec;
+}
+
 .android #search-area > form > input[type="search"]{
-	font-size:16px; 
-	width: 100%;
-	}	
+    font-size:16px; 
+    width: 100%;
+}	
 
 .android #search-area input[type="search"]{
-	-webkit-appearance: none;	
-	appearance: none;
-	border:none;	
-	border-bottom: 2px solid orange;
-	background: transparent;
-	}
-	
+    -webkit-appearance: none;	
+    appearance: none;
+    border:none;	
+    border-bottom: 2px solid orange;
+    background: transparent;
+}
+
 .android #search-area input[type="search"]::-webkit-search-cancel-button{
-	-webkit-appearance: none;	
-	appearance: none;
-	}	
-	
+    -webkit-appearance: none;	
+    appearance: none;
+}	
+
 .android #search-area input[type="search"]::-webkit-search-cancel-button:after{	
-	background-image: url('images/android/mdpi/1_navigation_cancel.png');
-	content:'';
-	display: block;	
-	width:28px; 
-	height:28px;	
-	background-position: 0 0;
-	background-repeat: no-repeat;
-	}
+    background-image: url('images/android/mdpi/1_navigation_cancel.png');
+    content:'';
+    display: block;	
+    width:28px; 
+    height:28px;	
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
 
 input[type="search"]:focus{
-	border:none;
-	outline:none;
-	border-bottom: 2px solid orange;	
-	}
+    border:none;
+    outline:none;
+    border-bottom: 2px solid orange;	
+}
 
-.android #search-area > form > button{
-	font-size:16px; 
-	font-family:sans-serif; 
-	}	
-	
-.android #search-area.active{
-	display:block;	
-	}
-	
-.android #more-container.active{
-	display: block;
-	text-align: left;
-	}	
-	
-.android #mainbar #more-container.active #add-favorite-icon > a,
-.android #mainbar #more-container.active #favorites-icon > a,
-.android #mainbar #more-container.active #search-icon > a,
-.android #mainbar #more-container.active #shortcuts-icon > a,
-.android #mainbar #more-container.active #settings-icon > a{
-	background-image: none;		
-	}
-	
+
+.android #more-container{
+    text-align: left;
+}	
+/*Kein Icon, sondern Text, wenn die Icons in die Mehr Bar wandern*/
+.android #mainbar #more-container a,
+.android #mainbar #more-container a,
+.android #mainbar #more-container a,
+.android #mainbar #more-container a,
+.android #mainbar #more-container a{
+    background-image: none;		
+}
+
+/*sprice-icons positionieren*/
 .android #mainbar #add-favorite-icon > a{
-	background-position: -27px -100px;
-	}
-	
+    background-position: -27px -100px;
+}
+
 .android #mainbar #add-favorite-icon.active > a{
-	background-position: -76px -100px;
-	}
+    background-position: -76px -100px;
+}
 
 .android #mainbar #favorites-icon > a{
-	background-position: -27px -180px;
-	}
-	
+    background-position: -27px -180px;
+}
+
 .android #mainbar #settings-icon > a{
-	background-position:	-27px -420px;
-	}
+    background-position:	-27px -420px;
+}
 
 .android #mainbar #shortcuts-icon > a{
-	background-position:  -27px -340px;
-	}
+    background-position:  -27px -340px;
+}
 
 
 /*Auxbar*/
 
 .android #auxbar{
-	position:fixed;
-	top:48px;
-	left:0;
-	width:100%;
-	background-color:#ececec;
-	}
+    position:fixed;
+    top:48px;
+    left:0;
+    right:0;
+    background-color:#ececec;
+}
 
-.android #auxbar > div{
-	width: 50%;
-	height: 31px;	
-	}
+.android #auxbar > .button{
+    width: 50%;
+    height: 32px;	
+}
+.android #auxbar a{
+    text-decoration: none;
+}
+.android #auxbar > .button > a>span{
+    display:block;
 
-.android #auxbar > div > a{
-	width:100%;
-	height:19px;
-	border-bottom: 2px solid orange;
-	display:block;
-	padding-top: 10px;	
-	}
+    width:100%;
+    height:30px;
 
-.android #auxbar > div  span{
-	line-height: 14px;
-	font-size: 14px;
-	display: block;
-	width:99%;
-	border-left:1px solid #d7d7d7;
-	text-align: center;		
-	}
+    border-bottom: 2px solid orange;
+    border-left:1px solid #d7d7d7;
 
-.android #auxbar > div:first-child span{
-	border-left:none;	
-	}
+    font-size:14px;
+    line-height:30px;	
+    text-align: center;	
+    color:grey;	
+    text-decoration: none;
+}
 
-.android #auxbar > div{
-	float: left;
-	}
+.android #auxbar > .btton:first-child span{
+    border-left:none;	
+}
 
-.android #auxbar .button.active a{
-	padding-top:6px;
-	height:21px;
-	border-bottom: 4px solid orange;
-	color:black;
-	text-decoration: none;
-	}
+.android #auxbar > .button{
+    float: left;
+}
 
-.android #auxbar .button a{
-	color:grey;	
-	text-decoration: none;
-	}
+.android #auxbar .button.active span{
+    height:28px;
+    border-bottom: 4px solid orange;
+    color:black;
+    text-decoration: none;
+}
 
 
-/*Footer*/
 
-.android #footer{
-	position:fixed;
-	bottom:0;
-	left:0;
-	width:100%;
-	height:39px;	
-	background-image: url('images/common/bg_footer.png');
-	background-repeat: repeat-x;
-	}
 
-.android #footer > div{
-	float:right;
-	padding-right:6px;
-	margin-top:24px;
-	font-size:10px;
-	}
-	
-.android #footer #copyright{
-	float:left;		
-	}
 
-	
 /*Navigation-menu*/
-
+.android #navigation-menu
+{
+    padding:0 0 20px 0;
+    background-color:#e0e0e0;
+}
 .android .up-page-content-localnav li{
-	border-top:1px dashed #acacac;
-	}
-	
+    border-bottom:1px dashed #acacac;
+}
+
 /*responsive Webdesign*/		
 /* Für android-Geräte, deren aktuelle Bildschirmbreite mindestens 850px beträgt: */
 
 @media (min-width: 850px){
-	.android #auxbar{
-		display: none;		
-		}
-	.android #content-pane{
-		top: 48px;		
-		}
-	.android #content-pane #navigation-menu{
-		border-right: 1px solid grey;
-		}
-	}
-		
+    .android #auxbar{
+        display: none;		
+    }
+    .android #content-pane{
+        top: 48px;		
+    }
+    .android #content-pane #navigation-menu{
+        border-right: 1px solid grey;
+    }
+}
+

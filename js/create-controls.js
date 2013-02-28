@@ -12,9 +12,9 @@ var config = {
 			overlayPaneIcons : ["#menu-icon a", "#add-favorite-icon a"]
 			},
 		android:{
-			moreIconPlacement : ".android #mainbar .relative",
+			moreIconPlacement : ".android #mainbar",
 			moreIconSelector : ".android #more-icon", 
-			variableContainer : ".android #mainbar .relative",
+			variableContainer : ".android #mainbar",
 			overflowContainer : ".android #more-container",
 			contentPaneIcons : ["#menu-icon a", "#content-icon a","#add-favorite-icon a", "#shortcuts-icon a", "#favorites-icon a", "#settings-icon a"],
 			overlayPaneIcons : ["#search-icon a", '#more-icon a']
@@ -26,15 +26,15 @@ var config = {
 //Anmerkung: Reihenfolge der Elemente hat Bedeutung für die Platzierung
 
 var cconfig = [
-		{target:".android #mainbar .relative",element:".android #logo-icon"},
-		{target:".android #mainbar .relative",element:".android #sitetitle"},
+		{target:".android #mainbar",element:".android #logo-icon"},
+		{target:".android #mainbar",element:".android #sitetitle"},
 
-		{target:".android #mainbar .relative",element:".android #search-icon"},
-		{target:".android #mainbar .relative",element:".android #add-favorite-icon"},
+		{target:".android #mainbar",element:".android #search-icon"},
+		{target:".android #mainbar",element:".android #add-favorite-icon"},
 		
-		{target:".android #mainbar .relative",element:".android #shortcuts-icon"},	
-		{target:".android #mainbar .relative",element:".android #favorites-icon"},
-		{target:".android #mainbar .relative",element:".android #settings-icon"},	
+		{target:".android #mainbar",element:".android #shortcuts-icon"},	
+		{target:".android #mainbar",element:".android #favorites-icon"},
+		{target:".android #mainbar",element:".android #settings-icon"},	
 		
 		{target:".android #auxbar",element:".android #menu-icon"},
 		{target:".android #auxbar",element:".android #content-icon"},
@@ -42,10 +42,10 @@ var cconfig = [
 		{target:".android #overlay-pane", element:".android #search-area"},
 		{target:".android #overlay-pane", element:".android #more-container"},			
 		
-		{target:".ios #mainbar .relative",element:".ios #logo-icon"},
-		{target:".ios #mainbar .relative",element:".ios #sitetitle"},		
-		{target:".ios #mainbar .relative",element:".ios #add-favorite-icon"},
-		{target:".ios #mainbar .relative",element:".ios #menu-icon"},
+		{target:".ios #mainbar",element:".ios #logo-icon"},
+		{target:".ios #mainbar",element:".ios #sitetitle"},		
+		{target:".ios #mainbar",element:".ios #add-favorite-icon"},
+		{target:".ios #mainbar",element:".ios #menu-icon"},
 		{target:".ios #auxbar",element:".ios #content-icon"},
 		
 		{target:".ios #auxbar",element:".ios #search-icon"},		

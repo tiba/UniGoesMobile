@@ -34,7 +34,7 @@ a.internal-link-new-window {background:url('../gfx/global/internal_link.gif') no
 a.more {background:url('../gfx/global/more-link.gif') no-repeat scroll right 6px transparent; padding:0 20px 0 0;}
 a.pdf-link {background:url('../gfx/global/fileicons.png') no-repeat 0 -16px scroll transparent; padding:0 0 0 20px;}
 b.important-text, strong.important-text {font-weight:400;}
-body {background:url('../gfx/global/bg.png') no-repeat scroll center 0 #fff; color:#000; font-family:Open Sans, Arial; font-size: 16px; line-height:1.5;}
+body {background-color: #fff; color:#000; font-family:Open Sans, Arial; font-size: 16px; line-height:1.5;}
 h1 {font-size:30px; font-weight:600; line-height:45px; margin:0;}
 h2 {font-size:22px; font-weight:600;}
 h3 {font-size:16px; font-weight:600;}

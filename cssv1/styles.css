@@ -1,117 +1,132 @@
 /*Allgemeine styles, die für ios und android gelten sollen:*/
 
-body, 
-#content, 
-#controls{
-	clear:both;
-	}
 
-a, 
-a:hover, 
-a:focus, 
-a:visited{
-	text-decoration: none;	
-	}
 
 #controls{
-	position:fixed;
-	display: none;
-	}
+    display: none;
+}
 
 
 /*Content-pane*/
 
 #content-pane{	
-	position: fixed;
-	top:0;
-	bottom:0;
-	left:0;
-	right:0;
-	}
-	
-.overthrow-enabled #content-pane > div{	
-	width: 100%;
-	background-color:white;
-	position:absolute;
-	top:0;
-	left:0;
-	right: 0;
-	bottom: 0;
-	display: none;
-	}
+    position: fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+#content-pane > div{	
+
+    background-color:white;
+    position:absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    padding:10px 10px 20px 10px;
+
+}
 
 #content-pane > div.active{
-	display: block;	
-	}
+    display: block;	
+}
 
-#content-pane p{
-	padding: 10px;	
-	}
-
+#favorites nav li{
+    position:relative;
+}
 #favorites nav a.delete{
-	position: absolute;
-	margin-top: -39px;	
-	margin-left: 90%;	
-	cursor: pointer;	
-	}
+    position: absolute;
+    right:48px;		
+    top:8px;
+}
 
 
 /*Overlay pane*/
 
 #overlay-pane{
-	position: fixed;
-	height: 100%;
-	width: 100%;
-	background-color: transparent;
-	z-index: 100;
-	display:none;	
-	top:0;
-	left:0;
-	}
+    position: fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    background-color: transparent;
+    z-index: 100;
+    display:none;	
+
+}
+
+#overlay-pane > div{
+    display:none;
+}
 #overlay-pane > div.active {
-	display: block;	
-	}
+    display: block;	
+}
 .overthrow-enabled .overthrow{
-   overflow: auto;
-   -webkit-overflow-scrolling: touch;
-	}
-	
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+#footer{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    height:20px;
+    padding:10px;
+    background: url('images/common/bg_footer.png') bottom center repeat-x transparent;
+    
+}
+
+#footer > div{
+    float:right;
+    margin-top:10px;
+    font-size:10px;
+}
+
+#footer #copyright{
+    float:left;	
+    
+}
+
 
 /*responsive Webdesign*/	
 /* Für ios- und android-Geräte, deren aktuelle Bildschirmbreite mindestens 850px beträgt:*/	
-		
+
 @media (min-width: 850px){
-	 #mainbar #menu-icon, 
-	 #auxbar #menu-icon{
-		display:none;		
-		}
-	 .ios #content-pane #navigation-menu,
-	 .android #content-pane #navigation-menu{
-		display: block;
-		width: 25%;		
-		z-index: 1;
-		padding:0;
-		margin:0;
-		left:0;
-		top:0;
-		bottom: 0;
-                height: 100%;
-		}
-	 .ios #content-pane > div,
-	 .android #content-pane > div{
-		left:25%;
-		padding-left:10px;
-		width:auto;	
-		}	
-	.ios.overthrow-enabled #content-pane > div,
-	.android.overthrow-enabled #content-pane > div{	
-		left:25%;
-		width: auto;
-		background-color:white;
-		overflow: auto;
-		}
-	 .ios #content-pane #content,
-	 .android #content-pane #content{
-		display: block;	
-		}
-	}
+    #mainbar #menu-icon, 
+    #auxbar #menu-icon{
+        display:none;		
+    }
+    .ios #content-pane #navigation-menu,
+    .android #content-pane #navigation-menu{
+        display: block;
+        width: 25%;		
+        z-index: 1;
+        padding:0;
+        margin:0;
+        left:0;
+        top:0;
+        bottom: 0;
+        height: 100%;
+    }
+    .ios #content-pane > div,
+    .android #content-pane > div{
+        left:25%;
+        padding-left:10px;
+        width:auto;	
+    }	
+    .ios.overthrow-enabled #content-pane > div,
+    .android.overthrow-enabled #content-pane > div{	
+        left:25%;
+        width: auto;
+        background-color:white;
+        overflow: auto;
+    }
+    .ios #content-pane #content,
+    .android #content-pane #content{
+        display: block;	
+    }
+}

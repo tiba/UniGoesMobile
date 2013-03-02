@@ -6,7 +6,7 @@ RewriteEngine On
 #Wir befinden uns im Unterverzeichnis UniGoesMobile und alle Links sind relativ zu diesem Verzeichnis angegeben
 RewriteBase /UniGoesMobile/
 Options +FollowSymLinks
-
+RewriteRule ^$ website.html [R=301,L]
 #statische Dateien der alten Website weiterleiten
 RewriteRule ^(typo3|typo3temp|typo3conf|fileadmin|uploads)(.*)$ http://www.uni-passau.de/$1$2 [R=301,L]
 

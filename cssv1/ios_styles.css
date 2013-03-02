@@ -115,7 +115,7 @@
     background: url('images/ios/sprite_ios_auxbar.png') no-repeat -585px -17px, -webkit-linear-gradient(top, #7c97bb, #5a7caa 50%, #50709a 51%, #476489);
 }
 
-.ios #mainbar #add-favorite-icon.active a{
+.ios #mainbar #add-favorite-icon.saved a{
     background: url('images/ios/sprite_ios_auxbar.png') no-repeat -585px -97px, -webkit-linear-gradient(top, #476489, #50709a  50%, #5a7caa 51%, #7c97bb);
 }		
 
@@ -291,7 +291,7 @@
 
 .ios #more-container{
     position: fixed;
-    right:0;
+    left:0;
     bottom:0;
     height: 48px; 
     right:0;
@@ -340,12 +340,13 @@
     bottom:48px;
 }
 /*Overlay-pane*/
-
+.ios #overlay-pane > div {
+    color:white;
+    padding:24px;
+}
 .ios #overlay-pane #navigation-menu{
     position: absolute;	
     width: 80%;
-    max-with:300px;
-    min-width:270px;
     height: 80%;
     top: 45px;
     left:10px;
@@ -355,12 +356,14 @@
     background-color: rgba(0,0,0,0.8);			
 }
 
+
 .ios #bookmark-status{
     position: absolute;	
-    width: 80%;
-    height: 80%;
-    top: 45px;
-    right:10px;
+    max-width: 80%;
+    max-height: 80%;
+    top:10%;
+    right:10%;
+    font-weight:bold;
     -moz-box-shadow: 0px 0px 12px rgba(0,0,0,.6);
     -webkit-box-shadow: 0px 0px 12px rgba(0,0,0,.6);
     box-shadow: 0px 0px 12px rgba(0,0,0,.6);
@@ -427,6 +430,12 @@
     padding-right:25px;
 }
 
+
+.ios #overlay-pane #navigation-menu nav{
+    overflow: none;
+    margin:0;
+    padding:0;
+}
 /*TODO: nachfolgende styles beinhalten die Verläufe für den Hintergrund der buttons in ios-menüs
 um diese anzuwenden müssen aber noch die Pfeil-Bilder aus dem uni-sprite als zweites back-
 ground-image neben jeden einzelnen Verlauf gesetzt werden*/

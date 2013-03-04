@@ -1,6 +1,8 @@
 /*Allgemeine styles, die für ios und android gelten sollen:*/
 
-
+#mainbar,#auxbar{
+    position: absolute;
+}
 
 #controls{
     display: none;
@@ -35,6 +37,7 @@
     display: block;	
 }
 
+
 #favorites nav li{
     position:relative;
 }
@@ -54,7 +57,6 @@
     bottom:0;
     right:0;
     background-color: transparent;
-    z-index: 100;
     display:none;	
 
 }
@@ -85,11 +87,17 @@
     float:right;
     margin-top:10px;
     font-size:10px;
+    margin-right:10px;
 }
 
 #footer #copyright{
     float:left;	
     
+}
+
+#navigation-menu ul{
+    margin:0;
+    padding:0;
 }
 
 

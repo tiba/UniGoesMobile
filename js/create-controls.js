@@ -58,7 +58,7 @@ var config = {
 
 (function($) {
     $(document).ready(function() {
-
+        scrollTo(0,1);
 
         var device = $.cookie('agent');
         //elemente positionieren
@@ -76,6 +76,8 @@ var config = {
         //scrollen auch auf älteren browsern ermöglichen:
 
         $('body').addClass('overthrow-enabled');
+        //tabellen sind gerne mal zu breit, daher overthrow einbauen und maximalbreite auf 100% setzen
+        $('table').addClass('overthrow').css('max-width','100%');
         $('#content-pane > div').addClass('overthrow');
         //automatische Höhen- und Breitenberechnung - wurde aber vorerst wieder auskommentiert, da bei Abstandsangaben 
         //für die content-pane Probbleme mit der Breite auftraten:		
@@ -275,9 +277,12 @@ var config = {
         //eventhandler für .close buttons hinzufegün
         $("#overlay-pane > div").append('<a class="close" title="Schliessen"></a>');
         $('#overlay-pane, #overlay-pane .close, #overlay-pane .confirm').on('click.createcontrols', function() {
-            $('#overlay-pane > div').removeClass('active');
-            $('#overlay-pane').hide();
-            return false;
+            if($(this).is('#overlay-pane') || $(this).is('#overlay-pane .close') || $(this).is('#overlay-pane.confirm')){
+                $('#overlay-pane > div').removeClass('active');
+                $('#overlay-pane').hide();
+                if($(this).is("a") && $(this).attr('href')=='#')
+                    return false;
+            }
         });
 
    

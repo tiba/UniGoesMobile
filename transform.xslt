@@ -16,8 +16,10 @@
                     <xsl:value-of select="//title"/>
                 </title>
                 <meta charset="utf-8"/>
-                                
-                <link rel="stylesheet" type="text/css" href="cssv1/reset.css" media="all"/>
+                <!--navigation in ios verstecken -->
+                <meta name="apple-mobile-web-app-capable" content="yes" />
+                <!--<link rel="stylesheet" type="text/css" href="cssv1/reset.css" media="all"/>-->
+                <link rel="stylesheet" type="text/css" href="cssv1/bootstrap.css" media="all"/>
                 <link rel="stylesheet" type="text/css" href="cssv1/content.css" media="all"/>
                 <link rel="stylesheet" type="text/css" href="cssv1/menu.css" media="all"/>
                 <link rel="stylesheet" type="text/css" href="cssv1/styles.css" media="all"/>
@@ -50,7 +52,14 @@
 						
                         <nav>
                             <!-- Füge Navigation ein -->
-                            <xsl:apply-templates select="//div[@id='left']/div[@class='mainnav']/ul"/>
+                            <ul>
+                                <li class="active sub">
+                                    <xsl:apply-templates select="//li[@class='top-activ']/a"/>
+                                    <xsl:apply-templates select="//div[@id='left']/div[@class='mainnav']/ul"/>
+                                </li>
+                                <xsl:apply-templates select="//ul[@class='topmenu']/li[not (@class)]"/>
+                            </ul>
+                           
                         </nav>
                     </div>
                     <div class="up-page-content-localnav" id="shortcuts">
@@ -116,7 +125,7 @@
                     </div>
                 </div>
                 <div id="footer">
-                    <div id="copyright" class="label">
+                    <div id="copyright" class="">
                         <span>© 2013 Universität Passau
                         </span>
                     </div>
@@ -242,7 +251,40 @@
         </html>
 
     </xsl:template>
+   
+    <!-- menüklassen ersetzen -->
+    <xsl:template match="//li/@class[.='menu1-lev1-actifsub']|//li/@class[.='menu1-lev2-actifsub']|//li/@class[.='menu1-lev3-actifsub']">
+        <xsl:attribute name="class">active sub</xsl:attribute>
+    </xsl:template>
 
+    <xsl:template match="//li/@class[.='menu1-lev1-curifsub']|//li/@class[.='menu1-lev2-curifsub']|//li/@class[.='menu1-lev3-curifsub']">
+        <xsl:attribute name="class">current sub</xsl:attribute>
+    </xsl:template>
+    
+    <!--buttons für Seitennavigation-->
+    <xsl:template match="//p[@class='pagebrowser']/span/a/@class">
+        <xsl:attribute name="class">btn</xsl:attribute>
+    </xsl:template>
+    <xsl:template match="//p[@class='pagebrowser']/span/b">
+        <b>
+            <xsl:attribute name="class">btn</xsl:attribute>
+             <xsl:copy>
+                <xsl:apply-templates select="@*|node()"/>
+            </xsl:copy>
+        </b>
+    </xsl:template>
+   
+   <!-- bildpfade umbiegen -->
+    <xsl:template match="//img">
+        <img title="{@title}" alt="{@alt}" width="{@width}" height="{@width}" src="http://www.uni-passau.de/{@src}"/>
+    </xsl:template>
+    
+    <xsl:template match="//input[@type='submit']">
+        <xsl:copy>
+            <xsl:attribute name="class">btn</xsl:attribute>
+            <xsl:apply-templates select="@*|node()"/>
+        </xsl:copy>
+    </xsl:template>
 
     <!-- identitäts-Template: kopiert 1-zu-1 den input -->
     <xsl:template match="@*|node()">

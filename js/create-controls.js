@@ -95,9 +95,10 @@ var config = {
             return false;
         });
         
-        $('#settinsg #deletesettings').on('click', function() {
-            $.cookie('audience', '');
-            $.cookie('agent', '');
+        $('#settings #deletesettings').on('click', function() {
+            $.removeCookie('audience');
+            $.removeCookie('agent');
+            
             $(location).attr('href', $('base').attr('href') + 'website.html');
             return false;
         });

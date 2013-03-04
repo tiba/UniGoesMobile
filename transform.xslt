@@ -112,7 +112,7 @@
                                 erkannt, wenn Sie aber mal das jeweils andere UI sehen wollen, können
                                 Sie dies hier entsprechend ändern</p>
                 
-                            <input type="submit" class="button" value="speichern"/>
+                            <input type="submit" class="button btn" value="speichern"/>
                             <p class="bodytext">
                                 Nach dem Speichern werden Sie auf Ihre neue Startseite weitergeleitet.
                                 Sie können Ihre Einstellungen jederzeit ändern, indem Sie 
@@ -232,7 +232,7 @@
                         <p class="bodytext">
                             Ihre Favoriten wurden aktualisiert
                         </p>            
-                        <a href="#" class="button confirm">Ok</a>
+                        <a href="javascript:return false;" class="button btn confirm">Ok</a>
                         
                     </div>
                 </div>

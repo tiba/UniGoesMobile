@@ -46,6 +46,12 @@
     font-size:15px;
     padding-top: 7px;	
     text-align: left;
+    background-color:transparent;
+    color:black;
+    text-shadow: none;
+    font-weight:bold;
+    display:block;
+    padding:15px    0px;
 }
 
 .android #logo-icon img{

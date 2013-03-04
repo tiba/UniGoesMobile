@@ -30,15 +30,17 @@
         $('body').addClass($.cookie("agent"));
         var l = location;
         //auf die entsprechende Startseite der Zielgruppe weiterleiten
-        if(l.pathname === $('base').attr('href')+'website.html'){
+        if(!setUserAgent && l.pathname === $('base').attr('href')+'website.html'){
             var audience = $.cookie('audience');
             if( audience && config[audience]){
                $(location).attr('href',$('base').attr('href')+config[audience]);
+            }else{
+                $(location).attr('href',$('base').attr('href')+"index.php");
             }
         }
         //Wenn useragent gesetzt wurde (d.h. erster Besuch!) einstellungen anzeigen
         if(setUserAgent){
-            $('#settings-icon a').trigger('click');
+            setTimeout(function(){$('#settings-icon a').trigger('click')},500);
         }
         
 

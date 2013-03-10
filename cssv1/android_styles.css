@@ -70,7 +70,8 @@
 
 .android #logo-icon img{
 	margin:8px 4px;
-	width: 50px;
+	width: auto;
+        height:32px;
 	}
 	
 .android #logo-icon{

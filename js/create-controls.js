@@ -3,251 +3,307 @@
 //da sie eventuell aus Platzgründen im more-button ausgelagert werden müssen:
 
 var config = {
-		ios:{
-			moreIconPlacement : ".ios #auxbar",
-			moreIconSelector : ".ios #more-icon", 
-			variableContainer : ".ios #auxbar",
-			overflowContainer : ".ios #more-container",
-			contentPaneIcons : ["#content-icon a",  "#shortcuts-icon a", "#favorites-icon a", "#settings-icon a","#search-icon a"],
-			overlayPaneIcons : ["#menu-icon a", "#add-favorite-icon a"]
-			},
-		android:{
-			moreIconPlacement : ".android #mainbar .relative",
-			moreIconSelector : ".android #more-icon", 
-			variableContainer : ".android #mainbar .relative",
-			overflowContainer : ".android #more-container",
-			contentPaneIcons : ["#menu-icon a", "#content-icon a","#add-favorite-icon a", "#shortcuts-icon a", "#favorites-icon a", "#settings-icon a"],
-			overlayPaneIcons : ["#search-icon a", '#more-icon a']
-			}	
-	}
+    ios: {
+        moreIconPlacement: " #auxbar",
+        moreIconSelector: " #more-icon",
+        variableContainer: " #auxbar",
+        overflowContainer: " #more-container",
+        sizeThreashold: 850,
+        contentPaneIcons: ["#content-icon a", "#shortcuts-icon a", "#favorites-icon a", "#settings-icon a", "#search-icon a"],
+        overlayPaneIcons: ["#menu-icon a", "#add-favorite-icon a"],
+        buttonTargets: [{target: " #mainbar", element: " #logo-icon"},
+            {target: " #mainbar", element: " #sitetitle"},
+            {target: " #mainbar", element: " #add-favorite-icon"},
+            {target: " #mainbar", element: " #menu-icon"},
+            {target: " #auxbar", element: " #content-icon"},
+            {target: " #auxbar", element: " #search-icon"},
+            {target: " #auxbar", element: " #shortcuts-icon"},
+            {target: " #auxbar", element: " #favorites-icon"},
+            {target: "#auxbar", element: " #settings-icon"},
+            {target: "#more-container", element: " #less-icon"},
+            {target: "#content-pane", element: " #search-area"},
+            {target: "#overlay-pane", element: " #navigation-menu", condition: "small"},
+            {target: "#content-pane", element: " #navigation-menu", condition: "large"},
+            {target: "#overlay-pane", element: " #bookmark-status"},
+            {target: "#auxbar", element: " #more-container"}]
 
-
+    },
+    android: {
+        moreIconPlacement: " #mainbar",
+        moreIconSelector: " #more-icon",
+        variableContainer: " #mainbar",
+        overflowContainer: " #more-container",
+        contentPaneIcons: ["#menu-icon a", "#content-icon a", "#shortcuts-icon a", "#favorites-icon a", "#settings-icon a"],
+        overlayPaneIcons: ["#search-icon a", '#more-icon a', "#add-favorite-icon a"],
+        sizeThreashold: 850,
+        buttonTargets: [
+            {target: " #mainbar", element: " #logo-icon"},
+            {target: " #mainbar", element: " #sitetitle"},
+            {target: " #mainbar", element: " #search-icon"},
+            {target: " #mainbar", element: " #content-icon", condition: "large"},
+            {target: " #mainbar", element: " #add-favorite-icon"},
+            {target: " #mainbar", element: " #shortcuts-icon"},
+            {target: " #mainbar", element: " #favorites-icon"},
+            {target: " #mainbar", element: " #settings-icon"},
+            {target: " #auxbar", element: " #menu-icon"},
+            {target: " #auxbar", element: " #content-icon", condition: "small"},
+            {target: " #overlay-pane", element: " #search-area"},
+            {target: " #overlay-pane", element: " #more-container"},
+            {target: "#overlay-pane", element: " #bookmark-status"}
+        ]
+    }
+};
 //Standard-Platzierung für Div-Elemente:
 //Anmerkung: Reihenfolge der Elemente hat Bedeutung für die Platzierung
 
-var cconfig = [
-		{target:".android #mainbar .relative",element:".android #logo-icon"},
-		{target:".android #mainbar .relative",element:".android #sitetitle"},
-
-		{target:".android #mainbar .relative",element:".android #search-icon"},
-		{target:".android #mainbar .relative",element:".android #add-favorite-icon"},
-		
-		{target:".android #mainbar .relative",element:".android #shortcuts-icon"},	
-		{target:".android #mainbar .relative",element:".android #favorites-icon"},
-		{target:".android #mainbar .relative",element:".android #settings-icon"},	
-		
-		{target:".android #auxbar",element:".android #menu-icon"},
-		{target:".android #auxbar",element:".android #content-icon"},
-
-		{target:".android #overlay-pane", element:".android #search-area"},
-		{target:".android #overlay-pane", element:".android #more-container"},			
-		
-		{target:".ios #mainbar .relative",element:".ios #logo-icon"},
-		{target:".ios #mainbar .relative",element:".ios #sitetitle"},		
-		{target:".ios #mainbar .relative",element:".ios #add-favorite-icon"},
-		{target:".ios #mainbar .relative",element:".ios #menu-icon"},
-		{target:".ios #auxbar",element:".ios #content-icon"},
-		
-		{target:".ios #auxbar",element:".ios #search-icon"},		
-		{target:".ios #auxbar",element:".ios #shortcuts-icon"},
-		{target:".ios #auxbar",element:".ios #favorites-icon"},
-		{target:".ios #auxbar",element:".ios #settings-icon"},
-		{target:".ios #more-container",element:".ios #less-icon"},
-		
-		{target:".ios #content-pane", element:".ios #search-area"},
-		{target:".ios #overlay-pane", element:".ios #navigation-menu"},
-		{target:".ios #overlay-pane", element:".ios #bookmark-status"},		
-		{target:".ios #auxbar",element:".ios #more-container"}
-	];
-
-
 (function($) {
-	$(document).ready(function(){
-		var device = $.cookie('agent');
+    $(document).ready(function() {
+        scrollTo(0,1);
+
+        var device = $.cookie('agent');
+        //elemente positionieren
+        positionElements(config[device], device);
+        //bei resize (auch geräterotation) Elemente positionieren
+        $(window).resize(function() {
+            //zuerst wieder alle events entfernen
+            $('*').off('.createcontrols');
+            positionElements(config[device], device);
+            addEvents(config[device], device, true);
+        });
 
 
-		//Div-Elemente nehmen Standard-Platzierung ein
-		
-		$.each(cconfig,function(key,value){
-				$(value.target).append($(value.element));			
-			});
+
+        //scrollen auch auf älteren browsern ermöglichen:
+
+        $('body').addClass('overthrow-enabled');
+        //tabellen sind gerne mal zu breit, daher overthrow einbauen und maximalbreite auf 100% setzen
+        $('table').addClass('overthrow').css('max-width','100%');
+        $('#content-pane > div').addClass('overthrow');
+        //automatische Höhen- und Breitenberechnung - wurde aber vorerst wieder auskommentiert, da bei Abstandsangaben 
+        //für die content-pane Probbleme mit der Breite auftraten:		
+        /*.height($(window).height()-$('#auxbar').height()-$('#mainbar').height()-$('#auxbar').css('padding-top')-$('#mainbar').css('padding-top')-$('#auxbar').css('padding-bottom')-$('#mainbar').css('padding-bottom'))
+         .width($(window).width());*/
+
+        //Zielgruppeneistellung
+        $('#settings #targetaudience').val($.cookie('audience'));
+        $('#settings #targetdevice').val($.cookie('agent'));
+        $('#settings form').submit(function() {
+
+            $.cookie('audience', $('#settings .targetaudience :selected').attr('value'));
+            $.cookie('agent', $('#settings .targetdevice :selected').attr('value'));
+            $(location).attr('href', $('base').attr('href') + 'website.html');
+            return false;
+        });
+        
+        $('#settings #deletesettings').on('click', function() {
+            $.removeCookie('audience');
+            $.removeCookie('agent');
+            
+            $(location).attr('href', $('base').attr('href') + 'website.html');
+            return false;
+        });
 
 
-		//Je nach display-orientation (portrait oder landscape) Divs an die richtigen Stellen schieben:		
-		//Schritt 1: Elemente erst alle in den variableContainer schmeißen 
-		//Schritt 2: danach die Elemente, die im variableContainer zu viel sind, entfernen und in den overflowContainer schmeißen
-		//Bsp. Schritt 1: bei Android werden erstmal alle mainbar-buttons in die mainbar (heißt bei android actionbar) eingefügt
-		//Bsp. Schritt 2: nach dem ersten Einfügen werden diejenigen Elemente, die nicht in die Breite der mainbar 
-		//passen, gleich wieder in den more-container ausgelagert. 
-		//Wenn man jetzt auf den more-button klickt, werden alle Elemente angezeigt, die nicht mehr in die mainbar gepasst haben.
-		//Anmerkung: die beschriebenen Schritte werden genauso bei der ios-Version vorgenommen, nur handelt es sich beim 
-		//variableContainer hier um die auxbar (heißt bei ios tabbar) und die zu platzierenden Elemente sind zum Teil andere.		
-			
-			//Schritt 1:
-						
-			var maxWidth = getContainerWidth(device);
-			var curWidth = 0;
+        //Plattformabhängige Einstellungen
+        if (device === 'ios') {
+            //scrollen im Hauptmenü-popup auch auf älteren browsern ermöglichen
+            $('#navigation-menu nav').addClass('overthrow');
+            $('#navigation-menu').removeClass('overthrow');
+            //bei ios einen close-button und einen popup-menü-Pfeil zu allen popups (divs in der overlay-pane) hinzufügen:
+        }
+        else if (device === 'android') {
+           
 
-			//Breiten zusammenzählen, unsichtbare Elemente nicht berücksichtigen (benötigt man speziell für den more-container!)
+        }
+        addEvents(config[device], device, false);
+        $('#mainbar > div > a, #auxbar > div > a, #more-container > div > a').on('click.createcontrols', function() {
+            return false;
+        });
+        //content-pane anzeigen!
+        $("#content-icon a").trigger("click");
+    });
 
-			$.each($(config[device].variableContainer + " > *:visible"), function(key, div){
-				
-					curWidth += $(div).width();
-								
-			});
-			
-			if(maxWidth<curWidth ){
-				var element = $(config[device].moreIconSelector);
-				element = element[0];
-				
-				//Schritt 2: 			
-			
-				curWidth = 0;
-				$(config[device].variableContainer).append(element);
-				var elWidth = $(element).width()
-				$.each($(config[device].variableContainer + " > *"), function(key, div){
-					curWidth += $(div).width();
-					if(curWidth>maxWidth-elWidth && div!=element){
+    /**
+     * Positioniert Elemente, wie Buttons und Inhaltsbereiche
+     * Es gibt zwei Bereiche für Buttons, die mainbar und die auxbar.
+     * und es gibt einen overflow-Bereiche, in den Elemente reinrutschen
+     * wenn es zuviele werden.
+     * Es gibt einen Bereich für Inhaltselemente und einen Für 
+     * Overlay-Elemente
+     * @param {object} config
+     * @param {string} device
+     * @returns {undefined}
+     */
+    function positionElements(config, device) {
+        //Eventhandler, die in dieser funktion gesetzt werden, zuerst entfernen (wicthig für rotation/resize)
+        //und alles in Ausgangssituation zurücksetzen (icons nach #elments verschieben)
+        $('#elements').append($('#mainbar > div, #auxbar>div,#more-container > div'));
+        //close buttons aus der Overlay pane entfernen (wenn welche vorhanden sind, wurden diese weiter unten hinugefügt)
+        $('#overlay-pane .close').replaceWith('');
 
-						//Anmerkung: curWidth repräsentiert ab hier nicht mehr die tatsächliche Breite, macht aber nichts,
-						//da alle elemente ab jetzt in den overflowContainer kommen.
-						
-						$(config[device].overflowContainer).append($(div));						
-						}								
-				});
-				
-			}		
-				
-//Klasse "active" für geklickte Buttons setzen:
+//Je nach display-orientation (portrait oder landscape) Divs an die richtigen Stellen schieben:		
+//Schritt 1: Elemente erst alle in den variableContainer schmeißen 
+//Schritt 2: danach die Elemente, die im variableContainer zu viel sind, entfernen und in den overflowContainer schmeißen
+//Bsp. Schritt 1: bei Android werden erstmal alle mainbar-buttons in die mainbar (heißt bei android actionbar) eingefügt
+//Bsp. Schritt 2: nach dem ersten Einfügen werden diejenigen Elemente, die nicht in die Breite der mainbar 
+//passen, gleich wieder in den more-container ausgelagert. 
+//Wenn man jetzt auf den more-button klickt, werden alle Elemente angezeigt, die nicht mehr in die mainbar gepasst haben.
+//Anmerkung: die beschriebenen Schritte werden genauso bei der ios-Version vorgenommen, nur handelt es sich beim 
+//variableContainer hier um die auxbar (heißt bei ios tabbar) und die zu platzierenden Elemente sind zum Teil andere.		
 
-		$(".button").click(function(){
-			$(".button").removeClass("active");
-			$(this).addClass("active");		
-			});			
+//Schritt 1:
+
+        var maxWidth = getContainerWidth(device);
+        //bildschirmbretie berechnen ("small" oder "large")
+        var width = (config.sizeThreashold > $(window).width()) ? 'small' : 'large';
+        var curWidth = 0;
+        $.each(config.buttonTargets, function(key, value) {
+            //es kann die Eigenschaft condition vorhanden sein. wenn vorhanden,
+            //nur anwenden, wenn die condition der Größe entspricht
+            if (!value.condition || value.condition === width) {
+                $(value.target).append($(value.element));
+            }
+        });
+
+        //Breiten zusammenzählen, unsichtbare Elemente nicht berücksichtigen (benötigt man speziell für den more-container!)
+        $.each($(config.variableContainer + " > *:visible"), function(key, div) {
+            curWidth += $(div).width();
+        });
+
+        //wenn nicht alle Elemente im dafür vorgesehenen Bereich platz haben, 
+        //in den more-container verschieben
+        if (maxWidth < curWidth) {
+
+            var element = $(config.moreIconSelector);
+            element = element[0];
+            //Schritt 2: 			
+
+            curWidth = 0;
+            $(config.variableContainer).append(element);
+            var elWidth = $(element).width();
+            $.each($(config.variableContainer + " > *"), function(key, div) {
+                curWidth += $(div).width();
+                if (curWidth > maxWidth - elWidth && div !== element) {
+
+//Anmerkung: curWidth repräsentiert ab hier nicht mehr die tatsächliche Breite, macht aber nichts,
+//da alle elemente ab jetzt in den overflowContainer kommen.
+
+                    $(config.overflowContainer).append($(div));
+                }
+            });
+        }
+    }
+
+    /**
+     * Fügt klick events hinzu, um den UI workflow zu erzeugen
+     * @param {object} config
+     * @param {string} device
+     * @param {boolean} cancelEvents
+     * @returns {undefined}
+     */
+    function addEvents(config, device, cancelEvents) {
+
+         if(device==="android"){
+             //in android muss der more-container verschwinden, nachdem man darin was geklickt hat...
+            $('#more-container > div > a').on('click.createcontrols', function() {
+                $('#overlay-pane > div').removeClass('active');
+                $('#overlay-pane').hide();
+
+            });
+        }else if(device ==="ios"){
+            
+        }
+
+        //aktuell geklicktes Element bekommt die Klasse active, die anderen nicht(nur aktive content-pane-Elemente 
+        //haben den style sichtbar). die referenzierte content-pane wird sichtbar gemacht
+        $.each(config.contentPaneIcons, function(k, v) {
+
+            //die Variable contentPane enthält den Wert des hrefs der Icons und diese sind gleichzeitig die ids der Elemente 
+            //in der content-pane dadurch kann man die contentPanes sichtbar und unsichtbar machen
+
+            var currentContentPane = $(v).attr("href");
+            $(v).on('click.createcontrols', function() {
+                $("#content-pane > div").removeClass("active");
+                $(currentContentPane).addClass("active");
+                $(".button").removeClass("active");
+                $(this).closest('.button').addClass("active");
+            });
+        });
+
+        //event handler für overlay panes hinzufügen (hier bekommen die icons
+        //KEINE active klasse, da overlays, nur temporär sind!)
+        $.each(config.overlayPaneIcons, function(k, v) {
+
+//die Variable overlayPane ...TODO: weiterschreiben!
+
+            var currentOverlayPane = $(v).attr("href");
+            $(v).on('click.createcontrols', function() {
+                $("#overlay-pane > div").removeClass("active");
+                $(currentOverlayPane).addClass("active");
+                //eventhandler unterbrechen, damit das click event nicht weiter propagiert wird
+                $("#overlay-pane").show();
+
+            });
+        });
 
 
-		$("#search-icon a").click(function(){
-		
-			//der Fokus wird auf das Eingabefeld gelegt, damit mobile User gleich die richtige Tastaturanzeige bekommen:			
-
-			$("#search-area input[type='search']").focus();		
-			return true;
-			});	
-
-		//Folgender Code nur für android relevant, weil die search-area bei ios ein content-pane darstellt:
-		
-		if(device=='android'){
-
-		//beim Klick auf das search-icon wird das Suchfeld aktiviert und durch den style sichtbar gemacht:		
-
-		$("#search-icon a").click(function(){
-			$("#search-area").addClass("active");				
 
 
-			return false;
-			});	
-		}
+        //beim Klicken auf den more-button wird ein Auswahlmenü mit weiteren Aktionsmöglichkeiten aktiviert und 
+        //durch den style sichtbar gemacht:
 
-		//beim Klicken auf den more-button wird ein Auswahlmenü mit weiteren Aktionsmöglichkeiten aktiviert und 
-		//durch den style sichtbar gemacht:
+        $("#more-icon a").on('click.createcontrols', function() {
+            $("#more-container").addClass("active");
 
-		$("#more-icon a").click(function(){
-			$("#more-container").addClass("active");		
-			});		
-	
-		//wenn der more-button in ios bereits geklickt wurde, der user aber wieder zurück möchte, 
-		//wird das more-Auswahlmenü wieder deaktiviert und so wieder die Standard-Anzeige der tabbar sichtbar: 			
+        });
+        //wenn der more-button in ios bereits geklickt wurde, der user aber wieder zurück möchte, 
+        //wird das more-Auswahlmenü wieder deaktiviert und so wieder die Standard-Anzeige der tabbar sichtbar: 			
+        $("#less-icon a").on('click.createcontrols', function() {
+            $("#more-container").removeClass("active");
+        });
 
-		$("#less-icon a").click(function(){
-			$("#more-container").removeClass("active");			
-			});		
+        //Suchfeld fokusieren, nach klick auf suchicon (damit gleich die Tastatur erscheint)
+        $("#search-icon a").on('click.createcontrols', function() {
+//der Fokus wird auf das Eingabefeld gelegt, damit mobile User gleich die richtige Tastaturanzeige bekommen:			
+            $("#search-area input[type='search']").focus();
+        });
 
-		//aktuell geklicktes Element bekommt die Klasse active, die anderen nicht(nur aktive content-pane-Elemente 
-		//haben den style sichtbar):			
-		
-		$.each(config[device].contentPaneIcons,function(k,v){
 
-			//die Variable contentPane enthält den Wert des hrefs der Icons und diese sind gleichzeitig die ids der Elemente 
-			//in der content-pane dadurch kann man die contentPanes sichtbar und unsichtbar machen
 
-			var currentContentPane = $(v).attr("href");
-			$(v).click(function(){
-				$("#content-pane > div").removeClass("active");
-				$(currentContentPane).addClass("active");
-				
-				//overlays ausblenden (falls etwas sichtbar ist), wenn angezeigter content wechselt!	
-					
-				$("#overlay-pane").hide();			
-			});
-				 					 			
-		});
 
-		$.each(config[device].overlayPaneIcons,function(k,v){
+        $('#search-area input[type="search"]').on('click.createcontrols', function() {
+            $(this).focus();
+            return false;
+        });
+        //eventhandler für .close buttons hinzufegün
+        $("#overlay-pane > div").append('<a class="close" title="Schliessen"></a>');
+        $('#overlay-pane, #overlay-pane .close, #overlay-pane .confirm').on('click.createcontrols', function() {
+            if($(this).is('#overlay-pane') || $(this).is('#overlay-pane .close') || $(this).is('#overlay-pane.confirm')){
+                $('#overlay-pane > div').removeClass('active');
+                $('#overlay-pane').hide();
+                if($(this).is("a") && $(this).attr('href')=='#')
+                    return false;
+            }
+        });
 
-			//die Variable overlayPane ...TODO: weiterschreiben!
+   
 
-			var currentOverlayPane = $(v).attr("href");
-			$(v).click(function(){
-				$("#overlay-pane > div").removeClass("active");
-				$(currentOverlayPane).addClass("active");
+        if (cancelEvents) {
+            //sämtliche Icons sollen nicht Ihr Ziel verfolgen, daher wird hier der event-handler unterbrochen
+            $('#mainbar > div > a, #auxbar > div > a, #more-container > div > a').on('click.createcontrols', function() {
+                return false;
+            });
+        }
+    }
 
-				
-				//eventhandler unterbrechen, damit das click event nicht weiter propagiert wird
-				
-				$(currentOverlayPane).click(function(){return false;});
-				$("#overlay-pane").show();				
-			});
-				 					 			
-		});
+    /**
+     * Liefert die Breite des Inhaltscontainers für icons zurück
+     * @param {type} device
+     * @returns {@exp;@call;$@call;width}
+     */
+    function getContainerWidth(device) {
+        return $(config[device].variableContainer).width();
+    }
 
-		
-		if(device=='ios'){		
 
-			//scrollen im Hauptmenü-popup auch auf älteren browsern ermöglichen
-			
-			$('#navigation-menu nav').addClass('overthrow');
-			
-			//bei ios einen close-button und einen popup-menü-Pfeil zu allen popups (divs in der overlay-pane) hinzufügen:
-			
-			$("#overlay-pane > div").append('<a class="close" title="close"></a>');
-			
-			//responsive Webdesign: für Geräte, deren aktuelle Bildschirmbreite mindestens 850px beträgt, soll die Hauptnavigation 
-			//(navigation-menu) immer links angezeigt werden, da genug Platz für Navigation und Inhalt vorhanden ist. 
-			//Deshalb wird das navigation-menu für diesen Fall in die content-pane verschoben - es soll ja kein popup-Menü mehr sein.
-
-			if($(window).width()>850){
-				$('#content-pane').append($('#navigation-menu'));				
-				}
-			
-		}
-		else if(device=='android'){				
-
-		}	
-	
-		$('#overlay-pane, #overlay-pane .close').click(function(){
-				$('#overlay-pane > div').removeClass('active');
-				$('#overlay-pane').hide();			
-			});
-
-//clickevent ausführen, um Inhalt anzuzeigen:
-
-		$("#content-icon a").trigger("click");
-		
-		//scrollen auch auf älteren browsern ermöglichen:
-		
-		$('body').addClass('overthrow-enabled');
-		$('#content-pane > div').addClass('overthrow');
-			
-			//automatische Höhen- und Breitenberechnung - wurde aber vorerst wieder auskommentiert, da bei Abstandsangaben 
-			//für die content-pane Probbleme mit der Breite auftraten:		
-			/*.height($(window).height()-$('#auxbar').height()-$('#mainbar').height()-$('#auxbar').css('padding-top')-$('#mainbar').css('padding-top')-$('#auxbar').css('padding-bottom')-$('#mainbar').css('padding-bottom'))
-			.width($(window).width());*/
-
-	}); 
-	
-	function getContainerWidth(device){
-			return $(config[device].variableContainer).width();		
-	}
-			
-		
- })(jQuery);
+})(jQuery);

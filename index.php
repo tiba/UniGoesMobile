@@ -22,15 +22,15 @@
         $xsl->loadXML(file_get_contents('transform.xslt'));
 		$xslt->importStylesheet($xsl);
 		
-		//Transformation durchführen
+		//Transformation durchfï¿½hren
         $data = $xslt->transformToXml($dom);
 		
-		//anschliessend noch URLs austauschen (ginge auch in XSLT, wäre dort aber deutlich mehr Aufwand
-        $data = str_replace('http://www.uni-passau.de/','http://www.zitroneneis.org/UniGoesMobile/',$data);
+		//anschliessend noch URLs austauschen (ginge auch in XSLT, wï¿½re dort aber deutlich mehr Aufwand
+        //$data = str_replace('http://www.uni-passau.de/','http://www.zitroneneis.org/UniGoesMobile/',$data);
 		
 		//Eingebundene Bilder sind auf der Website der uni-passau relativ eingebunden. Diese werden hier 
-		//absolut eingebunden damit der Traffic für die Bilder nicht durch diesen Server geschleust wird
-        $data = str_replace('img src="','img src="http://www.uni-passau.de/',$data);
+		//absolut eingebunden damit der Traffic fï¿½r die Bilder nicht durch diesen Server geschleust wird
+        //$data = str_replace('img src="','img src="http://www.uni-passau.de/',$data);
 		
 		//Ausgabe der transformierten Daten
         echo $data;

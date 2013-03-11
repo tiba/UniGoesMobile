@@ -99,7 +99,7 @@
 
 .android #mainbar #more-icon > a, 
 .android #mainbar #less-icon > a{
-    background-position: -27px -260px;
+    background-position: -23px -260px;
 }
 
 .android #mainbar #search-icon > a{
@@ -107,7 +107,7 @@
 }
 
 .android #mainbar #content-icon > a{
-    background-position: -28px -500px;
+    background-position: -23px -496px;
 }
  
 .android #search-area{
@@ -168,7 +168,7 @@ input[type="search"]:focus{
 
 /*sprice-icons positionieren*/
 .android #mainbar #add-favorite-icon > a{
-    background-position: -27px -100px;
+    background-position: -23px -100px;
 }
 
 .android #mainbar #add-favorite-icon.saved > a{
@@ -176,15 +176,15 @@ input[type="search"]:focus{
 }
 
 .android #mainbar #favorites-icon > a{
-    background-position: -27px -180px;
+    background-position: -23px -180px;
 }
 
 .android #mainbar #settings-icon > a{
-    background-position:-27px -420px;
+    background-position:-23px -420px;
 }
 
 .android #mainbar #shortcuts-icon > a{
-    background-position:  -27px -340px;
+    background-position:  -23px -340px;
 }
 
 

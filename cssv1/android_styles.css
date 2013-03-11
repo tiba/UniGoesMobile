@@ -5,10 +5,6 @@
     bottom:0px;
 }	
 
-
-
-
-
 .android #favorites nav a.delete{		
     width: 32px;
     height: 32px;
@@ -30,9 +26,7 @@
     border-bottom:1px solid #d7d7d7;	
     z-index:10;
     text-align: right;
-
 }
-
 
 .android #mainbar #sitetitle{
     float: left;	
@@ -112,6 +106,10 @@
     background-position: -28px -20px;	
 }
 
+.android #mainbar #content-icon > a{
+    background-position: -28px -500px;
+}
+ 
 .android #search-area{
     position: absolute;
     width: 50%;
@@ -182,7 +180,7 @@ input[type="search"]:focus{
 }
 
 .android #mainbar #settings-icon > a{
-    background-position:	-27px -420px;
+    background-position:-27px -420px;
 }
 
 .android #mainbar #shortcuts-icon > a{

@@ -172,7 +172,7 @@ input[type="search"]:focus{
 }
 
 .android #mainbar #add-favorite-icon.saved > a{
-    background-position: -76px -100px;
+    background-position: -72px -100px;
 }
 
 .android #mainbar #favorites-icon > a{

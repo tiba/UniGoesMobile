@@ -11,11 +11,38 @@ Array.prototype.remove = function(from, to) {
  * 
  */
 (function($) {
+        /**
+         * Liste der Shortcuts pro Zielgruppe
+         * @type type
+         */
+        var shortcuts ={
+          nn:[{title:'Startseite',url:'index.php'},
+              {title:'Seite2',url:'index.php'},
+                {title:'seite 3',url:'index.php'},
+                {title:'Seite 4',url:'index.php'}],
+          schueler:[{title:'Startseite',url:'index.php'},
+              {title:'Seite2',url:'index.php'},
+                {title:'seite 3',url:'index.php'},
+                {title:'Seite 4',url:'index.php'}],
+            student:[{title:'Startseite',url:'index.php'},
+              {title:'Seite2',url:'index.php'},
+                {title:'seite 3',url:'index.php'},
+                {title:'Seite 4',url:'index.php'}],
+            dozent:[{title:'Startseite',url:'index.php'},
+              {title:'Seite2',url:'index.php'},
+                {title:'seite 3',url:'index.php'},
+                {title:'Seite 4',url:'index.php'}]
+          
+            
+        };
+    
     /**
      * Fülle Bookmarkliste aus HTML5 local storage und registriere handler für Aktionen
+     * ausserdem werden die Schnellzugriffe abhängig von der gewählten Zielgruppe gefüllt
      */
     $(document).ready(function() {
         populateList();
+        populateShortcuts();
         /*
          * Clickhandler für Bookmark anlegne/löschen
          */
@@ -37,6 +64,25 @@ Array.prototype.remove = function(from, to) {
         }else{
             $('#add-favorite-icon').removeClass('saved');
         }
+    }
+    
+    /**
+     * fülle shortcutliste abhängig von der gewählten Nutzergruppe
+     * @returns {undefined}
+     */
+    function populateShortcuts(){
+        var audience =  $.cookie('audience');
+        if(!audience) audience = 'nn';
+        var links = shortcuts[audience];
+        
+        $("#shortcuts nav").remove();
+        $("#shortcuts").append("<nav><ul></ul></nav>");
+        $.each(links, function(i, e) {
+           $("#favorites nav ul").append('<li><a href="' + e.url + '" title="' + e.title + '">' + e.title + '</a></li>');
+
+        });
+       
+        
     }
     
     /**

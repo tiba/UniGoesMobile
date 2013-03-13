@@ -444,3 +444,25 @@ DIV.csc-textpic-intext-left-nowrap DIV.csc-textpic-imagewrap { float: left; clea
 /* Hide from IE5-mac. Only IE-win sees this. \*/
 * html DIV.csc-textpic-intext-left-nowrap .csc-textpic-text { height: 1%; }
 /* End hide from IE5/mac */
+
+/*media queries, um Bilder nicht mehr floaten zu lassen, sonst entsteht horizontales scrolling*/
+
+@media (max-width: 480px){
+    div.csc-textpic-right DIV.csc-textpic-imagewrap .csc-textpic-image, DIV.csc-textpic-intext-right-nowrap DIV.csc-textpic-imagewrap .csc-textpic-image, DIV.csc-textpic-intext-right DIV.csc-textpic-imagewrap .csc-textpic-image{
+        margin-left:0;
+        display:block;
+        
+    }    
+    DIV.csc-textpic-intext-right-nowrap DIV.csc-textpic-imagewrap {
+        float:none;
+    }
+    DIV.csc-textpic-intext-right DIV.csc-textpic-imagewrap, DIV.csc-textpic-intext-right-nowrap DIV.csc-textpic-imagewrap {
+        margin-left:0px;
+    }
+    .csc-textpic-intext-right .csc-textpic-imagewrap, .csc-textpic-intext-right-nowrap .csc-textpic-imagewrap {
+        margin-left:0px !important;
+    }
+    DIV.csc-textpic-intext-right DIV.csc-textpic-imagewrap {
+     float:none;   
+    }
+}

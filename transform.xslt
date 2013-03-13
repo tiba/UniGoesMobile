@@ -59,11 +59,11 @@
                                     <li>
                                         <xsl:if test="@class='top-activ'">
                                             <xsl:attribute name="class">active sub</xsl:attribute>
-                                         </xsl:if>
-                                         <xsl:apply-templates select="a"/>
-                                         <xsl:if test="@class='top-activ'">
+                                        </xsl:if>
+                                        <xsl:apply-templates select="a"/>
+                                        <xsl:if test="@class='top-activ'">
                                             <xsl:apply-templates select="//div[@id='left']/div[@class='mainnav']/ul"/>
-                                         </xsl:if>
+                                        </xsl:if>
                                     </li>
                                 </xsl:for-each>
                                 
@@ -274,16 +274,29 @@
     <xsl:template match="//p[@class='pagebrowser']/span/a/@class">
         <xsl:attribute name="class">btn</xsl:attribute>
     </xsl:template>
-    <xsl:template match="//p[@class='pagebrowser']/span/b">
+    <xsl:template match="//div[@class='browseLinksWrap']/a">
+        <a>
+        <xsl:attribute name="class">btn</xsl:attribute>
+        <xsl:apply-templates select="@*|node()"/>
+        </a>
+    </xsl:template>
+    <xsl:template match="//div[@class='browseLinksWrap']/span/@class">
+        <xsl:attribute name="class">btn disabled</xsl:attribute>
+    </xsl:template>
+    <xsl:template match="//p[@class='pagebrowser']/span/b/@class ">
+        <xsl:attribute name="class">btn disabled</xsl:attribute>
+    </xsl:template>
+
+    <!--<xsl:template match="//p[@class='pagebrowser']/span/b">
         <b>
             <xsl:attribute name="class">btn</xsl:attribute>
-             <xsl:copy>
+            <xsl:copy>
                 <xsl:apply-templates select="@*|node()"/>
             </xsl:copy>
         </b>
-    </xsl:template>
+    </xsl:template>-->
    
-   <!-- bildpfade umbiegen -->
+    <!-- bildpfade umbiegen -->
     <xsl:template match="//img">
         <img title="{@title}" alt="{@alt}" width="{@width}" height="{@width}" src="http://www.uni-passau.de/{@src}"/>
     </xsl:template>

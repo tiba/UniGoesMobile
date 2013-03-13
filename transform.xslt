@@ -54,7 +54,8 @@
                         <nav>
                             <!-- Füge Navigation ein -->
                             <ul>
-                                <xsl:for-each select="catalog/cd">
+                                <xsl:for-each select="//ul[@class='topmenu']/li">
+                                    
                                     <li>
                                         <xsl:if test="@class='top-activ'">
                                             <xsl:attribute name="class">active sub</xsl:attribute>

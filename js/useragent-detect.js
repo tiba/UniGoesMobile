@@ -6,10 +6,9 @@
         
         var config = {
             nn: 'index.php',
-            schueler: 'studieninteressierte.html',
-            quitschie: 'studierende.html',
-            student: 'studierende.html',
-            dozent: 'forschung.html'
+            schueler: 'landing_anfaenger.html',
+            student: 'landing_studis.html',
+            dozent: 'landing_angestellter.html'
             
         };
         var setUserAgent = false;

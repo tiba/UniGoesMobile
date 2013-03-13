@@ -118,7 +118,7 @@ var config = {
 
         }
         addEvents(config[device], device, false);
-        $('#mainbar > div > a, #auxbar > div > a, #more-container > div > a').on('click.createcontrols', function() {
+        $('#mainbar > div.button > a, #auxbar > div.button > a, #more-container > div.button > a').on('click.createcontrols', function() {
             return false;
         });
         //content-pane anzeigen!
@@ -292,7 +292,7 @@ var config = {
 
         if (cancelEvents) {
             //sämtliche Icons sollen nicht Ihr Ziel verfolgen, daher wird hier der event-handler unterbrochen
-            $('#mainbar > div > a, #auxbar > div > a, #more-container > div > a').on('click.createcontrols', function() {
+            $('#mainbar > div.button > a, #auxbar > div.button > a, #more-container > div.button > a').on('click.createcontrols', function() {
                 return false;
             });
         }

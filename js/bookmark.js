@@ -20,15 +20,15 @@ Array.prototype.remove = function(from, to) {
               {title:'Seite2',url:'index.php'},
                 {title:'seite 3',url:'index.php'},
                 {title:'Seite 4',url:'index.php'}],
-          schueler:[{title:'Startseite',url:'index.php'},
+          schueler:[{title:'Startseite schueler',url:'index.php'},
               {title:'Seite2',url:'index.php'},
                 {title:'seite 3',url:'index.php'},
                 {title:'Seite 4',url:'index.php'}],
-            student:[{title:'Startseite',url:'index.php'},
+            student:[{title:'Startseite student',url:'index.php'},
               {title:'Seite2',url:'index.php'},
                 {title:'seite 3',url:'index.php'},
                 {title:'Seite 4',url:'index.php'}],
-            dozent:[{title:'Startseite',url:'index.php'},
+            dozent:[{title:'Startseite dozent',url:'index.php'},
               {title:'Seite2',url:'index.php'},
                 {title:'seite 3',url:'index.php'},
                 {title:'Seite 4',url:'index.php'}]
@@ -78,7 +78,7 @@ Array.prototype.remove = function(from, to) {
         $("#shortcuts nav").remove();
         $("#shortcuts").append("<nav><ul></ul></nav>");
         $.each(links, function(i, e) {
-           $("#favorites nav ul").append('<li><a href="' + e.url + '" title="' + e.title + '">' + e.title + '</a></li>');
+           $("#shortcuts nav ul").append('<li><a href="' + e.url + '" title="' + e.title + '">' + e.title + '</a></li>');
 
         });
        

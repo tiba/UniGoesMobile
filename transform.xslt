@@ -161,7 +161,7 @@
 
                 <div id="controls">
                     <div id="logo-icon" class="icon">
-                        <a href="">
+                        <a href="/">
                             <img src="images/logo.png" alt="Logo Universität Passau" />
                         </a>
                     </div>

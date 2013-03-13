@@ -121,8 +121,9 @@
     background: url('images/ios/sprite_ios_auxbar.png') no-repeat -585px -97px, -webkit-linear-gradient(top, #476489, #50709a  50%, #5a7caa 51%, #7c97bb);
 }		
 
-.ios #mainbar .icon{		
+.ios #mainbar #logo-icon{		
     left: 48px;
+    top:0;
     position: absolute;	
 }
 

@@ -384,7 +384,7 @@ DIV.csc-textpic-intext-right DIV.csc-textpic-imagewrap .csc-textpic-image {
 /* Pictures centered, add margin on left */
 DIV.csc-textpic-center DIV.csc-textpic-imagewrap .csc-textpic-image {
     display: inline; /* IE fix for double-margin bug */
-    margin-left: 10px;
+    /*margin-left: 10px;*/
 }
 DIV.csc-textpic DIV.csc-textpic-imagewrap .csc-textpic-image .csc-textpic-caption { margin: 0; }
 DIV.csc-textpic DIV.csc-textpic-imagewrap .csc-textpic-image IMG { margin: 0; }

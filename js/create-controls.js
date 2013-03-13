@@ -110,6 +110,8 @@ var config = {
             $('#navigation-menu nav').addClass('overthrow');
             $('#navigation-menu').removeClass('overthrow');
             //bei ios einen close-button und einen popup-menü-Pfeil zu allen popups (divs in der overlay-pane) hinzufügen:
+            
+            $.stayInWebApp();
         }
         else if (device === 'android') {
            

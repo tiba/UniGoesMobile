@@ -29,13 +29,14 @@
             
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
+                <script type="text/javascript" src="js/jquery.stayinwebapp.js"></script>
 
+                <script src="js/overthrow.js"></script>
                 <script src="js/jquery.cookie.js"></script>
                 <script src="js/useragent-detect.js"></script>
                 <script src="js/create-controls.js"></script>
                 <script type="text/javascript" src="js/bookmark.js"></script>
-
-                <script src="js/overthrow.js"></script>
+            
                 <base href="/UniGoesMobile/"/>
                 <meta name="viewport" content="initial-scale=1, , maximum-scale=1, , minimum-scale=1"/>
 			
@@ -53,11 +54,18 @@
                         <nav>
                             <!-- Füge Navigation ein -->
                             <ul>
-                                <li class="active sub">
-                                    <xsl:apply-templates select="//li[@class='top-activ']/a"/>
-                                    <xsl:apply-templates select="//div[@id='left']/div[@class='mainnav']/ul"/>
-                                </li>
-                                <xsl:apply-templates select="//ul[@class='topmenu']/li[not (@class)]"/>
+                                <xsl:for-each select="catalog/cd">
+                                    <li>
+                                        <xsl:if test="@class='top-activ'">
+                                            <xsl:attribute name="class">active sub</xsl:attribute>
+                                         </xsl:if>
+                                         <xsl:apply-templates select="a"/>
+                                         <xsl:if test="@class='top-activ'">
+                                            <xsl:apply-templates select="//div[@id='left']/div[@class='mainnav']/ul"/>
+                                         </xsl:if>
+                                    </li>
+                                </xsl:for-each>
+                                
                             </ul>
                            
                         </nav>

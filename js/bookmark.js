@@ -22,7 +22,7 @@ Array.prototype.remove = function(from, to) {
                 {title:'Studienangebot',url:'studienangebot.html'},
                    {title:'StudIP',url:'www.intelec.uni-passau.de'},
        {title:'Hisqis',url:'qisserver.uni-passau.de/qisserver/rds?state=user&type=0'},
-                 {title:'Bibliothek',url:'www.ub.uni-passau.de/index.html', target:'_blank'},
+                 {title:'Bibliothek',url:'http://www.ub.uni-passau.de/index.html', target:'_blank'},
                 {title:'Studentenwerk',url:'www.stwno.de/joomla/de/'},
             {title:'Forschungseinrichtungen',url:'forschungseinrichtungen.html'},
                       {title:'Formulare',url:'formulare.html'},

@@ -24,7 +24,8 @@
 		
 		//Transformation durchf�hren
         $data = $xslt->transformToXml($dom);
-		
+	//Universität Passau im title entfernen
+        $data = str_replace("Universität Passau: ", "", $data);	
 		//anschliessend noch URLs austauschen (ginge auch in XSLT, w�re dort aber deutlich mehr Aufwand
         //$data = str_replace('http://www.uni-passau.de/','http://www.zitroneneis.org/UniGoesMobile/',$data);
 		

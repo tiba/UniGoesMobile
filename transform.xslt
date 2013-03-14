@@ -126,7 +126,7 @@
                             <p class="bodytext">
                                 Nach dem Speichern werden Sie auf Ihre neue Startseite weitergeleitet.
                                 Sie können Ihre Einstellungen jederzeit ändern, indem Sie 
-                                "Einstellungen" (Schraubenschlüssel-Symbol/Zahnrad) klicken.
+                                "Einstellungen" (Schraubenschlüssel-Symbol) klicken.
                     
                             </p>
                             <a href="#" id="deletesettings">Einstellungen löschen</a>

@@ -17,29 +17,44 @@ Array.prototype.remove = function(from, to) {
          */
         var shortcuts ={
           nn:[{title:'Startseite',url:'index.php'},
-              {title:'Seite2',url:'index.php'},
-                {title:'seite 3',url:'index.php'},
-                {title:'Seite 4',url:'index.php'}],
+              {title:'Vorlesungsverzeichnis',url:'vorlesungsverzeichnis.html'},
+                {title:'Studienberatung',url:'studienberatung.html'},
+                {title:'Studienangebot',url:'studienangebot.html'},
+                   {title:'StudIP',url:'www.intelec.uni-passau.de'},
+       {title:'Hisqis',url:'qisserver.uni-passau.de/qisserver/rds?state=user&type=0'},
+                 {title:'Bibliothek',url:'www.ub.uni-passau.de/index.html'},
+                {title:'Studentenwerk',url:'www.stwno.de/joomla/de/'},
+            {title:'Forschungseinrichtungen',url:'forschungseinrichtungen.html'},
+                      {title:'Formulare',url:'formulare.html'},
+               {title:'Campus Passau Blog',url:'blog.uni-passau.de'}],
             
-          schueler:[{title:'Startseite schueler',url:'index.php'},
-              {title:'Seite2',url:'index.php'},
-                {title:'seite 3',url:'index.php'},
-                {title:'Seite 4',url:'index.php'}],
+          schueler:[{title:'Startseite schueler',url:'landing_anfaenger.html'},
+              {title:'Studienberatung',url:'studienberatung.html'},
+                {title:'Studienangebot',url:'studienangebot.html'},
+                {title:'Studentenwerk',url:'www.stwno.de/joomla/de/'},
+                 {title:'Formulare',url:'formulare.html'},
+              {title:'Vorlesungsverzeichnis',url:'vorlesungsverzeichnis.html'},
+                   {title:'Bibliothek',url:'www.ub.uni-passau.de/index.html'},
+                {title:'Campus Passau Blog',url:'blog.uni-passau.de'}],
                
-          quitschie:[{title:'Startseite schueler',url:'index.php'},
-              {title:'Seite2',url:'index.php'},
-                {title:'seite 3',url:'index.php'},
-                {title:'Seite 4',url:'index.php'}],
-            student:[{title:'Startseite student',url:'index.php'},
-              {title:'Seite2',url:'index.php'},
-                {title:'seite 3',url:'index.php'},
-                {title:'Seite 4',url:'index.php'}],
-            dozent:[{title:'Startseite dozent',url:'index.php'},
-              {title:'Seite2',url:'index.php'},
-                {title:'seite 3',url:'index.php'},
-                {title:'Seite 4',url:'index.php'}]
-          
+            student:[{title:'Startseite student',url:'landing_studis.html'},
+                {title:'Studienberatung',url:'studienberatung.html'},
+                {title:'Studienangebot',url:'studienangebot.html'},
+                    {title:'Formulare',url:'formulare.html'},
+              {title:'Vorlesungsverzeichnis',url:'vorlesungsverzeichnis.html'},
+                  {title:'Bibliothek',url:'www.ub.uni-passau.de/index.html'},
+              {title:'Campus Passau Blog',url:'blog.uni-passau.de'}],
             
+            dozent:[{title:'Startseite dozent',url:'landing_angestellter.html'},
+                {title:'Vorlesungsverzeichnis',url:'vorlesungsverzeichnis.html'},
+                     {title:'Studienangebot',url:'studienangebot.html'},
+                   {title:'StudIP',url:'www.intelec.uni-passau.de'},
+         {title:'Hisqis',url:'qisserver.uni-passau.de/qisserver/rds?state=user&type=0'},
+                 {title:'Bibliothek',url:'www.ub.uni-passau.de/index.html'},
+            {title:'Forschungseinrichtungen',url:'forschungseinrichtungen.html'},
+                      {title:'Formulare',url:'formulare.html'},
+               {title:'Campus Passau Blog',url:'blog.uni-passau.de'}]
+             
         };
     
     /**

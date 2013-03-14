@@ -72,6 +72,7 @@
                         </nav>
                     </div>
                     <div class="up-page-content-localnav" id="shortcuts">
+                        <!--todo: textverfassen-->
                         <nav>
 						
                         </nav>
@@ -92,13 +93,13 @@
 
                             </p>
                             <div class="select">
-                                <label for="targetaudience">Ich bin ...</label>
+                                <!--TODO: optinoen anpassen-->
+                                <label for="targetaudience">Ich...</label>
                                 <select name="targetaudience" class="targetaudience" id="targetaudience">
                                     <option value="nn">[keine Angabe]</option>
-                                    <option value="schueler">noch nicht an der Uni Passau</option>
-                                    <option value="quitschie">neu an der Uni-Passau</option>
-                                    <option value="student">schon länger an der Uni Passau</option>
-                                    <option value="dozent">hier angestellt</option>
+                                    <option value="schueler">interessiere mich für ein Studium an der Uni Passau</option>
+                                    <option value="student">bin bereits Studierender an der Uni-Passau</option>
+                                    <option value="dozent">bin hier angestellt</option>
                                 </select>
                             </div>
 

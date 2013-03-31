@@ -5,7 +5,7 @@
 
 
 /*** GENERAL STYLES ***/
-a {color:#000; text-decoration:underline;}
+a {color:#666; text-decoration:underline;}
 a:focus {outline:2px solid #fd8900;}
 a:hover {color:#fd8900; text-decoration:underline;}
 b.important-text, strong.important-text {font-weight:400;}

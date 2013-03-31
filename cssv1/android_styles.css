@@ -275,6 +275,9 @@ input[type="search"]:focus{
     text-align:center;
     height:48px;
     line-height:48px;
+    background: none;
+	border: none;
+	border-radius: 0;
 }
 
 /*Navigation-menu*/

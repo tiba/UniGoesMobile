@@ -65,6 +65,7 @@
                                         <xsl:if test="@class='top-activ'">
                                             <xsl:apply-templates select="//div[@id='left']/div[@class='mainnav']/ul"/>
                                         </xsl:if>
+                                        <!-- Menü rendern, wenn kein a tag im li ist, das passiert nur auf fakultätsseiten, wo es oben kein Menü gibt! -->
                                         <xsl:if test="not(a)">
                                             <xsl:apply-templates select="//div[@id='left']/div[@class='mainnav']/ul"/>
                                         </xsl:if>

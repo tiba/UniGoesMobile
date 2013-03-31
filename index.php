@@ -9,8 +9,14 @@
 		//Anfrage-URI holen, und das UniGoesMobile Unterverzeichnis entfernen
         $url = $_SERVER['REQUEST_URI'];//$_REQUEST['path'];
         $url = str_replace('/UniGoesMobile','',$url);
+        //abfrage für Suche: die läuft über eine andere Subdomain...
+        if(strpos("cgi-bin/searchext.cgi",$url)!== false){
+        	$data = file_get_contents('http://uni-passau.de/' . $url);
+        }else{
+        	$data = file_get_contents('http://uni-passau.de/' . $url);
+        }
 		//Website von http://www.uni-passau.de holen
-        $data = file_get_contents('http://uni-passau.de/' . $url);
+        
         //http://www.php.net/manual/de/xsl.examples.php#103134http://www.php.net/manual/de/xsl.examples.php#103134
         //XSLT Processor initialisieren
 		$xslt = new XSLTProcessor();

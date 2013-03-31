@@ -32,10 +32,10 @@
 		
 		//Transformation durchf�hren
         $data = $xslt->transformToXml($dom);
-	//Universität Passau im title entfernen
+	//Universität Passau im title entfepOpEval: functrnen
         $data = str_replace("Universität Passau: ", "", $data);	
 		//anschliessend noch URLs austauschen (ginge auch in XSLT, w�re dort aber deutlich mehr Aufwand
-        //$data = str_replace('http://www.uni-passau.de/','http://www.zitroneneis.org/UniGoesMobile/',$data);
+        $data = str_replace('href="http://www.uni-passau.de/"','http://www.zitroneneis.org/UniGoesMobile/',$data);
 		
 		//Eingebundene Bilder sind auf der Website der uni-passau relativ eingebunden. Diese werden hier 
 		//absolut eingebunden damit der Traffic f�r die Bilder nicht durch diesen Server geschleust wird

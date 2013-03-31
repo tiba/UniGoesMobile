@@ -4,6 +4,11 @@
 }
 
 
+/* Elemente in Suche ausblenden */
+#content #local{
+	display:none;	
+}
+
 /*** GENERAL STYLES ***/
 a {color:#666; text-decoration:underline;}
 a:focus {outline:2px solid #fd8900;}
@@ -738,3 +743,4 @@ DIV.csc-textpic-intext-left-nowrap DIV.csc-textpic-imagewrap { float: left; clea
      float:none;   
     }
 }
+

@@ -11,7 +11,7 @@
         $url = str_replace('/UniGoesMobile','',$url);
         //abfrage für Suche: die läuft über eine andere Subdomain...
         if(strpos("cgi-bin/searchext.cgi",$url)!== false){
-        	$data = file_get_contents('http://uni-passau.de/' . $url);
+        	$data = file_get_contents('http://websearch.uni-passau.de/' . $url);
         }else{
         	$data = file_get_contents('http://uni-passau.de/' . $url);
         }

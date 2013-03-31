@@ -15,29 +15,30 @@
                 <title>
                     <xsl:value-of select="//title"/>
                 </title>
+                <base href="http://www.zitroneneis.org/UniGoesMobile/"/>
                 <meta charset="utf-8"/>
                 <!--navigation in ios verstecken -->
                 <meta name="apple-mobile-web-app-capable" content="yes" />
                 <!--<link rel="stylesheet" type="text/css" href="cssv1/reset.css" media="all"/>-->
-                <link rel="stylesheet" type="text/css" href="cssv1/bootstrap.css" media="all"/>
-                <link rel="stylesheet" type="text/css" href="cssv1/content.css" media="all"/>
-                <link rel="stylesheet" type="text/css" href="cssv1/menu.css" media="all"/>
-                <link rel="stylesheet" type="text/css" href="cssv1/styles.css" media="all"/>
+                <link rel="stylesheet" type="text/css" href="/cssv1/bootstrap.css" media="all"/>
+                <link rel="stylesheet" type="text/css" href="/cssv1/content.css" media="all"/>
+                <link rel="stylesheet" type="text/css" href="/cssv1/menu.css" media="all"/>
+                <link rel="stylesheet" type="text/css" href="/cssv1/styles.css" media="all"/>
 
-                <link rel="stylesheet" type="text/css" href="cssv1/ios_styles.css" media="all"/>
-                <link rel="stylesheet" type="text/css" href="cssv1/android_styles.css" media="all"/>
+                <link rel="stylesheet" type="text/css" href="/cssv1/ios_styles.css" media="all"/>
+                <link rel="stylesheet" type="text/css" href="/cssv1/android_styles.css" media="all"/>
             
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-                <script type="text/javascript" src="js/jquery.stayinwebapp.js"></script>
+                <script type="text/javascript" src="/js/jquery.stayinwebapp.js"></script>
 
-                <script src="js/overthrow.js"></script>
-                <script src="js/jquery.cookie.js"></script>
-                <script src="js/useragent-detect.js"></script>
-                <script src="js/create-controls.js"></script>
-                <script type="text/javascript" src="js/bookmark.js"></script>
+                <script src="/js/overthrow.js"></script>
+                <script src="/js/jquery.cookie.js"></script>
+                <script src="/js/useragent-detect.js"></script>
+                <script src="/js/create-controls.js"></script>
+                <script type="text/javascript" src="/js/bookmark.js"></script>
             
-                <base href="/UniGoesMobile/"/>
+                
                 <meta name="viewport" content="initial-scale=1, , maximum-scale=1, , minimum-scale=1"/>
 			
             </head>

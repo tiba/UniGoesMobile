@@ -58,11 +58,14 @@
                                 <xsl:for-each select="//ul[@class='topmenu']/li">
                                     
                                     <li>
-                                        <xsl:if test="@class='top-activ' | not(a)">
+                                        <xsl:if test="@class='top-activ'">
                                             <xsl:attribute name="class">active sub</xsl:attribute>
                                         </xsl:if>
                                         <xsl:apply-templates select="a"/>
-                                        <xsl:if test="@class='top-activ' | not(a)">
+                                        <xsl:if test="@class='top-activ'">
+                                            <xsl:apply-templates select="//div[@id='left']/div[@class='mainnav']/ul"/>
+                                        </xsl:if>
+                                        <xsl:if test="not(a)">
                                             <xsl:apply-templates select="//div[@id='left']/div[@class='mainnav']/ul"/>
                                         </xsl:if>
                                     </li>

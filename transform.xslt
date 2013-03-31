@@ -54,14 +54,15 @@
                         <nav>
                             <!-- Füge Navigation ein -->
                             <ul>
+                            	
                                 <xsl:for-each select="//ul[@class='topmenu']/li">
                                     
                                     <li>
-                                        <xsl:if test="@class='top-activ'">
+                                        <xsl:if test="@class='top-activ' | not(a)">
                                             <xsl:attribute name="class">active sub</xsl:attribute>
                                         </xsl:if>
                                         <xsl:apply-templates select="a"/>
-                                        <xsl:if test="@class='top-activ'">
+                                        <xsl:if test="@class='top-activ' | not(a)">
                                             <xsl:apply-templates select="//div[@id='left']/div[@class='mainnav']/ul"/>
                                         </xsl:if>
                                     </li>
@@ -94,12 +95,12 @@
                             </p>
                             <div class="select">
                                 <!--TODO: optinoen anpassen-->
-                                <label for="targetaudience">Ich...</label>
+                                <label for="targetaudience">Ich bin...</label>
                                 <select name="targetaudience" class="targetaudience" id="targetaudience">
                                     <option value="nn">[keine Angabe]</option>
-                                    <option value="schueler">interessiere mich für ein Studium an der Uni Passau</option>
-                                    <option value="student">bin bereits Studierender an der Uni-Passau</option>
-                                    <option value="dozent">bin hier angestellt</option>
+                                    <option value="schueler">neu an der Uni Passau</option>
+                                    <option value="student">schon länger an der Uni Passau</option>
+                                    <!--<option value="dozent">bin hier angestellt</option>-->
                                 </select>
                             </div>
 

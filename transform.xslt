@@ -256,8 +256,8 @@
                 </div>
                 <div id="elements">
                     <div id="search-area" class="container">		
-                        <form action="" id="search" name="searchform" method="post">
-                            <input type="search" class="search" id="Suche" placeholder="Suchbegriff" />
+                        <form action="http://websearch.uni-passau.de/cgi-bin/search.cgi" id="search" name="searchform" method="post">
+                            <input name="q" type="search" class="search" id="Suche" placeholder="Suchbegriff" />
                         </form>
                     </div>  
                 </div>

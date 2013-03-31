@@ -62,7 +62,13 @@
                                         <xsl:if test="@class='top-activ'">
                                             <xsl:attribute name="class">active sub</xsl:attribute>
                                         </xsl:if>
-                                        <xsl:apply-templates select="a"/>
+                                        <xsl:if test="a">
+                                        <a>
+                                        	<xsl:apply-templates select="a/@*"/>
+                                        	<xsl:attribute name="href"><xsl:variable name="text" select="replace(a/@href,'http://www.uni-passau.de/','')"/></xsl:attribute>
+                                        	<xsl:apply-templates select="a/node()"/>
+                                        	</a>
+                                        </xsl:if>
                                         <xsl:if test="@class='top-activ'">
                                             <xsl:apply-templates select="//div[@id='left']/div[@class='mainnav']/ul"/>
                                         </xsl:if>
@@ -267,7 +273,10 @@
         </html>
 
     </xsl:template>
-   
+
+	<!-- Absolute URLs in Menülinks ersetzen -->
+
+	
     <!-- menüklassen ersetzen -->
     <xsl:template match="//li/@class[.='menu1-lev1-actifsub']|//li/@class[.='menu1-lev2-actifsub']|//li/@class[.='menu1-lev3-actifsub']">
         <xsl:attribute name="class">active sub</xsl:attribute>

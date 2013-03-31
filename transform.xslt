@@ -126,7 +126,7 @@
                             <p class="bodytext">
                                 Nach dem Speichern werden Sie auf Ihre neue Startseite weitergeleitet.
                                 Sie können Ihre Einstellungen jederzeit ändern, indem Sie 
-                                "Einstellungen" (Schraubenschlüssel-Symbol <img src="images/settings_tab1.png/">) klicken.
+                                "Einstellungen" (Schraubenschlüssel-Symbol <img src="/images/settings_tab1.png/">) klicken.
                     
                             </p>
                             <a href="#" id="deletesettings">Einstellungen löschen</a>
@@ -163,7 +163,7 @@
                 <div id="controls">
                     <div id="logo-icon" class="icon">
                         <a href="/UniGoesMobile/">
-                            <img src="images/logo.png" alt="Logo Universität Passau" />
+                            <img src="/images/logo.png" alt="Logo Universität Passau" />
                         </a>
                     </div>
 					

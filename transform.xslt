@@ -167,7 +167,7 @@
                 <div id="controls">
                     <div id="logo-icon" class="icon">
                         <a href="/UniGoesMobile/">
-                            <img src="/images/logo.png" alt="Logo Universität Passau" />
+                            <img src="/UniGoesMobile/images/logo.png" alt="Logo Universität Passau" />
                         </a>
                     </div>
 					

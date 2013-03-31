@@ -256,7 +256,7 @@
                 </div>
                 <div id="elements">
                     <div id="search-area" class="container">		
-                        <form action="/cgi-bin/search.cgi" id="search" name="searchform" method="get">
+                        <form action="/UniGoesMobile/cgi-bin/search.cgi" id="search" name="searchform" method="get">
                             <input name="q" type="search" class="search" id="Suche" placeholder="Suchbegriff" />
                         </form>
                     </div>  

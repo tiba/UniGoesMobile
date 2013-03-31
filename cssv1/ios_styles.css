@@ -443,6 +443,10 @@
     margin:0;
     padding:0;
 }
+/* navigation bei splitscreen in dre größe anpassen, damit overthrow funktioniert!*/
+.ios #content-pane #navigation-menu nav{
+	top:0;bottom:0;position: absolute;right: 0;left: 0;
+}
 /*TODO: nachfolgende styles beinhalten die Verläufe für den Hintergrund der buttons in ios-menüs
 um diese anzuwenden müssen aber noch die Pfeil-Bilder aus dem uni-sprite als zweites back-
 ground-image neben jeden einzelnen Verlauf gesetzt werden*/

@@ -56,7 +56,7 @@
                             <!-- Füge Navigation ein -->
                             <ul>
                             	
-                                <xsl:for-each select="//ul[@class='topmenu']/li">
+                                <xsl:for-each select="//ul[@class='topmenu']/li | ul[@id='topmenu']/li">
                                     
                                     <li>
                                         <xsl:if test="@class='top-activ'">

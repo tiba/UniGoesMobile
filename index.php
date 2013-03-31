@@ -20,6 +20,8 @@
         //http://www.php.net/manual/de/xsl.examples.php#103134http://www.php.net/manual/de/xsl.examples.php#103134
         //XSLT Processor initialisieren
 		$xslt = new XSLTProcessor();
+		//PHP funktionen in xslt verfügbar machen (um z.b. urls auszutauschen
+		$xslt->registerPHPFunctions();
 		//Website der Uni Passau als DOM-Document laden (durch das vorangestellte @ werden Warnungen nicht ausgegeben
         $dom = @DOMDocument::loadHTML( $data);
         

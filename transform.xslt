@@ -133,7 +133,7 @@
 							</div>
 
 							<p class="bodytext">Mit dieser Angabe, erhalten Sie eine speziell auf Sie
-								zugeschnittene Startseite, sowie für Sie relevante Links unter
+								zugeschnittene Startseite, sowie für Sie wichtige Shortcuts unter
 								dem Punkt
 								"Direktzugriff".</p>
 							<div class="select">
@@ -147,21 +147,21 @@
 								</select>
 							</div>
 
-							<p class="bodytext">Damit Sie sich möglichst schnell bei uns zurecht
-								finden, präsentieren wir Ihnen je nach Ihrem Smartphone-Typ
-								ein angepasstes User-Interface. In der Regel wird dies automatisch
-								erkannt, wenn Sie aber mal das jeweils andere UI sehen wollen,
+							<p class="bodytext">Damit Sie sich möglichst schnell zurecht
+								finden, präsentieren wir Ihnen je nach Smartphone-Typ
+								ein angepasstes layout. In der Regel wird dies automatisch
+								erkannt, wenn Sie aber ein anderes layout sehen wollen,
 								können
-								Sie dies hier entsprechend ändern</p>
+								Sie diese Voreinstellung hier jederzeit entsprechend wechseln.</p>
 
 							<input type="submit" class="button btn" value="speichern" />
 							<p class="bodytext">
 								Nach dem Speichern werden Sie auf Ihre neue Startseite
 								weitergeleitet.
-								Sie können Ihre Einstellungen jederzeit ändern, indem Sie
+								Sie können Ihre Einstellungen jederzeit unter
 								"Einstellungen" (Schraubenschlüssel-Symbol
 								<img src="/images/settings_tab1.png/" />
-								) klicken.
+								) ändern.
 
 							</p>
 							<a href="#" id="deletesettings">Einstellungen löschen</a>

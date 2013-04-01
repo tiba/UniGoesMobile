@@ -46,9 +46,11 @@
     right:48px;		
     top:8px;
 }
-.show-shortcuts{
+.show-shortcuts > h3{
     background: url('images/common/localnav-arrows.png') no-repeat scroll 10px -178px #f0f0f0;
     padding: 6px 0 7px 25px;
+    font-size: 13pt;
+    text-decoration: none;
 }
 
 

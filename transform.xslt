@@ -175,13 +175,13 @@
 						</span>
 					</div>
 					<div id="impressum" class="">
-						<a href="#" title="Impressum">
+						<a href="impressum.html" title="Impressum">
 							<span>Impressum
 							</span>
 						</a>
 					</div>
 					<div id="contact" class="">
-						<a href="#" title="Kontakt">
+						<a href="kontakt.html" title="Kontakt">
 							<span>Kontakt
 							</span>
 						</a>

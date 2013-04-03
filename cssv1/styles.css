@@ -54,6 +54,20 @@
 }
 
 
+#accordion .ui-widget-content a {
+	color: #666;
+        font-weight: normal;
+}
+#accordion .ui-widget-header {
+	border: 1px solid #626262
+	background: #626262 url(images/common/localnav-arrows.png') no-repeat scroll 10px -178px repeat-x;
+	color: #white;
+	font-weight: bold;
+        margin-top: 10px;
+        margin-bottom: 10px;
+}
+
+
 #accordion a{
     font-size: 12pt;
 }

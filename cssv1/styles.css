@@ -60,8 +60,8 @@
 }
 #accordion .ui-widget-header {
 	border: none;
-	background: #626262 scroll 10px -178px repeat-x;
-	color: white;
+	background: #efefef scroll 10px -178px repeat-x;
+	color: #333;
 	font-weight: bold;
         padding-top: 10px;
         padding-bottom: 10px;

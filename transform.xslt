@@ -76,7 +76,7 @@
 											<a>
 												<xsl:apply-templates select="a/@*" />
 												<xsl:attribute name="href"><xsl:value-of
-													
+													name="text"
 													select="php:functionString('str_replace','http://www.uni-passau.de/','',a/@href)" /></xsl:attribute>
 												<xsl:apply-templates select="a/node()" />
 											</a>

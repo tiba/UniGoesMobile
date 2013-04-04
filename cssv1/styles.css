@@ -69,6 +69,9 @@
         border-top: solid orange 5px;
         margin: 20px 0 0 0;
 }
+#accordion .ui-widget-content {
+    border-color: #efefef;
+}
 
 
 #accordion a{

@@ -198,7 +198,7 @@
 				<div id="controls">
 					<div id="logo-icon" class="icon">
 						<a href="/UniGoesMobile/">
-							<img src="/UniGoesMobile/images/logo.png" />
+							<img src="images/logo.png" />
 						</a>
 					</div>
 

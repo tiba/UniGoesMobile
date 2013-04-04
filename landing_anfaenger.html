@@ -17,11 +17,7 @@
         
         <meta name="viewport" content="initial-scale=1, , maximum-scale=1, , minimum-scale=1">
         
-        <script>
-            $(function() {
-            $( "#accordion" ).accordion({header:'h5'});
-            });
-        </script>
+       
     </head>
     <body>
         <div id="content-pane">
@@ -415,5 +411,13 @@
                             <input name="q" type="search" class="search" id="Suche" placeholder="Suchbegriff" />
                         </form></div></div>
       
+      
+       <script>
+            (function() {
+            	$(document).ready(function(){
+            		$( "#accordion" ).accordion({header:'h5'});
+            	});
+            })();
+        </script>
     </body>
 </html>

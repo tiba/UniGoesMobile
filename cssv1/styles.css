@@ -53,13 +53,13 @@
     text-decoration: none;
 }
 
-
 #accordion .ui-widget-content a {
 	color: #666;
         font-weight: normal;
+        border: none;
 }
 #accordion .ui-widget-header {
-	border: 1px solid #626262;
+	border: none;
 	background: #626262 scroll 10px -178px repeat-x;
 	color: white;
 	font-weight: bold;
@@ -67,6 +67,7 @@
         padding-bottom: 10px;
         padding-left: 10px;
         border-top: solid orange 5px;
+        margin: 20px 0 0 0;
 }
 
 

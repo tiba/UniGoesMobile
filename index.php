@@ -30,7 +30,10 @@
         	$data = file_get_contents($urls[$mode] . '/' . $url);
         }
 		//Website von http://www.uni-passau.de holen
+        if($mode == 'new'){
+        	$data = utf8_decode($data);	
         
+        }
         //http://www.php.net/manual/de/xsl.examples.php#103134http://www.php.net/manual/de/xsl.examples.php#103134
         //XSLT Processor initialisieren
 		$xslt = new XSLTProcessor();

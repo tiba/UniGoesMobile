@@ -337,7 +337,7 @@
 	<!-- bildpfade umbiegen -->
 	<xsl:template match="//img">
 		<img title="{@title}" alt="{@alt}" width="{@width}" height="{@width}"
-			src="http://www.uni-passau.de/{@src}" />
+			src="http://old.uni-passau.de/{@src}" />
 	</xsl:template>
 
 	<xsl:template match="//input[@type='submit']">

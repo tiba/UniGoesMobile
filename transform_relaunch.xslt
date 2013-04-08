@@ -56,7 +56,7 @@
 				<div id="content-pane">
 					<div id="content">
 						<!-- FÜge Inhaltsbereich ein -->
-						<xsl:apply-templates select="//div[contains(@class,'up-page-content-column-center')]" />
+						<!-- <xsl:apply-templates select="//div[contains(@class,'up-page-content-column-center')]" />-->
 					</div>
 
 					<div class="up-page-content-localnav" id="navigation-menu">

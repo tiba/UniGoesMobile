@@ -21,18 +21,18 @@
 				<!--navigation in ios verstecken -->
 				<meta name="apple-mobile-web-app-capable" content="yes" />
 				<!--<link rel="stylesheet" type="text/css" href="cssv1/reset.css" media="all"/> -->
-				<link rel="stylesheet" type="text/css" href="cssv1/bootstrap.css"
+				<link rel="stylesheet" type="text/css" href="/UniGoesMobile/cssv1/bootstrap.css"
 					media="all" />
-				<link rel="stylesheet" type="text/css" href="cssv1/content.css"
+				<link rel="stylesheet" type="text/css" href="/UniGoesMobile/cssv1/content.css"
 					media="all" />
-				<link rel="stylesheet" type="text/css" href="cssv1/menu.css"
+				<link rel="stylesheet" type="text/css" href="/UniGoesMobile/cssv1/menu.css"
 					media="all" />
-				<link rel="stylesheet" type="text/css" href="cssv1/styles.css"
+				<link rel="stylesheet" type="text/css" href="/UniGoesMobile/cssv1/styles.css"
 					media="all" />
 
-				<link rel="stylesheet" type="text/css" href="cssv1/ios_styles.css"
+				<link rel="stylesheet" type="text/css" href="/UniGoesMobile/cssv1/ios_styles.css"
 					media="all" />
-				<link rel="stylesheet" type="text/css" href="cssv1/android_styles.css"
+				<link rel="stylesheet" type="text/css" href="/UniGoesMobile/cssv1/android_styles.css"
 					media="all" />
 
 				<script
@@ -40,11 +40,11 @@
 
 				<script type="text/javascript" src="js/jquery.stayinwebapp.js"></script>
 
-				<script src="js/overthrow.js"></script>
-				<script src="js/jquery.cookie.js"></script>
-				<script src="js/useragent-detect.js"></script>
-				<script src="js/create-controls.js"></script>
-				<script type="text/javascript" src="js/bookmark.js"></script>
+				<script src="/UniGoesMobile/js/overthrow.js"></script>
+				<script src="/UniGoesMobile/js/jquery.cookie.js"></script>
+				<script src="/UniGoesMobile/js/useragent-detect.js"></script>
+				<script src="/UniGoesMobile/js/create-controls.js"></script>
+				<script type="text/javascript" src="/UniGoesMobile/js/bookmark.js"></script>
 
 
 				<meta name="viewport"
@@ -165,7 +165,7 @@
 								weitergeleitet.
 								Sie können Ihre Einstellungen jederzeit unter
 								"Einstellungen" (Schraubenschlüssel-Symbol
-								<img src="/images/settings_tab1.png/" />
+								<img src="/UniGoesMobile/images/settings_tab1.png" />
 								) ändern.
 
 							</p>
@@ -203,7 +203,7 @@
 				<div id="controls">
 					<div id="logo-icon" class="icon">
 						<a href="/UniGoesMobile/">
-							<img src="images/logo.png" />
+							<img src="/UniGoesMobile/images/logo.png" />
 						</a>
 					</div>
 

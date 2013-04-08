@@ -56,7 +56,7 @@
 				<div id="content-pane">
 					<div id="content">
 						<!-- FÜge Inhaltsbereich ein -->
-						<!-- <xsl:apply-templates select="//div[contains(@class,'up-page-content-column-center')]" />-->
+						<xsl:apply-templates select="//div[contains(@class,'up-page-content-column-center')]" />
 					</div>
 
 					<div class="up-page-content-localnav" id="navigation-menu">
@@ -81,10 +81,15 @@
 												<xsl:apply-templates select="a/node()" />
 											</a>
 										</xsl:if>
-										<xsl:if test="contains(@class,'up-page-content-mainnav-item-cur')|contains(@class,'up-page-content-mainnav-item-act')">
+										<xsl:if test="contains(@class,'up-page-content-mainnav-item-cur')">
 											<xsl:apply-templates
 												select="//div[@class='up-page-content-localnav']/nav/ul" />
 										</xsl:if>
+                                                                                <xsl:if test="contains(@class,'up-page-content-mainnav-item-act')">
+											<xsl:apply-templates
+												select="//div[@class='up-page-content-localnav']/nav/ul" />
+										</xsl:if>
+                                                                                
 										<!-- Menü rendern, wenn kein a tag im li ist, das passiert nur 
 											auf fakultätsseiten, wo es oben kein Menü gibt! -->
 										<xsl:if test="not(a)">

@@ -81,7 +81,7 @@
 												<xsl:apply-templates select="a/node()" />
 											</a>
 										</xsl:if>
-										<xsl:if test="@class='up-page-content-mainnav-item-cur'">
+										<xsl:if test="contains(@class,'up-page-content-mainnav-item-cur')|contains(@class,'up-page-content-mainnav-item-act')">
 											<xsl:apply-templates
 												select="//div[@class='up-page-content-localnav']/nav/ul" />
 										</xsl:if>

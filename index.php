@@ -27,7 +27,7 @@
         if(strpos($url,"cgi-bin/search.cgi")!== false){
         	$data = file_get_contents('http://websearch.uni-passau.de/' . $url);
         }else{
-        	$data = file_get_contents($urls[$mode] . '/' . $url);
+        	$data = file_get_contents($urls[$mode] . $url);
         }
 		//Website von http://www.uni-passau.de holen
         if($mode == 'new'){

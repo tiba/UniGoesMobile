@@ -92,7 +92,7 @@
 										<!-- Menü rendern, wenn kein a tag im li ist, das passiert nur 
 											auf fakultätsseiten, wo es oben kein Menü gibt! -->
 										<xsl:if test="not(a)">
-                                                                                    <span><xsl:apply-templates select="span/node()" /></span>
+                                                                                    <a href="#"><xsl:apply-templates select="span/node()" /></a>
 										</xsl:if>
 										<xsl:if test="contains(@class,'up-page-content-mainnav-item-cur')">
 											<xsl:apply-templates

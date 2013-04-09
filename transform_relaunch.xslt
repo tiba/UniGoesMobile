@@ -71,8 +71,11 @@
 									<li>
 										<xsl:if test="@class='up-page-content-mainnav-item-cur'">
 											<xsl:attribute name="class">active sub</xsl:attribute>
+                                                                                </xsl:if>
+                                                                                <xsl:if test="@class='up-page-content-mainnav-item-act'">
+											<xsl:attribute name="class">active sub</xsl:attribute>
 										</xsl:if>
-										<xsl:if test="a">
+										
 											<a>
 												<xsl:apply-templates select="a/@*" />
                                                                                                 <xsl:attribute name="href"><xsl:value-of
@@ -85,7 +88,7 @@
                                                                                                 
 												<xsl:apply-templates select="a/node()" />
 											</a>
-										</xsl:if>
+										
 										<xsl:if test="contains(@class,'up-page-content-mainnav-item-cur')">
 											<xsl:apply-templates
 												select="//div[@class='up-page-content-localnav']/nav/ul" />

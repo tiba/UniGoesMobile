@@ -75,9 +75,14 @@
 										<xsl:if test="a">
 											<a>
 												<xsl:apply-templates select="a/@*" />
-												<xsl:attribute name="href"><xsl:value-of
+                                                                                                <xsl:attribute name="href"><xsl:value-of
 													name="text"
 													select="php:functionString('str_replace','http://www.uni-passau.de/','',a/@href)" /></xsl:attribute>
+												
+                                                                                               <xsl:if test="a/@href='http://www.uni-passau.de/'">
+                                                                                                    <xsl:attribute name="href">index.php</xsl:attribute>
+                                                                                                </xsl:if>
+                                                                                                
 												<xsl:apply-templates select="a/node()" />
 											</a>
 										</xsl:if>

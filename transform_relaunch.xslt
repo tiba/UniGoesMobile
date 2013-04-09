@@ -66,7 +66,7 @@
 							<ul>
 
 								<xsl:for-each
-									select="//nav/ul[@class='up-page-content-mainnav']/li | //ul[@id='topmenu']/li">
+									select="//nav/ul[@class='up-page-content-mainnav']/li">
 
 									<li>
 										<xsl:if test="@class='up-page-content-mainnav-item-cur'">
@@ -97,10 +97,10 @@
                                                                                 
 										<!-- Menü rendern, wenn kein a tag im li ist, das passiert nur 
 											auf fakultätsseiten, wo es oben kein Menü gibt! -->
-										<xsl:if test="not(a)">
+										<!--<xsl:if test="not(a)">
 											<xsl:apply-templates
 												select="//div[@class='up-page-content-localnav']/nav/ul" />
-										</xsl:if>
+										</xsl:if>-->
 									</li>
 								</xsl:for-each>
 

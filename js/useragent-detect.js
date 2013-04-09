@@ -6,9 +6,9 @@
         
         var config = {
             nn: 'index.php',
-            schueler: 'landing_anfaenger.html',
-             quitschie: 'index.php',
-            student: 'landing_studis.html',
+            schueler: 'landing_anfaenger_neu.html',
+            quitschie: 'index.php',
+            student: 'landing_studis_neu.html',
             dozent: 'landing_angestellter.html'
             
         };

@@ -18,3 +18,32 @@
 .csc-default:first-child {margin-top:0px;}
 .csc-default h1 {width:auto;}
 .csc-default strong a {color:#fd8900;}
+.fleft {float:left;}
+.fright {float:right;}
+
+.up-page-content-column-center-home-col .news-latest-item,
+.up-page-content-column-left .news-latest-item,
+.up-page-content-column-right .news-latest-item {border-bottom:1px dotted #ddd;}
+.up-page-content-column-center-home-topnewscol {margin:0 0 0 20px; width:229px;}
+.up-page-content-column-center-home-topnewscol:first-child {margin:0;}
+.up-page-content-column-left .news-latest-item,
+.up-page-content-column-right .news-latest-item {padding:5px 0;}
+
+.up-page-content-column-center .csc-textpic-imagewrap {margin-top:5px !important;}
+.up-page-content-column-center .csc-textpic-imagewrap IMG {display: inline !important;}
+.up-page-content-column-center-full {margin:0 0 20px 0 !important; width:728px !important;}
+.up-page-content-column-center-home-col {width:354px;}
+.up-page-content-column-center-home-col .csc-default {margin:0;}
+.up-page-content-column-center-home-supertopnews .csc-default {margin:0;}
+.up-page-content-column-center-home-supertopnews .csc-default p {margin:0 0 10px;}
+.up-page-content-column-center-home-topnews .csc-default {margin:0;}
+.up-page-content-column-right {font-size:13px; line-height:20px; margin:0 0 20px; width:184px;}
+.up-page-content-column-left .csc-header,
+.up-page-content-column-right .csc-header, .studip_lecturedetail_name_tr {border-top: 4px solid #FD8900; margin-top:5px;}
+
+.news-latest-item-supertop {background-color:#f4f4f4; border-top:4px solid #fd8900; margin:0 0 20px;}
+.news-latest-item-supertop  h2 {color:#333; font-size:18px; line-height:25px; margin:15px 0;}
+.news-latest-item-supertop h2 a {color:#333; text-decoration:none;}
+.news-latest-item-supertop h2 a:hover {color:#fd8900; text-decoration:underline;}
+.news-latest-item-supertop .news-latest-item-content {font-size:13px; margin:0 10px 0 50%;}
+.news-latest-item-content a, .list-view-home>b a.url {background:url('images/common/localnav-arrows.png') no-repeat scroll -1px 5px transparent; display:block; padding:0 0 0 11px;}

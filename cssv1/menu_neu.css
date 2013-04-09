@@ -1,3 +1,15 @@
 .up-page-content-localnav > nav ul:first-child > a {
   background-image: none;  
 }
+#up-content-top {
+    height: 1px;
+    display: block;
+    outline: none;
+    overflow: hidden;
+    width: 1px;
+}
+
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}

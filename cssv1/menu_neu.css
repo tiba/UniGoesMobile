@@ -1,0 +1,4 @@
+.up-page-content-localnav > nav > ul:first-child  span,
+.up-page-content-localnav > nav > ul:first-child a {
+  background-image: none;  
+}

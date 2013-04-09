@@ -9,12 +9,7 @@
     width: 1px;
 }
 
-.clearfix:before, .clearfix:after {
-    content: "";
-    display: table;
-}
 .clearfix:after { clear: both; }
-.clearfix { zoom: 1; }
 .csc-default:first-child {margin-top:0px;}
 .csc-default h1 {width:auto;}
 .csc-default strong a {color:#fd8900;}
@@ -41,7 +36,7 @@
 .up-page-content-column-left .csc-header,
 .up-page-content-column-right .csc-header, .studip_lecturedetail_name_tr {border-top: 4px solid #FD8900; margin-top:5px;}
 
-.news-latest-item-supertop {background-color:#f4f4f4; border-top:4px solid #fd8900; margin:0 0 20px;}
+
 .news-latest-item-supertop  h2 {color:#333; font-size:18px; line-height:25px; margin:15px 0;}
 .news-latest-item-supertop h2 a {color:#333; text-decoration:none;}
 .news-latest-item-supertop h2 a:hover {color:#fd8900; text-decoration:underline;}

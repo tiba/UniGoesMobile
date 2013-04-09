@@ -68,11 +68,12 @@
 								<xsl:for-each
 									select="//nav/ul[@class='up-page-content-mainnav']/li">
 
-									<li>
-										<xsl:if test="@class='up-page-content-mainnav-item-cur'">
+                                                                        <xsl:apply-templates select="@*|node()" />
+                                                                    <li>
+										<xsl:if test="contains(@class,'up-page-content-mainnav-item-cur')">
 											<xsl:attribute name="class">active sub</xsl:attribute>
                                                                                 </xsl:if>
-                                                                                <xsl:if test="@class='up-page-content-mainnav-item-act'">
+                                                                                <xsl:if test="contains(@class,'up-page-content-mainnav-item-act')">
 											<xsl:attribute name="class">active sub</xsl:attribute>
 										</xsl:if>
 										

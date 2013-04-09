@@ -68,8 +68,43 @@
 								<xsl:for-each
 									select="//nav/ul[@class='up-page-content-mainnav']/li">
 
-                                                                    <xsl:apply-templates select="@*|node()" />
-                                                                   
+                                                                    <li>
+										<xsl:if test="contains(@class,'up-page-content-mainnav-item-cur')">
+											<xsl:attribute name="class">active sub</xsl:attribute>
+                                                                                </xsl:if>
+                                                                                <xsl:if test="contains(@class,'up-page-content-mainnav-item-act')">
+											<xsl:attribute name="class">active sub</xsl:attribute>
+										</xsl:if>
+										
+											<a>
+												<xsl:apply-templates select="a/@*" />
+                                                                                                <xsl:attribute name="href"><xsl:value-of
+													name="text"
+													select="php:functionString('str_replace','http://www.uni-passau.de/','',a/@href)" /></xsl:attribute>
+												
+                                                                                               <xsl:if test="a/@href='http://www.uni-passau.de/'">
+                                                                                                    <xsl:attribute name="href">index.php</xsl:attribute>
+                                                                                                </xsl:if>
+                                                                                                
+												<xsl:apply-templates select="a/node()" />
+											</a>
+										
+										<xsl:if test="contains(@class,'up-page-content-mainnav-item-cur')">
+											<xsl:apply-templates
+												select="//div[@class='up-page-content-localnav']/nav/ul" />
+										</xsl:if>
+                                                                                <xsl:if test="contains(@class,'up-page-content-mainnav-item-act')">
+											<xsl:apply-templates
+												select="//div[@class='up-page-content-localnav']/nav/ul" />
+										</xsl:if>
+                                                                                
+										<!-- Menü rendern, wenn kein a tag im li ist, das passiert nur 
+											auf fakultätsseiten, wo es oben kein Menü gibt! -->
+										<!--<xsl:if test="not(a)">
+											<xsl:apply-templates
+												select="//div[@class='up-page-content-localnav']/nav/ul" />
+										</xsl:if>-->
+									</li>
 								</xsl:for-each>
 
 							</ul>

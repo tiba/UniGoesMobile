@@ -15,3 +15,6 @@
 }
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
+.csc-default:first-child {margin-top:0px;}
+.csc-default h1 {width:auto;}
+.csc-default strong a {color:#fd8900;}

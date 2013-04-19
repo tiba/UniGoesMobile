@@ -2,7 +2,7 @@
 #ausser wenn die Datei lokal existiert
 AuthUserFile /var/www/unipassaumobil.zitroneneis.org/htdocs/UniGoesMobile/.htpasswd
 AuthGroupFile /dev/null
-AuthName "Password Protected Area"
+AuthName "Masterarbeit: Mobile Website der Uni Passau, für Zugang: tinabeier at web.de"
 AuthType Basic
 
 <limit GET POST>

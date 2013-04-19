@@ -1,5 +1,13 @@
 #alle dokumente auf index.php weiterleiten
 #ausser wenn die Datei lokal existiert
+AuthUserFile /var/www/unipassaumobil.zitroneneis.org/htdocs/UniGoesMobile/.htpasswd
+AuthGroupFile /dev/null
+AuthName "Password Protected Area"
+AuthType Basic
+
+<limit GET POST>
+require valid-user
+</limit>
 
 
 RewriteEngine On
@@ -15,4 +23,4 @@ RewriteRule ^(typo3|typo3temp|typo3conf|fileadmin|uploads)(.*)$ http://www.uni-p
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond  %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*)$ index.php [L]
-#RewriteRule ^.*$ http://www.google.de [R=302]
+

@@ -137,12 +137,12 @@
 							</p>
 							<div class="select">
 								<!--TODO: optinoen anpassen -->
-								<label for="targetaudience">Ich bin...</label>
+								<label for="targetaudience">Ich...</label>
 								<select name="targetaudience" class="targetaudience" id="targetaudience">
 									<option value="nn">[keine Angabe]</option>
-									<option value="schueler">neu an der Uni Passau</option>
-									<option value="student">schon länger an der Uni Passau</option>
-									<!--<option value="dozent">bin hier angestellt</option> -->
+									<option value="schueler">interessiere mich für ein Studium an der Uni Passau</option>
+									<option value="student">studiere bereits an der Uni Passau</option>
+									<option value="dozent">bin hier angestellt</option>
 								</select>
 							</div>
 

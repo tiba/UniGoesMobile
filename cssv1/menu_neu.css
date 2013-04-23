@@ -43,12 +43,12 @@
 .news-latest-item-supertop .news-latest-item-content {font-size:13px; margin:0 10px 0 50%;}
 .news-latest-item-content a, .list-view-home>b a.url {background:url('images/common/localnav-arrows.png') no-repeat scroll -1px 5px transparent; display:block; padding:0 0 0 11px;}
 
-.news-latest-item-supertop clearfix{
+/*.news-latest-item-supertop.clearfix{
     display:none;
 }
-.up-page-content-column-center-home-cols {
+.up-page-content-column-center-home-cols.clearfix{
     display:none;
 }
-.up-page-content-column-center-home-col {
+.up-page-content-column-center-home-col.clearfix{
     display:none;
-}
+}*/

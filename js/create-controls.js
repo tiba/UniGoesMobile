@@ -266,7 +266,7 @@ var config = {
 
         //Suchfeld fokusieren, nach klick auf suchicon (damit gleich die Tastatur erscheint)
         $("#search-icon a").on('click.createcontrols', function() {
-//der Fokus wird auf das Eingabefeld gelegt, damit mobile User gleich die richtige Tastaturanzeige bekommen:			
+        //der Fokus wird auf das Eingabefeld gelegt, damit mobile User gleich die richtige Tastaturanzeige bekommen:			
             $("#search-area input[type='search']").focus();
         });
 

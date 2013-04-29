@@ -6,8 +6,6 @@
     bottom:48px;	
 }
 
-
-
 .ios #favorites nav a.delete{		
     display:block;
     width: 24px;
@@ -103,8 +101,6 @@
     display:inline-block;
 }
 
-
-
 .ios #mainbar #menu-icon a{
     background: url('images/ios/sprite_ios_auxbar.png') no-repeat -505px -17px, -webkit-linear-gradient(top, #7c97bb, #5a7caa 50%, #50709a 51%, #476489);
 }
@@ -182,7 +178,6 @@
     font-weight: bold;
     background-image: url('images/ios/sprite_ios_auxbar.png');
     background-repeat: no-repeat;
-
 }	
 
 .ios #auxbar .button.active > a > span{
@@ -203,6 +198,7 @@
     font-size:16px;  
     width: 100%;
 }	
+
 
 /*TODO:in den nachfolgenden 3 styles aufräumen!!*/	
 .ios #search-area input[type="search"]{
@@ -273,12 +269,9 @@
     pointer:cursor;
 }
 
-
-
 .ios #more-container.active{
     display: block;	
 }	
-
 
 .ios #less-icon.button.active{
     background-image: url('images/ios/bg_tabbar_activebutton.png');
@@ -305,7 +298,6 @@
     background-repeat: repeat-x;
     display:none;
 }
-
 
 .ios #favorites-icon.button.active > a > span{
     background-position: -240px -97px;
@@ -345,6 +337,8 @@
 .ios #footer{
     bottom:48px;
 }
+
+
 /*Overlay-pane*/
 .ios #overlay-pane > div {
     color:white;
@@ -361,7 +355,6 @@
     box-shadow: 0px 0px 12px rgba(0,0,0,.6);
     background-color: rgba(0,0,0,0.8);			
 }
-
 
 .ios #bookmark-status{
     position: absolute;	
@@ -437,67 +430,16 @@
     padding-right:25px;
 }
 
-
 .ios #overlay-pane #navigation-menu nav{
     overflow: none;
     margin:0;
     padding:0;
 }
-/* navigation bei splitscreen in dre größe anpassen, damit overthrow funktioniert!*/
+
+/* Navigation bei splitscreen in der Größe anpassen, damit Overthrow funktioniert!*/
 .ios #content-pane #navigation-menu nav{
 	top:0;bottom:0;position: absolute;right: 0;left: 0;
 }
-/*TODO: nachfolgende styles beinhalten die Verläufe für den Hintergrund der buttons in ios-menüs
-um diese anzuwenden müssen aber noch die Pfeil-Bilder aus dem uni-sprite als zweites back-
-ground-image neben jeden einzelnen Verlauf gesetzt werden*/
-
-/*.ios .up-page-content-localnav-L1-item a {
-        background: rgb(224,224,224); 
-        background: -moz-linear-gradient(top, rgba(224,224,224,1) 0%, rgba(239,239,239,1) 50%, rgba(232,232,232,1) 51%, rgba(255,255,255,1) 100%);
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(224,224,224,1)), color-stop(50%,rgba(239,239,239,1)), color-stop(51%,rgba(232,232,232,1)), color-stop(100%,rgba(255,255,255,1))); 
-        background: -webkit-linear-gradient(top, rgba(224,224,224,1) 0%,rgba(239,239,239,1) 50%,rgba(232,232,232,1) 51%,rgba(255,255,255,1) 100%); 
-        background: -o-linear-gradient(top, rgba(224,224,224,1) 0%,rgba(239,239,239,1) 50%,rgba(232,232,232,1) 51%,rgba(255,255,255,1) 100%); 
-        background: -ms-linear-gradient(top, rgba(224,224,224,1) 0%,rgba(239,239,239,1) 50%,rgba(232,232,232,1) 51%,rgba(255,255,255,1) 100%); 
-        background: linear-gradient(to bottom, rgba(224,224,224,1) 0%,rgba(239,239,239,1) 50%,rgba(232,232,232,1) 51%,rgba(255,255,255,1) 100%); 
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0e0e0', endColorstr='#ffffff',GradientType=0 ); 
-        }
-        
-.ios .up-page-content-localnav-L2-item a {
-        background: rgb(240,239,239);
-        background: -moz-linear-gradient(top, rgba(240,239,239,1) 0%, rgba(255,254,254,1) 50%, rgba(248,247,247,1) 51%, rgba(255,255,255,1) 100%);
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(240,239,239,1)), color-stop(50%,rgba(255,254,254,1)), color-stop(51%,rgba(248,247,247,1)), color-stop(100%,rgba(255,255,255,1))); 
-        background: -webkit-linear-gradient(top, rgba(240,239,239,1) 0%,rgba(255,254,254,1) 50%,rgba(248,247,247,1) 51%,rgba(255,255,255,1) 100%); 
-        background: -o-linear-gradient(top, rgba(240,239,239,1) 0%,rgba(255,254,254,1) 50%,rgba(248,247,247,1) 51%,rgba(255,255,255,1) 100%); 
-        background: -ms-linear-gradient(top, rgba(240,239,239,1) 0%,rgba(255,254,254,1) 50%,rgba(248,247,247,1) 51%,rgba(255,255,255,1) 100%);
-        background: linear-gradient(to bottom, rgba(240,239,239,1) 0%,rgba(255,254,254,1) 50%,rgba(248,247,247,1) 51%,rgba(255,255,255,1) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0efef', endColorstr='#ffffff',GradientType=0 );
-        }
-
-.ios .up-page-content-localnav-L3-item-act a {
-        background: rgb(248,248,248);
-        background: -moz-linear-gradient(top, rgba(248,248,248,1) 0%, rgba(255,254,254,1) 50%, rgba(250,250,250,1) 51%, rgba(255,255,255,1) 100%); 
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(248,248,248,1)), color-stop(50%,rgba(255,254,254,1)), color-stop(51%,rgba(250,250,250,1)), color-stop(100%,rgba(255,255,255,1)));
-        background: -webkit-linear-gradient(top, rgba(248,248,248,1) 0%,rgba(255,254,254,1) 50%,rgba(250,250,250,1) 51%,rgba(255,255,255,1) 100%); 
-        background: -o-linear-gradient(top, rgba(248,248,248,1) 0%,rgba(255,254,254,1) 50%,rgba(250,250,250,1) 51%,rgba(255,255,255,1) 100%); 
-        background: -ms-linear-gradient(top, rgba(248,248,248,1) 0%,rgba(255,254,254,1) 50%,rgba(250,250,250,1) 51%,rgba(255,255,255,1) 100%); 
-        background: linear-gradient(to bottom, rgba(248,248,248,1) 0%,rgba(255,254,254,1) 50%,rgba(250,250,250,1) 51%,rgba(255,255,255,1) 100%); 
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#ffffff',GradientType=0 );
-        }
-        
-.ios .up-page-content-localnav-L1-item-cur span,
-.ios .up-page-content-localnav-L2-item-cur span,
-.ios .up-page-content-localnav-L3-item-cur span,
-.ios .up-page-content-localnav-L4-item-cur span {
-        background: rgb(254,237,215);
-        background: -moz-linear-gradient(top, rgba(254,237,215,1) 0%, rgba(255,254,254,1) 50%, rgba(255,245,223,1) 51%, rgba(255,255,255,1) 100%); 
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(254,237,215,1)), color-stop(50%,rgba(255,254,254,1)), color-stop(51%,rgba(255,245,223,1)), color-stop(100%,rgba(255,255,255,1))); 
-        background: -webkit-linear-gradient(top, rgba(254,237,215,1) 0%,rgba(255,254,254,1) 50%,rgba(255,245,223,1) 51%,rgba(255,255,255,1) 100%); 
-        background: -o-linear-gradient(top, rgba(254,237,215,1) 0%,rgba(255,254,254,1) 50%,rgba(255,245,223,1) 51%,rgba(255,255,255,1) 100%); 
-        background: -ms-linear-gradient(top, rgba(254,237,215,1) 0%,rgba(255,254,254,1) 50%,rgba(255,245,223,1) 51%,rgba(255,255,255,1) 100%); 
-        background: linear-gradient(to bottom, rgba(254,237,215,1) 0%,rgba(255,254,254,1) 50%,rgba(255,245,223,1) 51%,rgba(255,255,255,1) 100%); 
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feedd7', endColorstr='#ffffff',GradientType=0 ); 
-        }
-*/
 
 
 /*responsive Webdesign*/	

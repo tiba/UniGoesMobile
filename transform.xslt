@@ -2,7 +2,29 @@
 <xsl:stylesheet encoding="UTF-8"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:php="http://php.net/xsl"
 	version="1.0">
-
+    <!--
+ Copyright notice
+ 
+   (c) 2012-2013 Christine Beier (tinabeier@web.de)
+   All rights reserved
+ 
+   This script is part of the master thesis "Die mobile Website der 
+   Universität Passau  Kommunikationskonzept und Usability-Test 
+   eines selbst entwickelten Prototypen". The prototype is free software; 
+   you can redistribute it and/or modify it under the terms of the 
+   GNU Lesser General Public License as published by the Free Software 
+   Foundation; either version 3 of the License, or any later version.
+   The GNU Lesser General Public License can be found at
+  
+   http://www.gnu.org/licenses/lgpl.txt.
+ 
+   This script is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+ 
+   This copyright notice MUST APPEAR in all copies of the script!
+    -->
 
 
 	<xsl:output method="html" encoding="UTF-8" />

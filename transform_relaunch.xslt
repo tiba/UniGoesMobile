@@ -135,7 +135,7 @@
 						</nav>
 					</div>
 					<div class="up-page-content-localnav" id="shortcuts">
-						<!--todo: textverfassen -->
+						<!--Hier könnte noch Text stehen-->
 						<nav>
 
 						</nav>
@@ -158,7 +158,6 @@
 
 							</p>
 							<div class="select">
-								<!--TODO: optinoen anpassen -->
 								<label for="targetaudience">Ich...</label>
 								<select name="targetaudience" class="targetaudience" id="targetaudience">
 									<option value="nn">[keine Angabe]</option>

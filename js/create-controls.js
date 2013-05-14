@@ -261,7 +261,8 @@ var config = {
         //KEINE active klasse, da overlays, nur temporär sind!)
         $.each(config.overlayPaneIcons, function(k, v) {
 
-//die Variable overlayPane ...TODO: weiterschreiben!
+            //die Variable overlayPane enthält den Wert des hrefs der Icons, die wiederum gleichzeitig die ids der Elemente 
+            //in der overlay-pane sind, sodass bei Klick immer das jeweils passende Popup sichtbar wird
 
             var currentOverlayPane = $(v).attr("href");
             $(v).on('click.createcontrols', function() {

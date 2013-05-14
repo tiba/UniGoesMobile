@@ -176,7 +176,6 @@ Array.prototype.remove = function(from, to) {
             data.remove(stored);
         } else {
             data.push(favorite);
-            //TODO: Ihre Seite wurde zu den Favoriten hinzugefügt Meldung einblenden
         }
         saveData(data);
     }

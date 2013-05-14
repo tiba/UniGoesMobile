@@ -35,10 +35,15 @@
         <link rel="stylesheet" type="text/css" href="cssv1/styles.css" media="all">
         <link rel="stylesheet" type="text/css" href="cssv1/ios_styles.css" media="all">
         <link rel="stylesheet" type="text/css" href="cssv1/android_styles.css" media="all">
-        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css">
+<!--    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css">
         <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
         <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
-        <script type="text/javascript" src="js/jquery.stayinwebapp.js"></script><script src="js/overthrow.js"></script><script src="js/jquery.cookie.js"></script><script src="js/useragent-detect.js"></script><script src="js/create-controls.js"></script><script type="text/javascript" src="js/bookmark.js"></script>
+-->
+        <script type="text/javascript" src="js/jquery.stayinwebapp.js"></script>
+        <script src="js/overthrow.js"></script><script src="js/jquery.cookie.js"></script>
+        <script src="js/useragent-detect.js"></script>
+        <script src="js/create-controls.js"></script>
+        <script type="text/javascript" src="js/bookmark.js"></script>
         <base href="http://www.zitroneneis.org/UniGoesMobile/"/>
         
         <meta name="viewport" content="initial-scale=1, , maximum-scale=1, , minimum-scale=1">
@@ -321,6 +326,7 @@
                             
                             <h4>Direktzugriffe</h4>
                             <p class="bodytext">Die Direktzugriffe sind eine Sammlung von Shortcuts zu häufig benötigten Informationen, Dokumenten und Stellen an der Uni Passau. Sie finden diese auch jederzeit wieder im Menü unter "Direktzugriff" (Pfeil-symbol <img src="images/shortcuts_tab1.png"/>):  
+                            </p>    
                                 <div id="shortcuts-quietschies" class="show-shortcuts">
                                     <h3><a href="studienberatung.html" class="internal-link">Studienberatung</a></h3><p></p>
                                     <h3><a href="studienangebot.html" class="internal-link">Studienangebot</a></h3><p></p>
@@ -330,7 +336,7 @@
                                     <h3><a href="http://www.ub.uni-passau.de/index.html" class="external-link-new-window">Bibliothek</a></h3><p></p>
                                     <h3><a href="http://blog.uni-passau.de/" class="external-link-new-window">Campus Passau Blog</a></h3><p></p>
                                 </div>
-                            </p>
+                            
                             <h4>Favoriten speichern</h4>
                             <p class="bodytext">Wenn Sie eine Seite der Uni Passau öfter benutzen oder besonders schnell auffindbar machen wollen, haben sie die Möglichkeit die Seite mittels der "Seite merken"-Funktion (Stern-Symbol <img src="images/merken_tab2_leer"/>) zu speichern. Die Seite wird dann in der Liste ihrer Favoriten (Lesezeichen-Symbol <img src="images/gemerkt_tab2.png"/>) angezeigt und kann jederzeit bequem aufgerufen oder aber wieder aus den Favoriten entfernt werden.
                             </p>
@@ -424,7 +430,7 @@
                 <p class="bodytext">
                     Ihre Favoriten wurden aktualisiert
                 </p>
-                <a href="javascript:return false;" class="button btn confirm">Ok</a>
+                <a href="#" onclick="return false;" class="button btn confirm">Ok</a>
             </div>
         </div>
         <div id="overlay-pane"></div>

@@ -200,7 +200,6 @@
 }	
 
 
-/*TODO:in den nachfolgenden 3 styles aufräumen!!*/	
 .ios #search-area input[type="search"]{
     /*Original-Selektor: .ui-body-c, .ui-overlay-c.ui-body-c, .ui-overlay-c*/
     color: #333 /*{c-body-color}*/;
